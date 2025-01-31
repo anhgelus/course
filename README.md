@@ -13,7 +13,7 @@ Chaque semestre possède son propre dossier contenant toutes les UE.
 Chaque UE possède son propre dossier.
 
 Les fichiers markdown (`.md`) ont été écris avec Obsidian.
-Les fichiers $\latex$ (`.tex`) ont été écris avec NeoVim.
+Les fichiers $\LaTeX$ (`.tex`) ont été écris avec NeoVim.
 Les fichiers C (`.c`) ont été écris avec Vim.
 ## Licence
 Ce repository est sous licence CC BY-NC-SA 4.0.
