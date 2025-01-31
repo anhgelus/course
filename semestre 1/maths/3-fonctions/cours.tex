@@ -1,0 +1,267 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Fonctions}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Ensemble de définition et continuité}
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ prend toutes les valeurs dans $A$ et lui associe une unique valeur dans $B$.
+
+		On appelle $A$ le domaine de définition de $f$ et $B$ l'ensemble d'arrivée de $f$.\\
+		On dit que $f$ est de $\mathbb{R}$ dans $\mathbb{R}$.
+	\end{defn}
+	\begin{defn}
+		Une fonction $f:I\to E$ est continue si et seulement si :
+		$$ \forall x\in I,\quad \lim_{n \to x_0} f(x) = f(x_0) $$
+	\end{defn}
+	\section{Propriétés des applications}
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ est surjective si et seulement si :
+		$$ \forall y\in B,\quad\exists x\in A,\quad f(x)=y $$
+	\end{defn}
+	Tous les éléments de $B$ sont atteints, comme la tarte.
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ est injective si et seulement si :
+		$$ \forall (x_1,x_2)\in A^2,\quad f(x_1)=f(x_2) \implies x_1=x_2 $$
+	\end{defn}
+	Chaque élément de $A$ possède une image unique.
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ est bijective si et seulement si elle est injective et surjective.
+	\end{defn}
+	Tous les éléments de $B$  sont atteints et est l'image d'un unique antécédent de $A$.
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ est paire si et seulement si :
+		$$ \forall x\in\mathbb{R},\quad f(x)=f(-x) $$
+	\end{defn}
+	\begin{defn}
+		Une fonction $f$ de $A$ dans $B$ est impaire si et seulement si :
+		$$ \forall x\in\mathbb{R},\quad f(x)=-f(x) $$
+	\end{defn}
+	\begin{defn}
+		Si $f$ de $A$ dans $B$ est bijective, alors il existe une fonction réciproque notée $f^{-1}$ de $B$ dans $A$ tel que :
+		$$ \forall a\in A,\quad f^{-1}(f(a)) = a $$
+	\end{defn}
+	\begin{props}
+		$f^{-1}$ est bijective et sa réciproque est $f$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{defn}
+		On dit que $f$ est $T$-périodique si et seulement si :
+		$$ \forall x\in A,\quad f(x)=f(x+T) $$
+	\end{defn}
+	\section{Grands théorèmes}
+	\begin{thm}[Théorème des valeurs intermédiaires]
+		Si $f$ est continue sur $[a,b]$, si pour tout $y$ inclus entre $f(a)$ et $f(b)$, il existe $c\in[a,b]$ tel que $f(c)=y$.
+	\end{thm}
+	\begin{proof}
+		Admis
+	\end{proof}
+	\begin{thm}[Théorème de la bijection]
+		Soit $f$ une fonction de $[a,b]$ dans $E$. Si $f$ est strictement croissante (resp. strictement décroissante), alors :
+		$$ \forall y\in [f(a),f(b)],\quad\exists !c\in[a,b],\quad f(c)=y $$
+	\end{thm}
+	\begin{proof}
+		Admis
+	\end{proof}
+	\section{Dérivation}
+	\begin{defn}
+		La dérivée de $f$ de $A$ dans $B$ est :
+		$$f'\begin{system}
+			A &\to b\\
+			x&\longmapsto \lim_{t \to x_0} \frac{f(t)-f(x)}{t-x}
+		\end{system}$$
+		si la limite est définie.
+	\end{defn}
+	\begin{props}
+		Soient deux fonctions $f$ et $g$ dérivables. \\
+		On a :
+		\begin{align*}
+			(f+g)' &= f'+g'\\
+			(fg)'  &= f'g+g'f \\
+			\left(\frac{f}{g}\right)' &= \frac{f'g-g'f}{g^2} 
+		\end{align*}
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{defn}
+		Soient $f:A\to B$ et $g:B\to C$.\\
+		On définit $g\circ f$ la composée de $f$ par $g$ tel que :
+		$$g\circ f\begin{system}
+			A&\to C\\
+			x\longmapsto g(f(x))
+		\end{system}$$
+	\end{defn}
+	\begin{props}
+		La dérivée de $g\circ f$ est $$g\circ f'\times f'$$
+	\end{props}
+	\begin{proof}
+		Chiant mais \AQT
+	\end{proof}
+	\begin{thm}
+		La dérivée de $f^{-1}$ est (si elle est dérivable) :
+		$$ f^{-1}'(x)=\frac{1}{f'(f^{-1}(y))} $$
+	\end{thm}
+	\begin{proof}
+		Chiant, mais très intuitif graphiquement
+	\end{proof}
+\end{document}

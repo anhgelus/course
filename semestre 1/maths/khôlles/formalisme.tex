@@ -1,0 +1,192 @@
+%%=====================================================================================
+%%
+%%       Filename:  formalisme.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  06/12/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Khôlle 1 - Un peu de formalisme}
+\author{William Hergès\thanks{Sorbonne Universite}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Un peu de formalisme}
+	Durant cette khôlle (ou colle, mais je préfère les mots pseudo-latin), je vais demander une rédaction particulièrement rigoureuse. Ce formalisme est ensentiel pour démontrer formalement des propositions et des théorèmes.
+	\subsection{Assertion, proposition et théorème}
+	Une assertion est un énoncé vrai ou faux, e.g. $\pi$ est un irrationnel (démonstration complexe mais faisable en fin de Terminal~: devoir maison des MPSI d'Henri-IV durant les vacances d'été précédent leur première année et devoir sur table des MP2I/MPSI à Saint-Louis vers janvier).
+
+	Une énoncé indiquant la vérité d'une assertion est une proposition ou un théorème. Ce dernier est juste une proposition importante.
+
+	Une propriété est une assertion détaillant les éléments fondamentaux découlant d'une définition. Toutes sommes de fonctions continues est continue est une propriété et une proposition.
+	\subsection{Quantification}
+	Tous les éléments doivent être quantifiés à l'aide de quantifieurs ($\forall$, $\exists$, $\exists!$, «~Soit~», etc.). Un élément non quantité est une faute de rigueur car noous ne savons pas dans quelle condition nous pouvons l'utiliser.
+
+	Par exemple, nous n'écrirons pas $$f(x)=2x\cos(x)$$ car nous ne quantifions pas $x$ ici. Nous écrirons plutôt : $$ \forall x\in D,\quad f(x)=2x\cos(x) $$ où $D$ est un ensemble sur lequel $f$ est définie.
+	\section{Logique}
+	On admet la proposition suivante :
+	$$ \exists x\in\varnothing,\quad P $$
+	est toujours fausse pour toute assertion $P$.
+
+	Démontrer que $$ \forall x\in\varnothing, P $$ où $P$ une assertion, est toujours vraie.
+	\section{Rigueur en démonstration}
+	Soit $(u_n)_{n\geqslant 0}$ telle que $u_1 = 1$ et :
+	$$ \forall n\in\mathbb{N}^*,\quad u_{2n} = 2u_n\quad\land\quad \forall n\in\mathbb{N}^*,\quad u_{2n+1}=u_{n+1}+u_n $$
+	Démontrer que pour tout naturel $n$ non nul, $u_n = n$
+	\section{Intégration}
+	Démontrer rigoureusement l'intégration par partie (et la primitivisation par partie).
+	\section{Limite suite}
+	Calculer le $\mathrm{DL}_0(3)$ de $x\longmapsto e^{\cos x}$.
+	\section{Newton}
+	Démontrer le binôme de Newton, i.e. pour tout $(a,b)\in\mathbb{C}^2$ et pour tout $n\in\mathbb{N}^*$ on a :
+	$$ (a+b)^n = \sum_{k=0}^{n} \begin{pmatrix} n\\k \end{pmatrix} a^{k}b^{n-k} $$
+\end{document}

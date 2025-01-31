@@ -1,0 +1,243 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Intégration}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Définitions et théorèmes fondamentaux}
+	\begin{defn}
+		L'intégration de la fonction $f: [a,b]\to \mathbb{R}$ est l'aire de la région sous la courbe de $f$ et l'axe des absisses. On note ce nombre $$ \int^b_af(x)\mathrm{d}x $$
+
+		L'aire sous la courbe est :
+		$$ \lim_{n \to \infty} \sum_{i=1}^{n-1} f\left( \frac{b-a}{i} \right) \frac{b-a}{n} $$
+	\end{defn}
+
+	Ce calcul est apparenté au calcul des dérivés.
+	\begin{defn}
+		Soit $f:I\to \mathbb{R}$ avec $I$ un intervalle, on dit que $F:I\to \mathbb{R}$ est une primitive de $f$, i.e. $$ F'=f $$
+	\end{defn}
+	$F$ est toujours déterminée à une constante près.
+	\begin{thm}
+		Soit $f$ une fonction continue de $[a,b]$ dans $\mathbb{R}$.
+
+		Il existe toujours une primitive $F$ de $f$ sur $[a,b]$.\\
+		On a alors :
+		$$ \int^b_a f(t)\mathrm{d}t = F(b)-F(a) = [F(x)]_a^b $$
+	\end{thm}
+	\begin{proof}
+		Admis.
+	\end{proof}
+	Ce calcul ne dépend pas de la constance de $F$.
+	\section{Calculs}
+	\subsection{Propriétés}
+	\begin{props}
+		La propriété de Chasles est vraie pour les intégrales
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		L'intégrale est linéaire
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		Si $f\geqslant 0$, alors $\int f\geqslant 0$.
+
+		Si $f \geqslant g$, alors $\int f \geqslant \int g$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\subsection{Intégration par partie}
+	\begin{thm}[IPP]
+		Soient $f,g$ deux fonctions intégrables sur $[a,b]$.
+
+		Alors~:
+		$$ \int_a^b f'(x)g(x)\mathrm{d}x = [(fg)(x)]^b_a-\int^b_af(x)g'(x)\mathrm{d}x $$
+	\end{thm}
+	\begin{proof}
+		Admis.
+	\end{proof}
+	\begin{exemple}
+		On a :
+		$$ \int_a^b te^{-t}\mathrm{d}t = [-te^{-t}]^b_a-\int^a_be^{-t}\mathrm{d}t $$
+		(en posant $f'(t)=e^{-t}$ et $g(t)=t$)
+	\end{exemple}
+	\subsection{Changement de variable}
+	\begin{thm}
+		Soit $f:[a,b]\to \mathbb{R}$ continue. 
+
+		Pour toute fonction $\varphi:J\to [a;b]$ de classe $\mathcal{C}^1$ et tous $\alpha,\beta\in J$ tels que $\varphi(\alpha)=a$ et $\varphi(\beta)=b$ (sous réserve d'existence), on a : $$ \int^b_af(t)\mathrm{d}t = \int^{\beta}_{\alpha}f(\varphi(u))\varphi'(u)\mathrm{d}u $$
+	\end{thm}
+	Quand on a une intégrale trop compliqué, on fait un changement de variable.
+
+	\begin{lititle}
+		Méthode
+	\end{lititle}
+	On cherche à transformer $$ \int^b_a f(t)\mathrm{d}t $$ en $$ \int^{\beta}_{\alpha} g(u)\mathrm{d}u $$
+	\begin{enumerate}
+		\item On exprime $t$ en fonction de $u$ (i.e. il existe $\varphi$ tel que $t=\varphi(u)$).
+		\item On cherche $\alpha,\beta$ tel que $\varphi(\alpha)=a$ et $\varphi(\beta)=b$.
+		\item On vérifie que $\varphi$ est de classe $\mathcal{C}^1$ sur $[\alpha,\beta]$ et l’on calcule $\mathrm{d}t = \varphi'(u)\mathrm{d}u$, ce qui donne l’ancienne différentielle $\mathrm{d}t$ en fonction de la nouvelle $\mathrm{d}u$.
+		\item On transforme l’intégrant $f(t) \mathrm{d}t$ en remplaçant $\mathrm{d}t$ par $\varphi'(u) \mathrm{d}u$ et $t$ par $\mathrm{d}(u)$. On obtient ainsi un nouvel intégrant de la forme $g(u) \mathrm{d}u$.
+		\item On écrit la nouvelle intégrale et on obtient bien celle qu'on cherchait.
+	\end{enumerate}
+\end{document}

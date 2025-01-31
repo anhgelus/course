@@ -1,0 +1,249 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Limites}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Classe d'une fonction}
+	\begin{defn}
+		Une fonction est de classe $\mathcal{C}^n$ (où $n\in\mathbb{N}^*$) si et seulement si sa dérivée $n$-ième est continue.\\
+		Une fonction de classe $\mathcal{C}^0$ ne possède pas de dérivée continue.\\
+		Une fonction est de classe $\mathcal{C}^{\infty}$ si et seulement si elle est dérivable une infinité de fois et que cette dériviée est continue.
+	\end{defn}
+	\begin{thm}[Théorème des accroissements finis]
+		Soit $f:[a,b]\to \mathbb{R}$ de classe $\mathcal{C}^1_{[a,b]}$.
+
+		Il existe $c\in]a,b[$ tel que :
+		$$ f'(x) = \frac{f(b)-f(a)}{b-a} $$
+	\end{thm}
+	\begin{thm}[Inégalité des accroissements finis]
+		Soit $f:[a,b]\to \mathbb{R}$ de classe $\mathcal{C}^1_{[a,b]}$.
+
+		S'il existe $M\in\mathbb{R}_+$ tel que :
+		$$ \forall x\in]a,b[,\quad |f'(x)|\leqslant M $$
+		alors
+		$$ |f(b)-f(a)|\leqslant M(b-a) $$
+	\end{thm}
+	\section{Comparaison d'ordre de grandeur}
+	\begin{defn}
+		Soit $x$ de $\mathbb{R}$.
+
+		Un voisinage de $x$ est un intervalle ouvert contenant $x$.
+	\end{defn}
+	\begin{defn}
+		Une limite $l$ en $a$ de la fonction $f$ défini dans voisinage de $a$ est :
+		$$ \forall \varepsilon>0,\quad\exists N\in\mathbb{R},\quad \forall x>N,\quad f(x)\in]l-\varepsilon,l+\varepsilon[ $$
+	\end{defn}
+	\begin{defn}
+		Soient $x$ de $\mathbb{R}$ et $f,g$ deux fonctions définies sur un voisinage $I$ de $x$.
+
+		On dit que :
+		\begin{enumerate}
+			\item $f$ est un petit $o$ de $g$ au voisinage de $x$ (noté $f=o_x(g)$) s'il existe une fonction $\varepsilon:I\to \mathbb{R}$ tel que :
+				$$ \forall x\in I,\quad f(x)=\varepsilon(x)g(x)\quad\land\quad \lim_{x_0 \to x} \varepsilon(x_0) = 0 $$
+			\item $f$ est équivalente à $g$ au voisinage de $x$ (noté $f\sim_x g$) s'il existe une fonction $\varepsilon:I\to \mathbb{R}$ tel que :
+				$$ \forall x\in I,\quad f(x)=(1+\varepsilon(x))g(x)\quad\land\quad \lim_{x_0 \to x} \varepsilon = 0 $$
+		\end{enumerate}
+	\end{defn}
+	On note $\overline{\mathbb{R}}$ l'ensemble $\mathbb{R}\cup\{+\infty,-\infty\}$.
+	\begin{thm}
+		Soient $x\in\overline{\mathbb{R}}$ et $f,g$ deux fontions définis sur un voisinage $I$ de $x$ avec $g$ ne s'annulant pas en $x$.
+
+		On dit que :
+		\begin{enumerate}
+			\item $f=o_x(g)$ si $\lim_{x_0 \to x} \frac{f(x_0)}{g(x_0)}=0$
+			\item $f\sim_x g$ si $\lim_{x_0 \to x} \frac{f(x_0)}{g(x_0)}=1$
+		\end{enumerate}
+	\end{thm}
+	\begin{defn}
+		Un développement limité d'ordre $n$ (noté DL$_n$) en $a$ est une fonction telle que
+		$$ f(a+h) = c_0+c_1h+c_2h^2+\ldots+c_nh^n+o_{h\to 0}(h^n) $$
+		où $f$ admet $c_0,\ldots,c_n\in\mathbb{R}$.
+	\end{defn}
+	\begin{thm}[Théorème de Taylor]
+		Soient $n\in\mathbb{N}$ et $f:I\to \mathbb{R}$ de classe $\mathcal{C}^n$ sur $I$.
+
+		On a que $f$ admet un unique DL$_n$ de forme :
+		$$ f(a+h)=\sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}h^k + o_{h\to 0}(h^n) $$
+	\end{thm}
+	On a :
+	\begin{center}
+		\fbox{$\displaystyle\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} +\ldots+ (-1)^{n} \frac{x^{2n+1}}{(2n+1)!}+o(x^{2n+2})$}
+	\end{center}
+	\begin{center}
+		\fbox{$\displaystyle\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} +\ldots+ (-1)^{n} \frac{x^{2n}}{(2n)!}+o(x^{2n+1})$}
+	\end{center}
+	\begin{center}
+		\fbox{$\displaystyle e^x = 1+\frac{x}{1!}+\frac{x^2}{x!}+\ldots+\frac{x^n}{n!}+o(x^n)$}
+	\end{center}
+	\begin{center}
+		\fbox{$\displaystyle \ln x = \frac{x}{1!}-\frac{x^2}{x!}+\ldots+(-1)^{n-1}\frac{x^n}{n!}+o(x^n)$}
+	\end{center}
+	\begin{center}
+		\fbox{$\displaystyle(a+x)^{\alpha}=1+\alpha x+\binom{\alpha}{2}x+\ldots+\binom{\alpha}{n}x+o(x^n)$}\\
+		\fbox{$\displaystyle\binom{\alpha}{n}=\frac{\prod_{k=0}^{n} \alpha-k}{n!}$}
+	\end{center}
+	\begin{center}
+		\fbox{$\displaystyle\frac{1}{x-1}=1-x+x^2+\ldots+(-1)^nx^n+o(x^n)$}
+	\end{center}
+	\begin{center}
+		\fbox{Les fonctions hyperboliques sont comme les fonctions circulaires,}
+		\fbox{mais sans alternance du signe}
+	\end{center}
+\end{document}

@@ -1,0 +1,394 @@
+%%=====================================================================================
+%%
+%%       Filename:  formalisme.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  06/12/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Khôlle 2 - Équations différentielles et projections}
+\author{William Hergès\thanks{Sorbonne Universite}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	On notera les exercicés créés par M. Kerner et M. Cote, deux professeurs à Henri-IV et à PSL, avec $\dagger$.
+	\newpage
+	\section{Équations différentielles}
+	Dans cette section, on ne traitera que des équations différentielles résolubles, c'est-à-dire que $a(t) = 1$ pour tout $t$ dans $D$, un interval, où :
+	$$ \forall t\in D,\quad a(t)y'+b(t)y=c(t) $$
+	avec $y$ une fonction dérivable sur $D$ et $b,c$ deux fonctions définies sur $D$.
+
+	\begin{props}
+		L'ensemble de définition $D$ de $E$, une équation différentielle du premier ordre, est
+		$$ D = D_a\cap D_b\cap D_c $$
+		où $D_a$ est l'ensemble de définition de $a$ (ici $\mathbb{R}$), $D_b$ est celui de $b$ et $D_c$ celui de $c$.
+	\end{props}
+
+	On rappelera que résoudre correctement une équation différentielle, c'est donner sa solution homogène (souvent notée $y_H$), sa solution particulière (souvent noté $y_P$) et son ensemble de définition.
+	\begin{defn}
+		On dit qu'une équation différentielle est linéaire si ces cœfficiants sont constants.
+	\end{defn}
+	\begin{props}
+		Soit $E$ une équation différentielle linéaire.\\
+		Soient $y_1$ et $y_2$ deux solutions de $E$.
+
+		On a que toutes les équations de la forme $\lambda y_1+\mu y_2$ (avec $(\lambda,\mu)$ dans $\mathbb{R}^2$) sont aussi solutions de $E$, d'où l'appelation linéaire~!
+	\end{props}
+	\subsection{Premier ordre}
+	\begin{lititle}
+		Exercice 1 - Pour commencer
+	\end{lititle}
+	Résoudre correctement le problème de Cauchy
+	$$ (E):\quad y'+4ty=5\cos t\exp\left\{-2t^2\right\}\quad\land\quad y(0) = 5 $$
+
+	\begin{lititle}
+		Exercice 2 - Une moche devenant belle ($\dagger$)
+	\end{lititle}
+	Résoudre correctement le problème de Cauchy sur $]-\frac{\pi}2;\frac{\pi}2[$
+	$$ (E):\quad y'+2(\tan t)y=2\quad\land\quad y(0)=0 $$
+	La solution de $(E)$ devra être aussi simple que possible .
+	\subsection{Second ordre}
+	\begin{lititle}
+		Exercice 3 - Un cas un peu plus général ($\dagger$)
+	\end{lititle}
+	Soit $m\in\mathbb{R}$. Résoudre l'équation différentielle
+	$$ (E):\quad y''+2y'+(1-m)y=0 $$
+	Rappeler l'équation caractéristique de $(E)$.
+
+	\begin{lititle}
+		Exercice 4 - Solution évidente
+	\end{lititle}
+	Résoudre l'équation différentielle
+	$$ (E):\quad y''+5y'-4y = 2 $$
+
+	\begin{lititle}
+		Exercice 5 - Hors programme ($\dagger$)
+	\end{lititle}
+	Trouver la solution particulière de
+	$$ (E):\quad y''+2y'+2y=3e^t\cos(2t) $$
+	La solution particulière sera de forme $\alpha\cos(2t)+\beta\sin(2t)$ avec $\alpha$ et $\beta$ deux constantes à déterminer.
+	\section{Projection et symetrie}
+	Dans cette partie, on s'intéressera au cours n'étant pas au programme du CC3.
+
+	Soit $f$ un endomorphisme linéaire (i.e. $f: X\to X$, où $X$ est un objet mathématique). On note abusivement $ff$ la composition de $f$ par $f$, i.e.
+	$$  ff = f\circ f $$
+	On utilisera aussi la notation des puissances pour ce type de composition. On a donc
+	$$ pps = p^2 s = p\circ p\circ s $$
+	\begin{warn}
+		Cette abus de notation ne rajoute en aucun cas la commutativité à la composition~!
+		$$ p^2 s \neq psp \neq sp^2 $$
+	\end{warn}
+	\subsection{Propriétés utiles}
+	\begin{lititle}
+		Exercice 1 - Une projection d'une projection reste la même projection
+	\end{lititle}
+	Cette exercice ne demande pas une démonstration formelle~: vous n'avez pas accès aux outils formelles nécessaires pour démontrer cette propriété.
+
+	Montrer que $p$ est une projection si, et seulement si, $p^2=p$.
+
+	\begin{lititle}
+		Exercice 2 - Une symétrie d'une symetrie annule la symétrie
+	\end{lititle}
+	Cette exercice ne demande pas une démonstration formelle~: vous n'avez pas accès aux outils formelles nécessaires pour démontrer cette propriété.
+
+	Montrer que $s$ est une symétrie si, et seulement si, $s^2 = \mathrm{Id}$ où $\mathrm{Id}$ est la fonction identitée ($x\longmapsto x$).
+
+	\subsection{Est-ce une projection~?}
+	\begin{lititle}
+		Exercice 3 - Un cas particulier\ldots ($\dagger$)
+	\end{lititle}
+	Soient $p,q$ deux projections tels que $pq = 0$. On pose $r = p + q - qp$. Montrez que $r$ est une projection.
+
+	\begin{lititle}
+		Exercice 4 - Du cas général ($\dagger$)
+	\end{lititle}
+	Soient $p,q$ deux projections. Montrez que $p+q$ est une projection si, et seulement si, $pq=qp=0$.
+	\appendix
+	\section{Corrections des équations différentielles}
+	\subsection{Premier ordre}
+	La rédaction sera bien détaillée que pour l'exercice 1 par flemme du correcteur.
+
+	\begin{lititle}
+		Exercice 1 - Pour commencer
+	\end{lititle}
+	$(E)$ est définie sur $\mathbb{R}$.
+
+	La solution homogène, $y_H$ est de la forme $\lambda\exp\left\{ -B(x) \right\}$ où $\lambda\in\mathbb{R}$ et $\forall x\in\mathbb{R},B(x)=\int^x b(x)\mathrm{d}x$. $x\longmapsto 2x^2$ est une forme de $B(x)$ valide. Alors
+	$$ \forall t\in\mathbb{R},\quad y_H(t) = \lambda\exp\left\{ -2t^2 \right\}\quad (\lambda\in\mathbb{R}) $$
+
+	La solution particulière $y_P$ est de forme $\lambda(t)\exp\left\{ -B(x) \right\}$ où $\lambda$ est une fonction dérivable définie sur $\mathbb{R}$. On a donc que
+	$$ \forall t\in\mathbb{R},\quad \lambda'(t)\exp\left\{ -2t^2 \right\} = 5\cos t\exp\left\{ -2t^2 \right\} $$
+	Alors
+	$$ \forall t\in\mathbb{R},\quad \lambda(t) = 5\sin(t) $$
+
+	La solution générale est ainsi
+	$$ \left\{\forall t\in\mathbb{R}, t\longmapsto \lambda\exp\left\{ -2t^2 \right\} + 5\sin t|\lambda\in\mathbb{R}\right\}$$
+	D'après les conditions de Cauchy, $y(0) = 5$, donc
+	$$ \lambda\exp\left\{ 0 \right\} + 5\sin t = 5 \iff \lambda = 5 $$
+	La solution de ce problème de Cauchy est donc :
+	$$ \left\{ \forall t\in\mathbb{R}, t\longmapsto 5\left( \exp\left\{ -2t^2 \right\} + \sin t \right)  \right\}  $$
+
+	\begin{lititle}
+		Exercice 2 - Une moche devenant belle ($\dagger$)
+	\end{lititle}
+	$(E)$ est définie sur $D=\left] -\frac{\pi}{2};\frac{\pi}{2} \right[ $ d'après la consigne.
+
+	La solution homogène $y_H$ est $t\longmapsto \lambda\exp\left\{ 2\ln|\cos t| \right\}$ où $\lambda\in\mathbb{R}$.
+
+	La solution particulière $y_P$ est $t\longmapsto \lambda(x)\exp\left\{ 2\ln|\cos t| \right\}$ où $\lambda$ est dérivable sur $D$. D'où, pour tout $t$ dans $D$,
+	\begin{align*}
+		\lambda'(t)\exp\left\{ 2\ln|cos t| \right\} &= 2 \\
+		\lambda'(t)\cos^2(t) &= 2 \\
+		\lambda'(t) &= \frac{2}{\cos^2 t} \\
+		&= 2\tan'(t) \\
+		\lambda(t) &= 2\tan(t) \\
+	\end{align*}
+	Alors
+	$$ \forall t\in D,\quad y_P(t) = 2\tan(t)\cos^2(t) = 2\sin(t)\cos(t) = \sin(2t) $$
+
+	La solution générale est ainsi
+	$$ \left\{ \forall t\in D,t\longmapsto \lambda\cos^2(t) + \sin(2t) \right\} $$
+	D'après les conditions de Cauchy, $y(0) = 0$, donc
+	$$ y(0) = \lambda\cos^2(0) + \sin(0) = 0 \iff \lambda = 0 $$
+	La solution de ce problème de Cauchy est donc :
+	$$ \left\{ \forall t\in D,t\longmapsto \sin(2t) \right\}  $$
+	\subsection{Deuxième ordre}
+	\begin{lititle}
+		Exercice 3 - Un cas un peu plus général ($\dagger$)
+	\end{lititle}
+	$(E)$ est définie sur $\mathbb{R}$.
+
+	L'équation caractéristique de $(E)$ est $r^2+2r+1-m$. Donc $\Delta = 4m$.
+
+	\fbox{Si $m>0$} On a $\Delta > 0$. Ainsi $r_1 = -1+\sqrt m$ et $-1-\sqrt m$.
+
+	L'ensemble solution de $(E)$ est $$ \left\{ \forall t\in\mathbb{R},t\longmapsto \lambda\exp\left\{ (-1+\sqrt m)t \right\}+\mu\exp\left\{ (-1-\sqrt m)t \right\}, (\lambda,\mu)\in\mathbb{R}^2 \right\}  $$
+
+	\fbox{Si $m=0$} On a $\Delta = 0$. Ainsi $r_1 = r_2 = r -1$.
+
+	L'ensemble solution de $(E)$ est $$ \left\{ \forall t\in\mathbb{R},t\longmapsto (\lambda+\mu t)e^{-t} \right\} ,(\lambda,\mu)\in\mathbb{R}^2 $$
+
+	\fbox{Si $m<0$} On a $\Delta < 0$. Ainsi $r = -1+i\sqrt m$ et $\bar r = -1-i\sqrt m$.
+
+	L'ensemble solution de $(E)$ est $$ \left\{ \forall t\in\mathbb{R}, t\longmapsto e^{-t}\left( \lambda\cos\sqrt{-m}+\mu\sin\sqrt{-m} \right), (\lambda,\mu)\in\mathbb{R}^2  \right\}  $$
+
+	\begin{lititle}
+		Exercice 4 - Solution évidente
+	\end{lititle}
+	$(E)$ est définie sur $\mathbb{R}$.
+
+	L'équation caractéristique de $(E)$ est $r^2+5r-4=0$. Donc $\Delta = 41$.
+
+	On a $$ \forall t\in\mathbb{R},\quad y_H(t) = \lambda\exp\left\{ \frac{-5-\sqrt{41}}{2} t \right\} +\mu\exp\left\{ \frac{-5+\sqrt{41}}{2} t \right\}  $$
+	où $\lambda$ et $\mu$ sont des constantes réelles.
+
+	Comme le second membre est constant, on a que $y_P(t) = -0.5$ pour tout $t\in\mathbb{R}$. Pour s'en convaincre, il suffit de réinjecter $y_P$ dans $(E)$.
+
+	Ainsi, l'ensemble solution est
+	$$ \left\{ \forall t\in\mathbb{R},t\longmapsto \lambda\exp\left\{ \frac{-5-\sqrt{41}}{2} t \right\} +\mu\exp\left\{ \frac{-5+\sqrt{41}}{2} t \right\}-0.5,(\lambda,\mu)\in\mathbb{R}^2 \right\}  $$
+
+	\begin{lititle}
+		Exercice 5 - Hors programme ($\dagger$)
+	\end{lititle}
+	\section{Corrections des projections et symétries}
+	\subsection{Propriétés utiles}
+	\begin{lititle}
+		Exercice 1 - Une projection d'une projection reste une projection
+	\end{lititle}
+	Soit $p$ une projection telle que $p(x+y) = x$ pour tout $(x,y)\in\mathbb{R}^2$. On a que $p^2(x) = p(p(x+y)) = p(x) = x$. La propriété est donc vérifiée pour $p$.
+
+	Graphiquement, cette propriété est évidente~: si on projette $M$ sur une axe donnant ainsi $M_x$, alors reprojetter $M_x$ sur ce même axe ne change pas $M_x$.
+
+	Si vous voulez la démonstration formelle, \href{mailto:william.herges@etu.sorbonne-universite.fr}{envoyez moi un mail}
+
+	\begin{lititle}
+		Exercice 2 - Une symétrie d'une symetrie annule la symétrie
+	\end{lititle}
+	Soit $s$ une symétrie telle que $s(x+y) = x-y$ pour tout $(x,y)\in\mathbb{R}^2$. On a que $s(s(x-y)) = s(x-y) = x+y$. La propriété est donc vérifiée pour $s$.
+
+	Graphiquement, cette propriété est aussi évidente~: si on prend le symétrique de $M$ noté $M'$ par rapport à un axe puis si on reprend le symétrique de $M'$ par rapport au même axe, on obtient $M$.
+
+	Si vous voulez la démonstration formelle, \href{mailto:william.herges@etu.sorbonne-universite.fr}{envoyez moi un mail}
+	\subsection{Est-ce une projection~?}
+	\begin{lititle}
+		Exercice 3 - Un cas particulier\ldots ($\dagger$)
+	\end{lititle}
+	On a
+	\begin{align*}
+		r^2 &= (p+q-qp)(p+q-qp) \\
+		&= p^2 + pq - pqp + qp + q^2 - q^2p - qp^2 - pqp + qpqp \\
+		&= p + 0 - 0p + qp + q - 2qp - 0p + 0 \\
+		&= p + q - qp \\
+		&= r
+	\end{align*}
+	D'après l'exercice 1, on a que $r$ est bien une projection.
+	
+	\begin{lititle}
+		Exercice 4 - Du cas général ($\dagger$)
+	\end{lititle}
+	On procède par double implication ici.
+
+	\fbox{$\implies$} On suppose que $p+q$ est une projection. Donc 
+	$$(p+q)^2 = p+q \quad\iff\quad p^2+pq+qp+q^2 = p+q \quad\iff\quad pq+qp = 0$$
+	En composant par $p$ à droite, on a : $$ p^2q+pqp = 0\quad\iff\quad pq = -pqp$$
+	En composant par $p$ à gauche, on a : $$ pqp+qp^2 = 0\quad\iff\quad qp = -pqp $$
+	Donc $$ pq = qp = -pqp\quad\land\quad pq+qp = 0 $$
+	Ce qui nous donne bien que $pq = qp = 0$.
+
+	\fbox{$\impliedby$} On suppose que $pq=qp=0$. Donc
+	\begin{align*}
+		(p+q)^2 &= p^2+qp+qp+q^2 \\
+		&= p+q
+	\end{align*}
+	Ce qui nous donne bien que $p+q$ est une projection.
+\end{document}

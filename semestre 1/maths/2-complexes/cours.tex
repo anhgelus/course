@@ -1,0 +1,274 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Complexes}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Présentation}
+	\begin{defn}
+		L'ensemble des nombres complexes est : $$ \mathbb{C} = \{a+ib|a,b\in\mathbb{R}\} $$
+		où $i^2 = -1$.
+
+		On a :
+		\begin{align*}
+			a+ib+a'+ib' &= a+a'+(b+b')i \\
+			(a+ib)(a'+ib') &= aa'+aib'+a'ib-bb'
+		\end{align*}
+	\end{defn}
+	On utilise la lettre $z$ pour les nombres complexes.
+	\begin{defn}
+		Soit $z\in\mathbb{C}$ tel que $z=a+bi$ (où $a,b\in\mathbb{R}$).
+
+		On note $\mathfrak{Re}(z)$ la partie réelle de $z$ qui est $a$.\\
+		On note $\mathfrak{Im}(z)$ la partie imaginaire de $z$ qui est $b$.\\
+		On note $|z|$ le module de $z$ qui est $\sqrt{a^2+b^2}$.\\
+		On note $\arg z$ l'argument de $z$ qui est l'angle entre la droite $OZ$ et la droite $\mathbb{R}^+$ (où $Z$ est le point d'affixe $z$).
+	\end{defn}
+	\begin{props}[Forme trigonométrique]
+		On peut donc écrire $z$ comme :
+		$$ z = |z|(\cos(\arg z)+i\sin(\arg z)) $$
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		On a :
+		$$ \arg z + \arg w = \arg(zw) $$
+		(où $z$ et $w$ sont deux nombres complexes.)
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{defn}[Forme exponentielle]
+		On note $z\in\mathbb{C}$ maintenant :
+		$$ z = |z|e^{i\arg z} $$
+		avec $e^{i\alpha} := \cos\alpha+i\sin\alpha$
+	\end{defn}
+	On utilise cette notation car les calculs sont les mêmes que ceux de la forme trigonométrique (cf. la proposition précédente).
+	\begin{exemple}
+		$z=|z|(\cos\alpha+i\sin\alpha)$ et $w=|w|(\cos\beta+i\sin\beta)$.
+
+		On a :
+		$$ zw = |z||w|(\cos(\alpha+\beta)+i\sin(\alpha+\beta)) = |z||w|e^{i(\alpha+\beta)} $$
+	\end{exemple}
+	\section{Racines}
+	\begin{thm}[Racines de l'unité]
+		On a que toutes les solutions de :
+		$$ z^n = 1 $$
+		où $n\in\mathbb{N}$ et $z\in\mathbb{C}$, sont :
+		$$ \{e^{\frac{2ik\pi}{n}}|k\in\mathbb{N}\} $$
+	\end{thm}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	On peut réduire l'ensemble des $k$ à $[|0;n-1|]$ car l'argument de $z$ est modulo $2\pi$.
+	\begin{props}
+		La somme des racines de l'unité est nulle
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\subsection{Racine carré d'un complexe}
+	\subsubsection{Complexe sous forme exponentielle}
+	Soit $z\in\mathbb{C}$. On cherche $x\in\mathbb{C}$. On note $x=re^{i\alpha}$ et $z=se^{i\beta}$.
+	\begin{align*}
+		x^2 &= z \\
+		(re^{i\alpha})^2 &= re^{i\alpha} \\
+		r^2e^{2i\alpha}	&= se^{i\beta}
+	\end{align*}
+	$x$ a comme module $\sqrt{|z|}$ et a comme argument $\frac{\beta}{2}$ ou $\frac{\beta}{2}+\pi$.
+
+	$x$ est donc $$ \left\{ \sqrt{|z|}e^{i\frac{\beta}{2}},\sqrt{|z|}e^{i\frac{\beta}{2}+\pi} \right\}  $$
+	\subsubsection{Complexe sous forme cartésienne}
+	Soit $X\in\mathbb{C}$ tel que $X=x+iy$ (où $x,y\in\mathbb{R}$). Soit $z\in\mathbb{C}$ tel que $z=a+ib$ (où $a,b\in\mathbb{R}$).
+	\begin{align*}
+		X^2&= z \\
+		(x+iy)^2&= a+ib \\
+		x^2+2ixy-y^2 &= a+ib \\
+	\end{align*}
+	Et on a :
+	\begin{align*}
+		x^2-y^2 &=a\\
+		2xy &= b\\
+		x^2+y^2 &= \sqrt{a^2+b^2}~\text{ car on $|x|^2=|z|$}
+	\end{align*}
+	Et on résout.
+	\section{Polynômes}
+	\begin{defn}
+		Soit $(\lambda_0,\ldots,\lambda_n)$ une famille de nombres complexes.
+
+		On note le polynôme lié à la famille $$P(X)=\sum_{i=0}^{n} \lambda_i x^i$$
+	\end{defn}
+	\begin{defn}
+		Le degré d'un polynôme $P$ est noté $\mathrm{deg}P$ tel que :
+		$$ \lambda_n\neq 0,\quad\forall i\in\mathbb{N}\geqslant n,\quad\lambda_i = 0 $$
+		où $n$ est le degré du polynôme.
+	\end{defn}
+	\begin{defn}
+		Une racine $r\in\mathbb{K}$ du polynôme $P$ est défini telle que $P(r)=0$.
+	\end{defn}
+	\begin{thm}[Théorème de d'Alembert-Gauss]
+		Pour tout polynôme $P$ de degré $n$, il existe exactement $n$ racines compté avec leur ordre de multiplicité. i.e.
+		$$ P(X)=\lambda_n\prod_{k=1}^{n} (x-x_k) $$
+		où la famille $(x_1,\ldots,x_n)$ sont les racines de $P$.
+	\end{thm}
+	\begin{proof}
+		Admis.
+	\end{proof}
+\end{document}

@@ -1,0 +1,107 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Correction TD Complexes}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\section*{Exercice 1 compléments}
+	On a :
+	\begin{align*}
+		z_1 &= 5+12i \\
+			&= (a+ib)^2 \\
+			&= a^2-b^2+2ab
+	\end{align*}
+	Alors :
+	\begin{align*}
+		a^2-b^2 &= 5 \\
+		2ab &= 12 \\
+		a^2+b^2 &= |z_1| = 13
+	\end{align*}
+	En faisant $(1)+(3)$ et $(3)-(1)$, on obtient que :
+	\begin{align*}
+		a^2 &= 9 \\
+		b^2 &= 4 \\
+		ab &= 6
+	\end{align*}
+	Ainsi, $a$ et $b$ sont de même signe. Donc :
+	$$ \{-3-2i;3+2i\} $$
+	est l'ensemble solution de $z^2=\delta$.
+	\section*{Exercice 2 compléments}
+	On a :
+	\begin{align*}
+		z^3 &= 2-2i \\ 
+			&= 2(1-i)\\
+			&= 2\sqrt 2e^{\frac{i\pi}{4}}
+	\end{align*}
+	Donc :
+	\begin{align*}
+		z &= \sqrt 2\left( e^{\frac{i\pi}{4}} \right)^{\frac{1}{3}} \\
+		  &= \sqrt 2\left( e^{\frac{i\pi}{4}+2k\pi} \right)^{\frac{1}{3}},\quad k\in\mathbb{Z} \\
+		  &= \sqrt 2e^{\frac{i\pi}{12}+\frac{2}{3}k\pi},\quad k\in\mathbb{Z} \\
+	\end{align*}
+	Comme les angles sont périodiques sur $2k\pi$, on a que toutes les solutions sont couvertes par $k\in[|0;2|]$. Ainsi :
+	$$ \left\{\sqrt 2e^{\frac{i\pi}{12}+\frac{2}{3}k\pi},k\in[|0;2|]\right\} $$
+\end{document}

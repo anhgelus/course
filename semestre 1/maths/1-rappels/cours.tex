@@ -1,0 +1,291 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Rappels}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	Rappels en vrac.
+	\section{Vecteur}
+	\subsection{Norme d'un vecteur}
+	\begin{defn}
+		La norme du vecteur $\vec v$ se note $||\vec v||$ et $$||\vec v||=\sqrt{(x_b-x_a)^2+(y_b-y_a)^2+(z_b-z_a)^2}$$
+	\end{defn}
+	\subsection{Produit scalaire}
+	\begin{defn}
+		Le produit scalaire entre $\vec v$ et $\vec u$ se note $\vec v\cdot\vec u$ et $$\vec v\cdot\vec u=||\vec u||\times||\vec v||\cos\alpha$$
+	\end{defn}
+	\begin{props}
+		Pour tous vecteurs $\vec u$, $\vec v$ et $\vec w$, on a :
+		\begin{itemize}
+			\item $\vec u\cdot\vec v = \vec v\cdot \vec u$
+			\item $\forall \lambda\in\mathbb{R},\quad(\lambda\vec u)\cdot\vec v = \lambda\cdot(\vec u\vec v)$
+			\item $(\vec u+\vec v)\vec w = \vec u\vec w+\vec w\vec v$
+		\end{itemize}
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		Pour tous vecteurs $\vec u$ et $\vec v$, on a :
+		\begin{itemize}
+			\item $||\vec u+\vec v||^2 = (\vec u+\vec v)\cdot(\vec u+\vec v)$
+			\item $||\vec u-\vec v||^2 = (\vec u-\vec v)\cdot(\vec u-\vec v)$
+		\end{itemize}
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\subsubsection{Produit scalaire dans une bose orthonormée}
+	\begin{defn}
+		Un vecteur est alors caractérisé par trois coordonnées (qui sont celles du point d'arrivé si le vecteur part du point d'origine). On peut alors écrire :
+		$$ \vec u = x\vec i+y\vec j+z\vec k $$
+		(où $(x,y,z)\in\mathbb{R}^3$ sont les coordonnées du vecteur $\vec u$ et $(\vec i,\vec j, \vec k)$ une base)
+	\end{defn}
+	\begin{props}
+		Pour deux vecteurs $\vec u$ et $\vec v$, on a :
+		$$ \vec u\cdot\vec v = xx'+yy'+zz' $$
+		(où $(x,y,z)\in\mathbb{R}^3$ sont les coordonnées de $\vec u$ et $(x',y',z')$ sont les coordonnées de $\vec v$)
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\subsection{Produit vectoriel}
+	\begin{defn}
+		Soient $\vec u$ et $\vec v$ deux vecteurs dans une base orthonormée.
+
+		Le produit vectoriel de $\vec v$ par $\vec u$ est noté $ \vec u\land \vec v$ et est le vecteur perpendiculaire à $\vec u$ et à $\vec v$ de norme $u\times v\times\sin\alpha$ (où $\alpha$ est l'angle entre $\vec u$ et $\vec v$) dirigé selon "la règle de la main droite".
+	\end{defn}
+	\begin{props}
+		On a :
+		$$ 
+		\begin{pmatrix} x\\y\\z \end{pmatrix} \land \begin{pmatrix} x'\\y'\\z' \end{pmatrix} =
+		\begin{pmatrix} yz'-zy'\\zx'-xz'\\xy'-yx' \end{pmatrix} 
+		$$
+	\end{props}
+	\begin{proof}
+		\AQT (besoin de linéarité comme lemme)
+	\end{proof}
+	\begin{warn}
+		$\vec u\land\vec v = -\vec v\land\vec u$
+	\end{warn}
+	\begin{lititle}
+		Application principale
+	\end{lititle}
+	Il sert à obtenir un vecteur orthogonal à deux autres.
+	\section{Droites et plans}
+	\subsection{Droites}
+	\begin{defn}
+		Une droite $\Delta$ dirigée par $\vec u = \begin{pmatrix} \alpha\\\beta \end{pmatrix}$ passant par $A=(a,b)$ est l'ensemble des points $P$ sastisfaisant cette relation :
+		$$ \forall M\in P,\quad\exists k\in\mathbb{R},\quad \overrightarrow{AM} = k\vec u $$
+	\end{defn}
+	\begin{props}[Équations paramétriques]
+		Une droite $\Delta$ dirigée par $\begin{pmatrix} \alpha\\\beta \end{pmatrix}$ passant par $(a,b)$ possède comme équations paramétriques :
+		$$\begin{system}
+			x=a+t\alpha\\
+			y=b+t\beta
+		\end{system},\quad (t\in\mathbb{R})$$
+		pour un point de coordonnées $(x,y)$ appartenant à $\Delta$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}[Équation cartésienne]
+		Une droite $\Delta$ dirigée par $\begin{pmatrix} \alpha\\\beta \end{pmatrix}$ passant par $(a,b)$ possède comme équation cartésienne : 
+		$$ y-\frac{\beta}{\alpha}x=b-\frac{a\beta}{\alpha} $$
+		pour un point de coordonnées $(x,y)$ appartenant à $\Delta$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	C'est la même chose dans $\mathbb{R}^3$.
+	\subsection{Plans}
+	\begin{props}[Équations paramétriques]
+		Soit $\Pi$ le plan passant par $A=(a,b,c)$ et dirigé par $\vec v = \begin{pmatrix} \alpha\\\beta\\\gamma \end{pmatrix}$ et par $\vec u = \begin{pmatrix} \alpha'\\\beta'\\\gamma' \end{pmatrix}$ possède comme équation paramétrique :
+		$$\begin{system}
+			x=a+t\alpha+s\alpha'\\
+			y=b+t\beta+s\beta'\\
+			z=c+t\gamma+s\gamma'
+		\end{system},\quad (t,s\in\mathbb{R})$$
+		pour un point de coordonnées $(x,y,z)$ appartenant à $\Pi$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		Soit $\Pi$ un plan passant par $A$ et dirigée par $\vec u$ et $\vec v$.\\
+		Soit $P$ un point de $\Pi$.
+
+		Le vecteur $\overrightarrow{AP}$ est orthogonal à $\vec w$ (où $\vec w$ est un vecteur orthognal à $\vec u$ et $\vec v$).
+
+		Autrement dit, $$ \overrightarrow{AP}\cdot (\vec u\land\vec v) = 0 $$
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	Cela permet d'obtenir l'équation cartésienne du plan.
+	\section{Familles libres, familles liées}
+	\begin{defn}
+		Une famille de $n$-vecteurs $(\vec u_1,\ldots,\vec u_n)\in\mathbb{R}^n$ est libre si, et seulement si, ces vecteurs sont linéairement indépendant. i.e.
+		$$ \sum_{i=1}^{n} \lambda_i\vec u_i = \vec 0\iff \forall i\in[|1,n|],\quad\lambda_i = 0 $$
+		avec $(\lambda_1,\ldots,\lambda_n)\in\mathbb{R}^n$.
+	\end{defn}
+	\begin{defn}
+		Une famille de $n$-vecteurs est liée si, et seulement si, elle n'est pas libre.
+	\end{defn}
+\end{document}

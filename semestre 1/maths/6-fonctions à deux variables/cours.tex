@@ -1,0 +1,250 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+%\usepackage[cal=rsfs,calscale=1.03]{mathalpha}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Fonctions à deux variables}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Fonctions, graphes et courbes de niveau}
+	Dans ce chapitre, nous n'allons traiter que les fonctions à deux variables.
+	\begin{defn}
+		Une fonction $f$ de $D\subset\mathbb{R}^2$ dans $E\subset\mathbb{R}$ est définie telle que :
+		$$(x,y)\longmapsto f(x,y)$$
+		On appelle ce type de fonction une fonction à deux variables.
+	\end{defn}
+	\begin{defn}
+		Le graphe de $f$ une fonction à deux variables l'ensemble des points
+		$$ \Gamma_f = \{((x,y),z)|(x,y)\in D,z=f(x,y)\} $$
+	\end{defn}
+	On peut avoir que $f$ ne dépend qu'une des deux variables, $x$ par exemple. On a alors que son graphe ne dépend pas de $y$, i.e.
+	$$ \forall (y,y')\in I\subset\mathbb{R}, f(x,y) = f(x,y') $$
+	\begin{defn}
+		On définit $C_t$ tel que :
+		$$C_t = \{(x,y)\in\mathbb{R}^2|f(x,y)=t\}$$
+		$C_t$ est une courbe de niveau.
+	\end{defn}
+	\section{Dérivée partielle}
+	\begin{defn}
+		Soit $f$ une fonction de $D_1\times D_2$ dans $I$.
+
+		On note $f_{y_0}$ la fonction de $D_1$ dans $I$ tel que :
+		$$ \forall s\in D_1,\quad f_{y_0} = f(s,y_0) $$
+
+		\textit{Mutadis mutandis} pour $f_{x_0}$.
+	\end{defn}
+	\begin{defn}
+		La dérivée partielle de $f$ par rapport à $x$ (resp. $y$) est la dérivée de $f_{y_0}$ (resp. $f_{x_0}$). On la note :
+		$$ \frac{\partial f}{\partial x} = f'_{y_0} $$
+	\end{defn}
+	\begin{thm}
+		On a :
+		\begin{align*}
+			\frac{\partial}{\partial x}\left( \frac{\partial f}{\partial y} \right) &= \frac{\partial^2 f}{\partial x\partial y} \\
+			\frac{\partial}{\partial y}\left( \frac{\partial f}{\partial x} \right) &= \frac{\partial^2 f}{\partial y\partial x}
+		\end{align*}
+		Ce qui est la même chose ! Ainsi :
+		$$ \frac{\partial^2 f}{\partial x\partial y} = \frac{\partial^2 f}{\partial y\partial x}$$
+	\end{thm}
+	\begin{lititle}
+		Plan tangent
+	\end{lititle}
+	L'équation du plan tangent par $f$ est $(x_0,y_0)$ :
+	$$ z = f(x_0,y_0)+\frac{\partial f}{\partial x}(x-x_0)+\frac{\partial f}{\partial y}(y-y_0) $$
+	\begin{defn}
+		On pose $\nabla f$ le gradient de $f:D_1\times D_2\to I$ (où $D_1\times D_2\subset\mathbb{R}^2$ et $I\subset\mathbb{R}$) tel que :
+		$$ \forall (x,y)\in D_1\times D_2,\quad\nabla f (x,y) = \begin{pmatrix} \frac{\partial f}{\partial x} (x,y)\\ \frac{\partial f}{\partial y} (x,y)\end{pmatrix}  $$
+	\end{defn}
+	\fbox{
+		\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+			\begin{lititle}
+				\centering Notations de Monge
+			\end{lititle}
+			On note $$p=\frac{\partial f}{\partial x}\quad;\quad q=\frac{\partial f}{\partial y}$$
+			On note $$ r=\frac{\partial^2 f}{\partial^2 x}\quad;\quad s = \frac{\partial^2 f}{\partial x\partial y}\quad;\quad t = \frac{\partial^2 f}{\partial^2 y} $$	
+		\end{minipage}
+	}
+	\section{Extrémum}
+	\begin{thm}
+		$f$ possède un extremum en $(x_0,y_0)$ implique que :
+		$$ \frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial y}(x_0,y_0) = 0$$
+	\end{thm}
+	\begin{thm}
+		Soient $f$ une fonction à deux variables et $(x_0,y_0)$ est un point critique. \\
+		On pose $$ D = rt-s^2$$
+		avec $r,t,s$ les notations de Monge.
+
+		\begin{itemize}
+			\item Si $D>0$, alors $(x_0,y_0)$ est un extrémum. Il s'agit d'un maximum si $r<0$ ou d'un minimum si $r>0$.
+			\item Si $D<0$, alors $(x_0,y_0)$ n'est pas un extrémum.
+			\item Si $D=0$, alors tout est possible.
+		\end{itemize}
+	\end{thm}
+	\begin{props}
+		Soit $f:D\to I$ de classe $\mathcal{C}^1$. \\
+		Soit $c\in I$ et $f^{-1}(c)$ un ensemble de niveau de $f$.\\
+		Soit $X: I\to D$ telle que $X(t)\in f^{-1}(c)$ pour tout $t\in I$.
+
+		Alors :
+		$$ X'(t)\nabla f(X(t)) = 0 $$
+		pour tout $t\in I$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+\end{document}

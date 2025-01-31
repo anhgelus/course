@@ -1,0 +1,113 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Correction TD 1}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\section*{Exercice 1}
+	\begin{enumerate}
+		\item On a : 
+			\begin{table}[htpb]
+				\centering
+				\caption{Angles remarquables}
+				\label{tab:trigo}
+				\begin{tabular}{|c|c|c|c|c|c|}
+					\hline
+					$\alpha$ & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$\\
+				\hline
+					$\cos\alpha$ & 1 & $\frac{\sqrt 3}{2}$ & $\frac{\sqrt 2}{2}$ & $\frac{1}{2}$ & 0 \\
+					\hline
+					$\sin\alpha$ & 0 & $\frac{1}{2}$ & $\frac{\sqrt 2}{2}$ & $\frac{\sqrt 3}{2}$ & 1 \\
+					\hline
+				\end{tabular}
+			\end{table}
+		\item Pour tout $x\in\mathbb{R}$, on a :
+			\begin{align*}
+				\cos\left( x+\frac{\pi}{2} \right) &= -\sin x \\
+				\cos\left( x+\pi \right) &= -\cos x \\
+				\cos\left( x+\frac{3\pi}{2} \right) &= \sin x \\
+				\sin\left( x+\frac{\pi}{2} \right) &= \cos x \\
+				\sin\left( x+\pi \right) &= -\sin x \\
+				\sin\left( x+\frac{3\pi}{2} \right) &= -\cos x \\
+			\end{align*}
+		\item \AQT
+	\end{enumerate}
+	\section*{Exercice 2}
+	\AQT
+	\section*{Exercice 3}
+	Tout ce que j'ai fait est bon.
+
+	Soit $M$ un point de la droit $D$ de vecteur directeur $\vec u$ passant par $A$. On a donc :
+	$$ \overrightarrow{AM} = \alpha\vec u\quad(\alpha\in\mathbb{R}) $$
+	Si on note $(x,y)\in\mathbb{R}^2$ les coordonnées de $M$ et $(a,b)\in\mathbb{R}^2$ les coordonnées de $A$ dans la base canonique, alors on a :
+	$$ \begin{pmatrix} x-a\\y-b \end{pmatrix} = \alpha\vec u\quad(\alpha\in\mathbb{R}) $$
+	Ce qui nous donne l'équation paramétrique :
+	$$ \begin{pmatrix} x\\y \end{pmatrix} = \begin{pmatrix} a\\b \end{pmatrix}+t\vec u\quad(\text{où}~t\in\mathbb{R}) $$
+	Pour tous les points $M\in D$, on a :
+	$$ \overrightarrow{AM}\cdot\vec v = 0 $$
+	(où $v$ est un vecteur normal)\\
+	L'équation cartésienne est donc une relation liant $x$ et $y$ satisfaisant la relation précédente. On peut l'obtenir en résolvant l'équation paramétrique ou en calculant le produit scalaire entre tous points $M\in D$ et un vecteur normal de $D$.
+\end{document}
