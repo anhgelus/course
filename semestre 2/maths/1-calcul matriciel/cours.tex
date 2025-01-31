@@ -1,0 +1,296 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+%\usepackage[cal=rsfs,calscale=1.03]{mathalpha}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Calcul matriciel}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Définition}
+	\begin{defn}
+		Une matrice est un l'ensemble de nombre $\{a_{p,q}\in E, p,q\in \mathcal{SN}\}$ où $\mathcal{SN}$ est un intervale de $\mathbb{N}^*$. On note l'ensemble de ces matrices $\mathcal{M}_{p,q}(E)$.
+	\end{defn}
+	\begin{defn}
+		Une matrice carrée est l'ensemble des matrices $\mathcal{M}_{k,k}(\mathbb{K})$ ($k\in\mathbb{N}^*$).
+
+		On utilise l'abus de notation $\mathcal{M}_k(\mathbb{K})$ pour parler des matrices carrées d'ordre $k\in\mathbb{N}^*$.
+	\end{defn}
+	\subsection{Opérations}
+	\begin{defn}[Somme de matrices]
+		Une somme de matrice est la somme  des nombres des matrices.
+
+		Si on note $(a_{p,q})$ les nombres de la matrice $A$ et $(b_{p,q})$ les nombres de la matrice $B$, alors
+		$$ A+B = \{a_{p,q}+b_{p,q},p,q\in\mathcal{SN}\} $$
+
+		Alors :
+		$$ \begin{pmatrix} a_{1,1} & \cdots & a_{1,q} \\ \vdots & & \vdots \\ a_{p,1} & \cdots & a_{p,q} \end{pmatrix} + \begin{pmatrix} b_{1,1} & \cdots & b_{1,q} \\ \vdots & & \vdots \\ b_{p,1} & \cdots & b_{p,q} \end{pmatrix} = \begin{pmatrix} a_{1,1} + b_{1,1} & \cdots & a_{1,q} + b_{1,q} \\ \vdots & & \vdots \\ a_{p,1} + b_{p,1} & \cdots & a_{p,q} + b_{p,q} \end{pmatrix} $$
+	\end{defn}
+	\begin{defn}[Produit externe]
+		Soit $A\in\mathcal{M}_{p,q}(\mathbb{K})$ et $t\in\mathbb{K}$.
+
+		On a :
+		$$ t A = (ta_{p,q})_{p,q\in\mathcal{SN}} $$
+	\end{defn}
+	\begin{props}
+		On a :
+		\begin{itemize}
+			\item $s(tA) = t(sA)$
+			\item $t(A+B) = tA+tB$
+			\item $(t+s)A = tA+sA$
+		\end{itemize}
+		pour $t,s\in\mathbb{K}$ et $A,B\in\mathcal{M}_{p,q}(\mathbb{K})$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{props}
+		L'élément neutre pour l'addition est $\tilde 0$, i.e. l'ensemble $(a_{p,q})_{p,q\in\mathcal{SN}} = 0$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{defn}[Produit matriciel]
+		Soient $p,q,r\in\mathbb{N}^*$. Soient $A\in\mathcal{M}_{p,r}(\mathbb{K})$ et $B\in\mathcal{M}_{r,q}(\mathbb{K})$.
+
+		Le produit $AB$ est :
+		$$ \forall (i,k)\in[|1,p|]\times[|1,q|],\quad (ab)_{i,k} = \sum_{j=1}^{r} a_{i,j}b_{j,k} $$
+	\end{defn}
+	\begin{warn}
+		On a besoin que le nombre de colonnes de la matrice $A$ soit égal au nombre de lignes de la matrice $B$.
+	\end{warn}
+	C'est une forme de produit scalaire !
+	\section{Matrices spéciales}
+	\begin{defn}
+		Une matrice de $\mathcal{M}_{p}(\mathbb{K})$ est dite diagonale si et seulement si :
+		$$ \forall (i,j)\in[|1,p|]^2,\quad i\neq j \implies a_{i,j} = 0 $$
+	\end{defn}
+	\begin{props}
+		La multiplication matricielle des matrices diagonales est commutative et se fait très simplement.
+	\end{props}
+	\begin{props}
+		L'élément neutre de $M_p(\mathbb{K})$ est la matrice diagonale notée $I_p$ telle que :
+		$$ \forall (i,j)\in[|1,p|]^2,\quad i=j\implies 1 $$
+	\end{props}
+	\begin{defn}
+		On note $A^{-1}$ la matrice inverse de $A$, i.e.
+		$$ A A^{-1} = A^{-1} A = I_p $$
+	\end{defn}
+	\begin{thm}
+		Soit $A\in\mathcal{M}_2(\mathbb{K})$.
+
+		$A^{-1}$ existe si et seulement si :
+		$$ ad-bc = 0 $$
+		où $A = \begin{pmatrix} a&b\\c&d \end{pmatrix}, a,b,c,d\in\mathbb{K}$
+
+		Ainsi,
+		$$ A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d&-b\\-c&a \end{pmatrix} $$
+	\end{thm}
+	\begin{lititle}
+		Mais qu'est-ce $ad-bc$ ?
+	\end{lititle}
+	Il s'agit d'un déterminant de la matrice $A$. C'est une notion essentielle que l'on retrouve partout en maths.
+
+	\begin{thm}
+		Si $A$ et $B$ sont inversibles, alors $AB$ l'est aussi et :
+		$$ (AB)^{-1} = B^{-1}A^{-1} $$
+	\end{thm}
+	\section{Système linéaire}
+	\begin{thm}
+		On peut remplacer un système linéaire à $x$ inconnu par une matrice $A\in\mathcal{M}_{x}$ contenant les coefficiants, $X\in\mathcal{M}_{x,1}$ contenant les inconnues et $B\in\mathcal{M}_{x,1}$ contenant les résultats. On a alors :
+		$$ AX=B $$
+
+		Si $A$ est inversible, alors il existe une unique solution à ce système linéaire tel que :
+		$$ X=A^{-1}B $$
+	\end{thm}
+	\begin{exemple}
+		Le système 
+		\begin{align*}
+			a_{1,1}x_1 &+ a_{1,2}x_2 + \ldots + a_{1,p}x_p &= b_1\\
+			\vdots& &= \vdots \\
+			a_{p,1}x_1 &+ a_{p,2}x_2 + \ldots + a_{p,p}x_p &= b_p
+		\end{align*}
+		est équivalent à
+		$$ \begin{pmatrix} a_{1,1}&a_{1,2}&\ldots&a_{1,p}\\\vdots&&&\vdots\\a_{p,1}&a_{p,2}&\ldots&a_{p,p} \end{pmatrix} \begin{pmatrix} x_1\\\vdots\\x_p \end{pmatrix} = \begin{pmatrix} b_1\\\vdots\\b_p \end{pmatrix}  $$
+	\end{exemple}
+	\begin{lititle}
+		Opérations élémentaires
+	\end{lititle}
+	Ce sont les opérations qui ne font perdre aucune information au système. Il y a :
+	\begin{itemize}
+		\item permutation de deux lignes, notée $P_{i_1 \to i_2}$ (échange des lignes $i_1$ et $i_2$)
+		\item dilatation d'une ligne, notée $D_{i,\alpha\in\mathbb{R}^*}$ (dilatation de la ligne $i$ par $\alpha$)
+		\item transvection (somme de deux lignes), notée $T_{i_1,i_2,t\in\mathbb{R}}$ (transvection de la ligne $i_1$ par $i_2$ avec comme facteur $t$)
+	\end{itemize}
+	C'est-à-dire, on peut faire des combinaisons linéaires !
+	
+	Faire cette opération, c'est équivalent à multiplier par une matrice carrée inversible.
+
+	Par exemple, pour $P_{2\to 3}$, on a la matrice :
+	$$ \begin{pmatrix} 1&0&0\\0&0&1\\0&1&0 \end{pmatrix}  $$
+	ou $D_{2, \alpha\in\mathbb{R}^*}$ est :
+	$$ \begin{pmatrix} 1&0&0\\0&\alpha&0\\0&0&1 \end{pmatrix}  $$
+	ou encore $T_{2,3,t}$ est :
+	$$ \begin{pmatrix} 1&0&0\\0&1&t\\0&0&1 \end{pmatrix}  $$
+	\begin{thm}
+		Si $r$ est le rang de $A|B$ (voir le pivot de Gauss), si $p$ est le nombre de colonnes de $A$ et $q$ le nombre de lignes de $A$, alors :
+		\begin{itemize}
+			\item si $r=p$, alors pour tout $B$ il existe une solution (existence)
+			\item si $r=q$, alors il existe une unique solution (unicité)
+		\end{itemize}
+	\end{thm}
+\end{document}

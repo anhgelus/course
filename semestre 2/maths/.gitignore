@@ -1,0 +1,8 @@
+td/info.md
+poly.pdf
+*.aux
+*.fdb_latexmk
+*.log
+*.gz
+*.toc
+*.fls
