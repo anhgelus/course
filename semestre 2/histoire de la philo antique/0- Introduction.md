@@ -80,3 +80,23 @@ Peut-on parler du changement et comment le changement s'articule-t-il avec ce qu
 |> connaître nous est-il possible alors que nous changeons ?
 
 Pourquoi Platon défend la possibilité de la connaissance ?
+
+D'après Aristote, la philosophie de Platon est dans la continué des Pythagoriciens (pensent que la réalité ne sont que des nombres)
+|> pour eux, les nombreux possèdent une existence matérielle (un mariage est le nombre 5, la justice est le 4), ressemble à la vision des sciences naturelles
+
+Cratyle pense que tout change, donc science est impossible
+|> Platon a été largement influencé par Héraclite (maître de Cratyle)
+
+Socrate cherche à définir les définitions des vertus pour dégager les caractéristiques universelles de la vertu 
+-> recherche la validité universelle, est une entreprise scientifique
+
+Les sensibles ne peuvent pas être définies car elles changent -> n'intéressent pas Platon
+Les Idées (ou Formes) peuvent l'être car elles sont immuables -> intéressent Platon
+
+Les choses sensibles sont nommées à partir d'une forme d'intelligible (comme le langage) et sont modelées à partir des Idées
+
+L'idée de participation est très importante
+|> permet de résoudre l'analyse du sensible d'Héraclite et du savoir de Socrate -> relation de participation (n'en rejette aucun des deux)
+
+On peut connaître quelque chose du sensible
+|> on peut dégager des structures organisant le sensible

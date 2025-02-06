@@ -8,6 +8,8 @@ semestre: 2
 Une note en TD sera un QCM en temps limité
 
 Partiel sera des questions
+
+Chalmers, _Qu'est-ce que la science ? Popper, Kuhn, Lakatos, Feyerbend_
 ## Qu'est-ce que la philosophie des sciences ?
 est la partie de la philosophie cherchant à clarifier la nature et les fondements des connaissances scientifiques et à explorer certaines de ses conséquences philosophiques
 |> on fera essentiellement de la recherche de la nature et des fondements de la connaissance
@@ -94,5 +96,7 @@ L'empirisme est-il une bonne conception de la façon dont les théories scientif
 	1. Les constituants non empiriques des données
 	2. Les hypothèses viennent-elles de l'expérience ?
 	3. La place des valeurs dans les sciences
-4. **...**
+4. Le défi de la causalité
+	1. La science peut-elle se passer de la causalité ?
+	2. La causalité échappe-t-elle vraiment à l'empirisme ?
 

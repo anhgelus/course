@@ -293,4 +293,28 @@ headpunct=,%
 			\item si $r=q$, alors il existe une unique solution (unicité)
 		\end{itemize}
 	\end{thm}
+	\section{Déterminent}
+	\begin{thm}
+		$A$ est inversible si et seulement si le rang de $A$ est égal au nombre de colomnes (et de lignes) et si et seulement si le déterminent de $A$ est différent de 0. (On note $\mathrm{det}(A)$ le déterminent de $A$.)
+	\end{thm}
+	\begin{props}
+		On a :
+		\begin{itemize}
+			\item $\mathrm{det}(D)$, où $D$ est une matrice diagonale, est la multiplication des coefficiants de la diagonale
+			\item $\mathrm{det}(T)$, où $T$ est une matrice triangulaire, est aussi la multiplication des coefficiants de la diagonale
+			\item si on multiplie une colonne par $\alpha$, alors $\mathrm{det}(A') = \alpha\mathrm{det}(A)$ (pour tout $\alpha$) 
+			\item le déterminent ne change pas avec une transvection ou une transposée
+		\end{itemize}
+	\end{props}
+	Ces propriétés suffisent à calculer tous les déterminents
+
+	\begin{exemple}
+		Calculons le déterminent de $\small\begin{pmatrix} 1&3\\2&1 \end{pmatrix}$.
+		\begin{align*}
+			\mathrm{det}\begin{pmatrix} 1&3\\2&1 \end{pmatrix} &= \mathrm{det}\begin{pmatrix} 1&3\\0&-5 \end{pmatrix}  \\
+										 &= -5\times\mathrm{det}\begin{pmatrix} 1&3\\0&1 \end{pmatrix}  \\
+										 &= -5\times\mathrm{det}\begin{pmatrix} 1&0\\0&1 \end{pmatrix}  \\
+										 &= -5 
+		\end{align*}
+	\end{exemple}
 \end{document}
