@@ -1,0 +1,214 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Familles et bases}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Familles}
+	\begin{defn}
+		Soit $(v_1,\ldots,v_p)$ une famille de vecteurs dans $\mathbb{R}^p$.
+
+		La famille est dite liée s'il existe $(\lambda_1,\ldots,\lambda_p)\in\mathbb{R}^p$ non tous nuls tel que :
+		$$ \sum_{i=1}^{p} \lambda_iv_i = 0 $$
+	\end{defn}
+	\begin{defn}
+		Si une famille n'est pas liée, alors elle est libre.
+	\end{defn}
+	Le vecteur nul est toujours dans une famille liée !
+
+	\begin{thm}
+		La famille $A=(v_1,\ldots,v_q)$ est libre si et seulement si $\mathrm{rg}(A)=q$.
+	\end{thm}
+
+	\begin{defn}
+		Une famille $A=(v_1,\ldots,v_q)$ dans $E$, un ev de $\mathbb{K}$, est génératrice si et seulement si :
+		$$ \forall b\in E,\quad \exists(\lambda_1,\ldots,\lambda_q)\in\mathbb{K}^q,\quad \sum_{i=1}^{q} \lambda_iv_i = b $$
+	\end{defn}
+	Avec une famille génératrice, on peut générer tout l'espace.
+	\section{Base}
+	\begin{defn}
+		Une base de $E$ est une famille libre et génératrice.
+
+		On note $\mathrm{dim}(E)$ le cardinal d'une base de $E$.
+	\end{defn}
+	$\mathrm{dim}(E)$ est unique.
+
+	\begin{thm}
+		Soit $A$ une famille de vecteurs de cardinal $q$.
+
+		Si le rang de $A$ vaut $\mathrm{dim}(E)$, alors $A$ est génératrice (i.e. $\forall b\in E,\exists X,\quad AX=b$).
+
+		(Rappel) Si le rang de $A$ vaut $q$, alors $A$ est libre (i.e. $\exists!X,\quad AX=0$).
+	\end{thm}
+	Une matrice $A$ carrée de $\mathcal{M}_n$ est une base si et seulement si son rang vaut $n$.
+
+	On remarque donc que $A$ est une base s'il existe des opérations élémentaires permettant d'écrire une multiplication des opérations élémentaires successives par $A$ égal à $I_n$. Cela montre que $A$ est inversible et que $A^{-1}$ est la multiplication des opérations élémentaires successives.
+
+	Pour trouver l'inverse, on fait le pivot de Gauss sur la matrice et sur la matrice identité correspondante.
+
+	\begin{exemple}[Technique pour trouver l'inverse]
+		On a :
+		$$ \begin{pmatrix} 1&3&0&|&1&0&0\\ 2&1&0&|&0&1&0\\0&0&1&|&0&0&1 \end{pmatrix} \rightarrow \begin{pmatrix} 1&3&0&|&1&0&0\\ 0&-5&0&|&-2&1&0\\0&0&1&|&0&0&1 \end{pmatrix} $$
+		$$\rightarrow \begin{pmatrix} 1&3&0&|&1&0&0\\ 0&1&0&|&2/5&-1/5&0\\0&0&1&|&0&0&1 \end{pmatrix}\rightarrow  \begin{pmatrix} 1&0&0&|&-1/5&3/5&0\\ 0&1&0&|&2/5&-1/5&0\\0&0&1&|&0&0&1 \end{pmatrix}$$
+		Ainsi, on a que la matrice $\small\begin{pmatrix}-1/5&3/5&0\\2/5&-1/5&0\\0&0&1 \end{pmatrix}$ est l'inverse de la première matrice. 
+
+		NLDR: les étapes sont foireuses mais on a la marche à suivre
+	\end{exemple}
+\end{document}
+
