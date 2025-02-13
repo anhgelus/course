@@ -1,0 +1,234 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Applications linéaires et sous espace vectoriel}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Définition}
+	\begin{defn}
+		Une application $f$ est dite linéaire de $E$ dans $F$ (deux sev) si et seulement si :
+		$$ \forall (a,b)\in E^2,\forall (x,y)\in E^2,\quad f(ax+by) = af(x)+bf(y) $$
+	\end{defn}
+	\begin{thm}
+		Toute application linéaire est représentable par une matrice.
+	\end{thm}
+	\begin{exemple}
+		Représentation d'une application linéaire de $\mathbb{R}^3\to \mathbb{R}^2$ :
+		$$ \begin{pmatrix} x\\y\\z \end{pmatrix} \longmapsto \begin{pmatrix} a_{1,1}&a_{1,2}&a_{1,3}\\a_{2,1}&a_{2,2}&a_{2,3} \end{pmatrix} \begin{pmatrix} x\\y\\z \end{pmatrix}  = \begin{pmatrix} a_{1,1}x+a_{1,2}y+a_{1,3}z\\a_{2,1}x+a_{2,2}y+a_{2,3}z \end{pmatrix} $$
+	\end{exemple}
+	\begin{defn}
+		L'image de $A$ une matrice représentant l'application linéaire $f$ de $E$ dans $F$ est notée $\mathrm{Im}A$ et :
+		$$ \mathrm{Im}A =\{AX|X\in E\}$$
+	\end{defn}
+	L'image est l'ensemble des éléments atteints par l'application linéaire représentée par $A$.
+	\begin{defn}
+		Le noyau de $A$ une matrice représentant l'application linéaire $f$ de $E$ dans $F$ est noté $\mathrm{Ker}A$ et :
+		$$ \mathrm{Ker}A=\{X| AX = 0, X\in E\} $$
+	\end{defn}
+	Le noyau est l'ensemble des éléments donnant 0 par $f$.
+	\begin{defn}
+		La dimension d'un espace vectoriel est le nombre de vecteur d'une base (sauf si la base vaut $\{0\}$, dans ce cas là sa dimension vaut 0). On note la dimension de $E$ $\mathrm{dim}E$.
+
+		D'une manière formelle, soit $f$ une base de $E$, on a :
+		$$ \mathrm{dim}(E)=\mathrm{card}(f) $$
+		(où $\mathrm{card}$ est le cardinal de $f$)\\
+		sauf si $f=\{0\}$, où dans ce cas $\mathrm{dim}(E)=0$. 
+	\end{defn}
+	\begin{thm}
+		La dimension de l'image de l'application linéaire $f$ représentée par les matrices $AX$ est égal au rang de $A$, i.e.
+		$$ \mathrm{dim}~\mathrm{Im}A = \mathrm{rg}A $$
+	\end{thm}
+	\begin{thm}[Théorème du rang]
+		Soit $f$ une application linéaire de $E$ dans $F$.
+
+		On a que :
+		$$ \mathrm{dim}E = \mathrm{dim}~\mathrm{Im}A+\mathrm{dim}~\mathrm{Ker}A $$
+	\end{thm}
+	\begin{thm}
+		Les vecteurs colonnes au dessus de la matrice $A$ se trouvant au dessus des pivots constituent une base de l'image.
+	\end{thm}
+	\begin{exemple}
+		On a :
+		$$ \begin{pmatrix} 1&1&0\\1&1&0 \end{pmatrix} $$
+		Après le pivot de Gauss, on obtient :
+		$$ \begin{pmatrix} \fbox{1}&1&0\\0&0&0 \end{pmatrix} $$
+		Donc, une base de l'image est $\begin{pmatrix} 1\\1 \end{pmatrix} $
+
+		Comme $\begin{pmatrix} 1&0&0\\0&1&0 \end{pmatrix}$ est déjà échelonné, on a que $\begin{pmatrix} 1&0\\0&1 \end{pmatrix}$ est une base de l'image.
+	\end{exemple}
+	\section{Sous espace vectoriel}
+	\begin{defn}
+		Un sous espace vectoriel $V$ est un espace vectoriel si et seulement si :
+		\begin{itemize}
+			\item $V\neq \varnothing$
+			\item pour tout $v_1,v_2\in V$, on a $v_1+v_2$ est bien dans $V$
+			\item pour tout $v$ dans $V$ et pour tout $\lambda$ dans $\mathbb{K}$, on a $\lambda v\in V$
+		\end{itemize}
+	\end{defn}
+	\begin{props}
+		L'image et le noyau d'une application linéaire sont des sous-espaces vectoriels.
+	\end{props}
+	\section{Déterminer une base du noyau}
+	On a une base de l'image et on a $A$, la matrice représentant l'application linéaire à l'origine.
+
+	On sait que la base du noyau possède $\mathrm{dim}(E)-\mathrm{dim}~\mathrm{Im}(A)$ (théorème du rang).
+	
+	Pour chaque colonne sans pivot, on détermine un vecteur de la base du noyau (voir \href{}{ce gif})
+\end{document}

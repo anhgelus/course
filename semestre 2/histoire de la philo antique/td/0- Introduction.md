@@ -9,8 +9,10 @@ DS 10/03 et 05/05
 
 Étude de _Le Sophiste_, Platon
 |> traduction de N. Cordero (GF) ou de L. Monge (Livre de Poche)
+|> est une sorte de deuxième apologie de Platon
 
 Sophiste est un simulacre du philosophe, c'est une image
+|> une image peut aussi être une copie
 
 *Pedimental structure*
 ```mermaid
@@ -68,3 +70,17 @@ C'est parce que la foule ignore qu'il y a trois types de philosophe -> ils switc
 |> provient de l'ignorance
 |> opinion <=> jugement de valeurs
 |> la foule ne connait que le nom (apparaît), pas la chose (est)
+
+Quand Socrate parle, il parle à propos de la chose et non de l'image
+|> c'est pour ça qu'il ne parle pas dans ce dialogue
+
+L'Étranger parle surtout de la chose
+|> n'est donc pas un sophiste
+|> explique que chez lui il y a ces trois formes mais qui sont très compliqués à définir
+|> ne choisit pas de faire une macrologie (discours long), mais préfère une brachylogie (discours type Socrate)
+|> on a besoin d'avoir un interlocuteur : c'est Théétète jeune
+-> l'Étranger obéit à Socrate, ne choisit pas forcément comme ça se passe
+
+Platon, _République_, II, 380d
+|> est une critique d'Homère
+|> les dieux peuvent se transformer mais garde le même nom -> ne peut pas changer de valeur, il reste uni

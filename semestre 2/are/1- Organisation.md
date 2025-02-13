@@ -33,3 +33,10 @@ Exemples de sujet :
 - la médecine est-elle une science ? (_Le Nihilisme médical_, Stegenga)
 
 Ne pas faire un sujet complètement éthique
+
+Que peut nous apprendre les intelligences artificielles sur nos relations au vivant ?
+|> déjà qu'est-ce qu'une intelligence artificielle ? -> le problème dans la définition du terme
+|> qu'est-ce que la conscience ? -> une création peut-elle être consciente ?
+|> doit-on être moral envers une IA ? -> si elle est consciente, elle doit pouvoir souffrir
+|> toutes les créations doivent-elles être morales ? -> trolley dilemma
+|> que devient la valeur du travail dans un monde où tout est automatisé ? -> faire travailler des IA, est-ce travailler ?

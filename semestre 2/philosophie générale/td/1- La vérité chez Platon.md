@@ -51,8 +51,11 @@ Dans la partie 2, on quitte l'argumentation pour arriver vers un mythe
 > |> expose quand même une vérité, mais sous l'exemple
 
 > [!warning] Il n'existe pas d'âme ignorante pour Platon
+> En cherchant la vérité, on ne développe que ce qu'il y a en nous
 
 > [!tip] Organisation d'un texte de Platon
 > Souvent, il existe plusieurs niveaux argumentatifs chez Platon
 > |> mieux vaut les suivre quand on fait un commentaire
 > |-> le niveau mythique très souvent est complexe
+
+81d à 86d est aussi très intéressant
