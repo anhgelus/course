@@ -29,7 +29,6 @@
 \usepackage{framed}
 \usepackage{parskip}
 \usepackage{titlesec}
-\usepackage{hyperref}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -154,81 +153,34 @@ headpunct=,%
 
 \renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
 
-\title{Applications linéaires et sous espace vectoriel}
+\title{TD du 20 février}
 \author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
 
 \begin{document}
 	\maketitle
-	\tableofcontents
 	\newpage
-	\section{Définition}
-	\begin{defn}
-		Une application $f$ est dite linéaire de $E$ dans $F$ (deux sev) si et seulement si :
-		$$ \forall (a,b)\in E^2,\forall (x,y)\in E^2,\quad f(ax+by) = af(x)+bf(y) $$
-	\end{defn}
-	\begin{thm}
-		Toute application linéaire est représentable par une matrice.
-	\end{thm}
-	\begin{exemple}
-		Représentation d'une application linéaire de $\mathbb{R}^3\to \mathbb{R}^2$ :
-		$$ \begin{pmatrix} x\\y\\z \end{pmatrix} \longmapsto \begin{pmatrix} a_{1,1}&a_{1,2}&a_{1,3}\\a_{2,1}&a_{2,2}&a_{2,3} \end{pmatrix} \begin{pmatrix} x\\y\\z \end{pmatrix}  = \begin{pmatrix} a_{1,1}x+a_{1,2}y+a_{1,3}z\\a_{2,1}x+a_{2,2}y+a_{2,3}z \end{pmatrix} $$
-	\end{exemple}
-	\begin{defn}
-		L'image de $A$ une matrice représentant l'application linéaire $f$ de $E$ dans $F$ est notée $\mathrm{Im}A$ et :
-		$$ \mathrm{Im}A =\{AX|X\in E\}$$
-	\end{defn}
-	L'image est l'ensemble des éléments atteints par l'application linéaire représentée par $A$.
-	\begin{defn}
-		Le noyau de $A$ une matrice représentant l'application linéaire $f$ de $E$ dans $F$ est noté $\mathrm{Ker}A$ et :
-		$$ \mathrm{Ker}A=\{X| AX = 0, X\in E\} $$
-	\end{defn}
-	Le noyau est l'ensemble des éléments donnant 0 par $f$.
-	\begin{defn}
-		La dimension d'un espace vectoriel est le nombre de vecteur d'une base (sauf si la base vaut $\{0\}$, dans ce cas là sa dimension vaut 0). On note la dimension de $E$ $\mathrm{dim}E$.
+	\section{Fin de la feuille du 13}
+	\subsection*{Exercice 7}
+	$\lambda v_1+v_2 = (\lambda x_1+x_2,\lambda y_1 + y_2)$\\
+	$\lambda y_1+y_2=\lambda x_1+x_2+\lambda+1 \neq \lambda x_1+x_2+1$\\
+	donc $A$ n'est pas un sev.
 
-		D'une manière formelle, soit $f$ une base de $E$, on a :
-		$$ \mathrm{dim}(E)=\mathrm{card}(f) $$
-		(où $\mathrm{card}$ est le cardinal de $f$)\\
-		sauf si $f=\{0\}$, où dans ce cas $\mathrm{dim}(E)=0$. 
-	\end{defn}
-	\begin{thm}
-		La dimension de l'image de l'application linéaire $f$ représentée par les matrices $AX$ est égal au rang de $A$, i.e.
-		$$ \mathrm{dim}~\mathrm{Im}A = \mathrm{rg}A $$
-	\end{thm}
-	\begin{thm}[Théorème du rang]
-		Soit $f$ une application linéaire de $E$ dans $F$.
+	$\lambda v_1+v_2 = (\lambda x_1 + x_2, \lambda x_1 + x_2)$\\
+	donc $A_1$ est un sev.
 
-		On a que :
-		$$ \mathrm{dim}E = \mathrm{dim}~\mathrm{Im}A+\mathrm{dim}~\mathrm{Ker}A $$
-	\end{thm}
-	\begin{thm}
-		Les vecteurs colonnes au dessus de la matrice $A$ se trouvant au dessus des pivots constituent une base de l'image.
-	\end{thm}
-	\begin{exemple}
-		On a :
-		$$ \begin{pmatrix} 1&1&0\\1&1&0 \end{pmatrix} $$
-		Après le pivot de Gauss, on obtient :
-		$$ \begin{pmatrix} \fbox{1}&1&0\\0&0&0 \end{pmatrix} $$
-		Donc, une base de l'image est $\begin{pmatrix} 1\\1 \end{pmatrix} $
+	$\lambda v_1+v_2 = (\lambda x_1+x_2,\lambda y_1 + y_2)$\\
+	$\lambda y_1 = \lambda^2 x^2 \neq x^2$\\
+	donc $A_2$ n'est pas un sev.
+	\section{Feuille du 20}
+	\subsection*{Exercice 2}
+	$g\circ f (x,y,z) = (z-2y-x, 2x-y+z)$
 
-		Comme $\begin{pmatrix} 1&0&0\\0&1&0 \end{pmatrix}$ est déjà échelonné, on a que $\begin{pmatrix} 1&0\\0&1 \end{pmatrix}$ est une base de l'image.
-	\end{exemple}
-	\section{Sous espace vectoriel}
-	\begin{defn}
-		Un sous espace vectoriel $V$ est un espace vectoriel si et seulement si :
-		\begin{itemize}
-			\item $V\neq \varnothing$
-			\item pour tout $v_1,v_2\in V$, on a $v_1+v_2$ est bien dans $V$
-			\item pour tout $v$ dans $V$ et pour tout $\lambda$ dans $\mathbb{K}$, on a $\lambda v\in V$
-		\end{itemize}
-	\end{defn}
-	\begin{props}
-		L'image et le noyau d'une application linéaire sont des sous-espaces vectoriels.
-	\end{props}
-	\section{Déterminer une base du noyau}
-	On a une base de l'image et on a $A$, la matrice représentant l'application linéaire à l'origine.
+	$BA = \begin{pmatrix} -1&-2&1\\2&-1&1 \end{pmatrix} $
+	\subsection*{Exercice 3}
+	Par le théorème du rang, on a que la dimension du Ker est 1. La représentation matricielle de $f$ est :
+	$$ \begin{pmatrix} 1&-1&0\\0&1&-1 \end{pmatrix}  $$
+	$$x-y = 0 \quad\land\quad y-z = 0 \iff x = y = z$$
+	Donc $\mathrm{Ker}(f) = \mathrm{Vect}((1,1,1)) = \{(a,a,a)|a\in\mathbb{R}\}$
 
-	On sait que la base du noyau possède $\mathrm{dim}(E)-\mathrm{dim}~\mathrm{Im}(A)$ (théorème du rang).
-	
-	Pour chaque colonne sans pivot, on détermine un vecteur de la base du noyau (voir \href{}{ce gif})
+	Comme $f$ est de rang $2$, alors $f$ est surjective (tous les éléments sont atteints), mais pas injective.
 \end{document}

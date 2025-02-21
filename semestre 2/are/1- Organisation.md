@@ -40,3 +40,19 @@ Que peut nous apprendre les intelligences artificielles sur nos relations au viv
 |> doit-on être moral envers une IA ? -> si elle est consciente, elle doit pouvoir souffrir
 |> toutes les créations doivent-elles être morales ? -> trolley dilemma
 |> que devient la valeur du travail dans un monde où tout est automatisé ? -> faire travailler des IA, est-ce travailler ?
+
+Sujet : **Pouvons-nous parler de conscience artificielle pour l'IA ?**
+|> besoin de définir ce qu'est une IA -> langage, technique et métaphysique
+|> besoin de définir la conscience -> lié à la raison, à l'essence
+|> distinction objet/sujet -> à partir de quand un objet devient-il sujet ?
+|> distinction artificielle/naturelle -> distinction vraiment tenable ?
+|> lié au langage et à la perception -> tromperie du langage, une fausse perception ?
+|> questions soulevées par la création d'une conscience (artificielle) -> moralité
+
+Bibliographies indicatives :
+- Interview de El Madhi El Mamdhi pour Clique
+- _L'Existentialisme est un humanisme_, Sartre
+- _Par-delà nature et culture_, Descola
+- Conférence de Science4All à Polytechnique
+- Conférence à la BnF sur l'humain dépassé par l'IA
+- Papier de Science4All, de Philoxime et du chercheur québécois sur la régulation des algorithmes de recommendation

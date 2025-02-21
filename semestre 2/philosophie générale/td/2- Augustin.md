@@ -24,8 +24,13 @@ Amour de la vérité est aussi naturelle que celle du bonheur
 > Fonctionne de la même manière que chez Platon
 > |> est une mémoire pas du tout empiriste
 > |> est une mémoire se rappelant des concepts
-> |> voir [[1- La vérité chez Platon]]
+> |> voir [[1- Platon]]
 
 Explique pourquoi nous ne sommes pas tous heureux
 |> cette vision de la vérité est très faible
 |> ce qui est sensible est beaucoup plus importants chez nous car c'est beaucoup plus présent
+
+Explique que la haine provient aussi de la vérité
+|> orgueil provient du tord
+|> ne veut pas arrêter nos passions
+-> la haine provient de l'amour de la vérité

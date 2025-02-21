@@ -110,4 +110,35 @@ Le relativisme ne tient pas sur ce qui est avantageux, bénéfique ou utile
 |> admettons qu'aujourd'hui il semble que demain sera X, si on est relativiste, alors "demain sera X" est vrai pour moi aujourd'hui, si un sage contredit ma prédiction, alors il y a une contradiction
 -> la vérité n'est donc pas relative à *une* perception concernant les jugements sur l'avenir
 
-Mais Protagoras fonctionne pour le présent ?
+Mais Protagoras fonctionne-t-il pour le présent ?
+|> le jugement que l'on fait identifie l'instantané un objet
+
+Le jugement ne fait exprimer que ce que j'ai senti -> est donc exact
+|> garantie que les choses sont pour chaque sujet percevant exactement telles qu'il les perçoit
+|> les choses sont pour chaque sujet percevant ce qu'ils jugent -> est adéquat
+
+En acceptant cette doctrine, on ne peut rien affirmer de positif
+|> on ne peut décrire que les choses en étant ce qu'elles ne sont pas
+
+Il n'existe pas de base objective vu que tout bouge (sinon le jugement serait vrai plus longtemps)
+|> donc aucun jugement ne peut être faux
+|> impossible de faire un jugement car tous les énoncés apparaissent comme aussi vrai / aussi faux (peut être que la chose a changé)
+-> la chose n'est même pas ce que je pense
+
+Donc, le langage devient inutile et la connaissance ne peut être le savoir (sauf si le savoir est privé)
+|> le savoir ne serait que sensoriel -> impossible à exprimer dans la pensée
+|> donc le savoir est impossible
+
+**2- Réfutation par Théétète**
+Les organes sont des outils permettant à l'âme de percevoir
+|> l'âme est le centre unitaire de la perception et qui les coordonne
+|> on peut distinguer deux sens (distinguer couleur et son)
+|> on est aussi capable de voir quelque chose de commun à la sensation de voir et entendre
+-> on dépasse les sens
+|> les propriétés communes ne sont pas perçues par les sens, mais par quelque chose d'autre 
+|-> c'est l'âme grâce à sa pensée
+
+Si la sensation ne peut pas saisir l'être, elle ne peut pas atteindre la vérité
+|> atteindre la vérité est nécessaire pour le savoir
+-> sentir n'est pas savoir et le savoir ne dépend pas de la sensation
+|> besoin de porter des jugements abstraits ou généraux, sont ceux d'une âme pensante
