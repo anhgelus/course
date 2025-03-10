@@ -125,6 +125,8 @@ La méthode du dialogue est exprimée par Socrate dans _Gorgias_ de Platon
 |> accord après examen fournit la preuve que la vérité a été atteinte (vision consensuelle)
 |> concordance ou confirmation du résultat par les interlocuteurs, puis résultat reproductible
 |> besoin d'avoir une éthique du dialogue -> besoin d'avoir une attitude vertueuse/morale
+=> est totalement opposé à la figure des maîtres du savoir
+|> est une forme d'éthique
 
 Critique de l'*ad populum*
 |> nombre de personnes n'est pas un indice de vérités : ils peuvent quand même se tromper
@@ -132,3 +134,62 @@ Critique de l'*ad populum*
 
 Critique de l'*ad hominem*
 |> transforment le dialogue en dispute
+
+Cette vision demande une égalité des interlocuteurs
+|> lien entre vérité et éthique
+-> besoin de veiller au respect de son interlocuteur et certaines règles
+|> n'est pas l'unique forme d'accès à la vérité
+|> mais tous les énoncés est adressé à un interlocuteur et implique la possibilité de l'examen par le lecteur
+
+La vérité est, d'une manière générale, toujours menacée par les passions
+## C. La place de la preuve
+Dans le cadre de la vérité, une vérification n'affirme rien de nouveau
+
+La preuve, elle, montre un progrès dans l'établissement de la vérité
+
+Quand on a l'accord des interlocuteurs et reconnaissance de la méthode, alors une preuve est suffisante pour démontrer la vérité
+|> tout le monde doit être d'accord sur le statut de preuve
+
+Les règles de la démonstration sont thématisés par Aristote dans _Les Topiques_ et _Seconds analytiques_
+|> raisonnement déductif est une formule d'argumentation (discours rationnel) permettant de parvenir à une conclusion d'une manière nécessaire à partir de prémisses posées
+|> si le raisonnement ne découle pas des prémisses, alors c'est un mauvais raisonnement
+
+Dans une démonstration, les prémisses sont des affirmations vraies et premières
+Dans le raisonnement déductif, ce sont des idées admises
+
+Les prémisses sont vraies et premières si elles sont vraies par elle-même
+|> frappent par l'évidence et incontestable
+-> est le cas des premiers principes de la connaissance
+
+Premiers principes de la connaissance
+|> principe de non contradiction -> $A\land\lnot A$ est impossible
+|> principe du tiers exclu -> $A\lor B$ où $B$ exclue $A$ est complète (demain il pleuvra ou il ne pleuvra pas) est toujours vrai
+|> principe d'identité -> $A=A$ est vrai
+-> permettent la connaissance et sont les points de départ
+|> dirigent la marche de la connaissance
+(est inutile de les rappeler)
+
+> [!seealso] _Alice au Pays des merveilles_ de Lewis Caroll
+> Est une suite de problèmes logiques et de ses conséquences
+
+> [!info] AnPo / APo = Seconds analytiques
+> C'est évidemment interdit dans les copies
+
+Connaître scientifique = connaître la cause
+|> permet de comprendre pourquoi une chose est cette chose
+|> existe une liaison nécessaire entre une chose et sa cause
+-> mentionner la cause d'une chose permet la connaissance nécessairement vraie
+
+Une démonstration doit donc mettre en évidence des causes
+
+4 types de cause (Aristote, _Physique_, II) :
+1. cause matérielle -> ce à partir de quoi est faite la chose
+2. cause formelle -> définition de la chose
+3. cause motrice -> ce qui a provoqué l'advenu (ou un changement) de la chose
+4. cause finale -> but / fonction d'une chose
+
+Prémisses doivent être vraies, premières, immédiates, mieux connues que la conclusion, antérieures à la conclusion et causes de la conclusion
+
+Indémontrable = immédiat *ici*
+
+Démonstration reproduit sur le plan du discours ce qu'il se produit sur le plan causal

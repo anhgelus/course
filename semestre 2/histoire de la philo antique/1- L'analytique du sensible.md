@@ -142,3 +142,73 @@ Si la sensation ne peut pas saisir l'être, elle ne peut pas atteindre la vérit
 |> atteindre la vérité est nécessaire pour le savoir
 -> sentir n'est pas savoir et le savoir ne dépend pas de la sensation
 |> besoin de porter des jugements abstraits ou généraux, sont ceux d'une âme pensante
+
+---
+
+La sensation ne suffit pas pour avoir accès à la connaissance
+|> nous n'avons accès qu'à des qualités sensibles
+
+La réalité ne se réduit pas au domaine sensible
+|> il existe le domaine des caractéristiques formelles par exemple
+
+Platon, _Phédon_ = thème est la mort de Socrate
+|> l'âme est-elle immortelle ?
+
+Socrate font partie de la différence entre l'âme et le corps
+|> le corps est un obstacle à la pensée -> les sens empêchent la pensée rationnelle
+|> car il n'y a pas d'exactitude et de clarté via le corps, donc pas de vérité -> un savoir est précis et est clair (NDLR, ressemble beaucoup à Descartes)
+
+Quel est l'objet du savoir ?
+|> le juste, le beau, le bon (on appelle ça des valeurs)
+|> la force, la santé...
+
+L'essence de X = le X en soi
+|> peuvent être compris à l'aide de leur contraire
+|> en soi est indépendant de la relativité
+|> essence n'est pas l'accident (ce qui est présent et ne la définit pas)
+-> permet de définir une multitude de chose en même temps
+|> cet objet n'est jamais vu
+
+Ces choses en soi sont les Idées/Formes
+-> sont les objets de la connaissance
+
+Comment peut-on connaître quoi que ce soit tant que le corps existe ?
+|> comment passer du sensible aux essences ?
+
+S'il n'y a pas de connaissance possible -> sceptique
+On peut accepter une connaissance approximative (qui est probable)
+On peut connaître véritablement par la pensée seule
+|> comment est-il possible d'activer sa pensée seule sans tenir compte de notre relation au sensible ?
+-> double obstacle du corps (se détacher du sensible et nous n'avons pas accès à autre chose que les corps)
+
+Pour accéder à la vérité, on doit mourir
+|> l'âme est débarrassé du corps
+-> n'est pas retenu car pose *quelques* problèmes
+|> rien ne nous assure l'immortalité de l'âme
+|> si l'âme est immortel, rien nous assure qu'elle peut penser après la mort
+
+Deuxième option : et si l'âme n'a pas existé avant l'incarnation du corps ?
+|> apprendre c'est se rappeler
+|> ne consiste pas dans l'acquisition d'un nouveau savoir mais dans la réminiscence ->savoir acquis avant mais oublier
+|> personne ne confond un homme et une lyre, mais on peut associer une lyre à un homme (association d'idée provoque chez nous un souvenir absent)
+|> existe aussi avec proximité spatiale ou temporel, par ressemblance, etc. (cf Hume)
+-> on peut donc passer d'un mode d'appréciation à un autre
+
+<|OvO|> <--- ceci est un wazo
+
+Quand à partir de la perception d'un objet, on se souvient à un objet semblable, on ne peut s'empêcher de penser qu'il manque quelque chose à l'objet évocateur
+|> pour constater que deux choses sont égales, on a besoin du concept d'égalité
+|> les choses constatées comme égales n'apparaissent pas forcément comme telles
+|> égalité est relative à un paramètre contingent -> est imparfaite
+|> on le sait car on sait ce qu'est qu'une égalité (ou une intuition)
+|> cette possession ne peut pas s'être produite par la sensation
+-> on possède une idée de l'ordre de l'intelligible
+
+Corps et les sens, même s'il ne nous donne pas accès à l'essence, ils ne sont pas incompatibles à l'activité de pensée
+|> donnent l'occasion à la pensée de mener une activité de pensée tournée vers la connaissance des essences
+-> sensible est imparfait et constatation implique la connaissance de la perfection qu'il lui manque, mais aussi des valeurs
+
+Sensation / pensée
+|> sensation est imparfaite, joue le rôle de copie
+|> pensée est parfaite, joue le rôle de modèle
+-> en prenant conscience de la contingence du sensible, on accède au domaine supérieur

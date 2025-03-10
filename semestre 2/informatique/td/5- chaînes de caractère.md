@@ -28,14 +28,7 @@ int int_to_str(int val){
 	for (i = 1; tmp_val % 10 != tmp_val; i++) tmp_val /= 10;
 	char *str = malloc(sizeof(char) * (i+1)); // +1 car on n'oublie pas le '\0'
 	str[i] = '\0'; // on rajoute de suite le '\0'
-	for (int j = 0; j <= i; j++) {
-		int c = val % pow(10, j);
-		val -= c;
-		str[j] = c + 48;
-	}
+	for (int j = 0; j < i; j++) str[j-1] = val % pow(10, j) + 48;
 	return str;
 }
 ```
-
-On ne peut pas écrire `int arr[][];` !
-|> on doit forcément indiquer la taille des sous-tableaux, e.g. `int arr[][5];`

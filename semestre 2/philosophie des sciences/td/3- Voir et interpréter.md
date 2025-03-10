@@ -7,7 +7,7 @@ tags:
 semestre: 2
 ---
 Tous les humains ne voient pas la même chose (pathologie vs hallucination vs "normal")
-|> tous les êtres humains ne voient pas aussi la même chose (mouche vs chat vs humain)
+|> tous les êtres vivants ne voient pas aussi la même chose (mouche vs chat vs humain)
 
 Mais la vision ne dépend pas que de l'information transmise ou de notre constitution
 |> voir les illusions d'optiques
@@ -38,11 +38,11 @@ L'identification des actions a besoin de l'interprétation
 Besoin de supposer que l'observateur perçoit la scène sans erreur
 Besoin de supposer que le tout est cohérent
 
-> [!note] La science commence par l’observation
-> Faux, car on a besoin de théories pour comprendre ce qu'on observe !
+> [!info] La science *ne* commence *pas* par l’observation
+> On a besoin de théories pour comprendre ce qu'on observe !
 
-> [!NOTE] L'observation est le moyen le plus sûr de fonder une connaissance en raison
-> Faux, l'énoncé d'observation peut être tout aussi imprécis que la théorie qu'il y a derrière
+> [!info] L'observation *n*'est *pas* le moyen le plus sûr de fonder une connaissance en raison
+> L'énoncé d'observation peut être tout aussi imprécis que la théorie qu'il y a derrière
 ## Texte de Hanson
 Exemples donnés cassent le point de vu inductiviste
 

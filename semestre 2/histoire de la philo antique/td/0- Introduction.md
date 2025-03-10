@@ -11,6 +11,8 @@ DS 10/03 et 05/05
 |> traduction de N. Cordero (GF) ou de L. Monge (Livre de Poche)
 |> est une sorte de deuxième apologie de Platon
 
+Hadot, _Qu'est-ce que la philosophie antique ?_ -> très bonne introduction
+
 Sophiste est un simulacre du philosophe, c'est une image
 |> une image peut aussi être une copie
 
@@ -48,7 +50,7 @@ _Poème_ de Diels-Kranz contient les textes importants des pré-socratiques
 
 L'Étranger est aussi un éléate, mais est *heteron* (différent)
 |> possède les mêmes concepts mais est différent
-|> est pensé comme un dieu de la réfutation (theos elegktikos) par Socrate
+|> est pensé comme un dieu de la réfutation (*theos elegktikos*) par Socrate
 |> attribue ce côté divin au côté philosophe
 -> ressemble au sophiste, à un noble sophiste (Socrate)
 |> mais présente pourtant comme un philosophe (Théodore)
@@ -61,7 +63,7 @@ Trois types de philosophe (Socrate)
 
 Hubris = démesure
 
-C'est parce que la foule ignore qu'il y a trois types de philosophe -> ils switchent entre ces trois versions en fonction de ce que la foule veut
+C'est parce que la foule ignore qu'il y a trois types de philosophe -> ils alternent entre ces trois versions en fonction de ce que la foule veut
 |> ces images ne sont pas identiques (elles dépendent de ce qu'est la foule)
 |> politique = ceux qui se trompent sur la valeur des valeurs
 |> sophisme = ceux qui se font abuser
@@ -71,7 +73,7 @@ C'est parce que la foule ignore qu'il y a trois types de philosophe -> ils switc
 |> opinion <=> jugement de valeurs
 |> la foule ne connait que le nom (apparaît), pas la chose (est)
 
-Quand Socrate parle, il parle à propos de la chose et non de l'image
+Socrate parle de la chose et non de l'image
 |> c'est pour ça qu'il ne parle pas dans ce dialogue
 
 L'Étranger parle surtout de la chose

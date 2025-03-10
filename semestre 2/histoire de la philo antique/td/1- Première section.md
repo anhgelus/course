@@ -57,7 +57,7 @@ Toute pratique est le résultat d'une action
 |> besoin de s'accorder sur ce dialogue
 |> chose trouve sa réalité dans l'instrument auquel elle est liée
 -> besoin de respecter l'action nommée quand on définit le nom et son être
-|> nom sert une fonction, un acte (fonction diacritique)
+|> nom sert une fonction, un acte propre (fonction diacritique)
 |> nom sert aussi une didactique
 -> forme du nom rejoint sa fonction (_Cratyle_)
 
@@ -71,5 +71,64 @@ Toute pratique est le résultat d'une action
 > Possède un sens bien différent !
 > |> chose permettant de faire voir
 > |> est aussi bien un exemple qu'un modèle
+#### Après le texte
+Pourquoi parler du pêcheur à la ligne pour s'exercer ?
+|> est un chasseur, comme le sophiste
+|> compte sur la stupidité de la proie, comme le sophiste
+|> activité neutre axiologiquement (226b)
+-> ressemble au sophiste, mais est beaucoup moins prétentieuse
 
+Platon, _Timée_, 92b
+|> quatrième espèce (poisson) est celle qui est tombée au plus bas de l'ignorance
+|> poisson croit que la surface de la mer est un ciel (_Phèdre_, 109d)
+-> plus généralement, parle de la réincarnation de l'âme
 
+> [!info] Méthode en grec antique
+> est le chemin à suivre, mais avec des choses bloquant la route (les problèmes)
+
+Méthode de la définition : division dichotomique
+|> quel genre ?
+|> quelle différence ?
+|> quel nom ?
+|> où est la cible ?
+
+Application de la méthode à la pêche à la ligne
+```mermaid
+flowchart TB
+ A[art, technique] --> B1[art de production]
+ A --> B2[art d'acquisition]
+ B2 --> C1[échange consenti]
+ B2 --> C2[art de la mainmise par des actes ou des paroles]
+ C2 --> D1[lutte]
+ C2 --> D2[capture]
+ D2 --> E1[capture des inanimés]
+ D2 --> E2[chasse]
+ E2 --> F1[chasse aux animaux marcheurs]
+ E2 --> F2[chasse aux animaux des milieux humides]
+ F2 --> G1[chasse des animaux aquatiques]
+ F2 --> G2[pêche]
+ G2 --> H1[capture par cloture]
+ G2 --> H2[capture à la frappe]
+ H2 --> I1[chasse au feu]
+ H2 --> I2[pêche à l'hameçon]
+ I2 --> J1[pêche au trident]
+ I2 --> J2[[pêche à la ligne]]
+```
+
+> [!note] Critique par Aristote
+> _Parties des animaux_, I, 2-4 et _Premiers analytiques_, I, 31
+> 
+> Absence de classification : répétition, addition de différences, conjonctions, division est faite par accident
+> |> pas de vision organique
+> 
+> Non heuristique = présuppose la nature de ce qui est divisé
+> 
+> Non démonstratif = ne démontre absolument rien
+
+Maintenant, on peut appliquer la méthode au sophiste
+|> donne les six premières définitions du sophiste
+|> ces définitions donnent chacune un aspect du sophiste
+-> il manque systématiquement le point focal liant toutes ses définitions
+
+La dichotomie entre offrir des présents et chercher un salaire dans la première définition du sophisme montre que le philosophe n'est pas désintéressé
+|> Socrate se cache dans "offrir des présents" (_Le Banquet_)

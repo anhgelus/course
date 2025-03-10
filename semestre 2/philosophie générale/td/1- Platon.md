@@ -5,7 +5,7 @@ tags:
   - philosophie-générale
 semestre: 2
 ---
-2 DS = 10/03 et un jour en avril
+2 DS = 17/03 et 28/04
 |> 3/4 questions de cours
 |> question type dissertation avec introduction et le début d'une des 3 parties
 ## Platon, _Ménon_, 80e - 81e

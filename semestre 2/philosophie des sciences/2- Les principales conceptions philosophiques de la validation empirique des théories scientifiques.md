@@ -79,7 +79,6 @@ Si la nature ne ressemble pas un minimum au passé, alors on ne peut rien conna�
 |> très compliqués pour les empiristes
 |> n'y a pas de certitude concernant les théories scientifiques
 ## B. Le falsificationnisme
-### 1. La démarche selon Popper
 Le falsificationnisme est extrêmement lié à Popper
 
 S'oppose au vérificationnisme : ce qui est vrai est ce qui n'est pas faux
@@ -95,7 +94,7 @@ Vérifier un énoncé a bcp de problèmes
 | $H$                      | $\lnot H$                      |
 La vérification est inductive
 La réfutation est déductive
--> est asymétrique, mais les deux utilisent des hypothèses
+-> est asymétrique, mais les deux utilisent des hypothèses similaires
 
 Popper utilise la réfutation car elle permet d'éviter le problème de Hume
 |> critère de démarcation = énoncé est scientifique s'il est falsifiable
@@ -122,3 +121,25 @@ Théorie est meilleure quand :
 Popper a une approche compétitive : c'est théorie contre théorie
 
 Rien ne permet de dire qu'une théorie est vraie, ça permet juste d'évoquer la nature d'une théorie
+## C. Les limites du falsificationnisme
+**1. l'épreuve des faits** = ne résiste pas bien à ce qu'est la science
+|> le critère de démarcation n'est-il pas trop sévère ? -> et les sciences humaines et historiques ?
+
+**2. sauvetage des hypothèses** = si une hypothèse est fausse, souvent on essaye de la sauver -> mauvaise description
+|> est-ce une mauvaise norme ?
+|> on peut sauver des hypothèses si l'hypothèse supplémentaire permet de faire des autres prédictions (sinon, l'hypothèse ajoutée est *ad hoc*)
+|> aussi possible que l'expérience ne fonctionne pas, i.e. il y a des hypothèses supplémentaires
+-> le falsificationnisme ne dépend pas que des faits et de la logique déductive, donc induction !
+|> est le problème de Duhem ou l'holisme du falsificationnisme
+|> un sauvetage est donc toujours possible
+
+**3. hypothèse probabiliste** = casse totalement le falsificationnisme
+|> $P(\text{pile}) =\frac{1}{2}$ empêche les prédictions sur le prochain lancé
+|> ne peut pas être falsifié
+-> falsification « en pratique » a besoin d'utiliser les probas et les stats
+## D. Progrès scientifique
+Falsificationnisme = science avance par essais et erreurs
+|> resistance aux tests empiriques est le plus important (est la « corroboration »)
+-> pourquoi devrait-on choisir une théorie comme celle-là pour progresser ?
+|> pas possible de rejeter une telle préférence sans l'induction
+|> *in fine*, on a besoin de l'induction, donc problème de Hume
