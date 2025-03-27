@@ -12,9 +12,15 @@ void calcule_borne_sup(int *tab, int taille){
 
 int tire_non_equi(int *tab, int taille){
 	int tire = rand()%100;
-	int i;
-	for (i = taille -1; tab[i] > tire; i--);
-	printf("%d - %d <= %d\n", i, tab[i], tire);
+	int i = taille -1;
+	/*while (i >= 0) {
+		if (tire > tab[i]) break;
+		i--;
+	}
+	i++;*/
+	for (i = taille -1; tab[i] >= tire; i--);
+	i++;
+	printf("%d >= %d\n", tab[i], tire);
 	return i;
 }
 

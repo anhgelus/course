@@ -79,7 +79,7 @@ Les « maîtres de vérité » vs les savants (ceux qui cherchent la vérit�
 |> vérité dans le sens mythique / religieux
 |> comment passe-t-on de cette vision à celle rationnelle ?
 |> on peut quand même voir cette figure dans certaines personnalités
-|-> les discours paraissent vrais car la personne le prononçant possède une force (like Trump)
+|-> les discours paraissent vrais car la personne les prononçant possède une force (like Trump)
 
 Figures de maîtres de vérité :
 - Aède (poète) diffuse les savoirs via la parole
@@ -99,9 +99,9 @@ Quelles vérités prononcent le roi ?
 |> est un rituel provenant des dieux 
 -> le roi ne sert que de relais des dieux
 
-Ici, la vérité est un type de parole prononcée dans certaines conditions par un personne investi de pouvoir particuliers
+Ici, la vérité est un type de parole prononcée dans certaines conditions par une personne investie de pouvoir particuliers
 |> dépend donc de la personne
-|> parole est efficace réalisant une action -> est performative (poète montre les puissances invisibles, roi institue la justice)
+|> parole efficace réalise une action -> est performative (poète montre les puissances invisibles, roi institue la justice)
 |> parole ne dépend pas du temps (présent gnomique, présent de vérité générale)
 |> ne cherche jamais l'assentiment du locuteur ou du groupe et n'attend pas de validation
 -> parole transcende les humains et est le privilège d'une fonction sociale
@@ -133,13 +133,13 @@ Critique de l'*ad populum*
 |> besoin de l'accord des interlocuteurs, surtout quand ils ne sont pas d'accord au départ
 
 Critique de l'*ad hominem*
-|> transforment le dialogue en dispute
+|> transforme le dialogue en dispute
 
 Cette vision demande une égalité des interlocuteurs
 |> lien entre vérité et éthique
 -> besoin de veiller au respect de son interlocuteur et certaines règles
 |> n'est pas l'unique forme d'accès à la vérité
-|> mais tous les énoncés est adressé à un interlocuteur et implique la possibilité de l'examen par le lecteur
+|> mais tous les énoncés sont adressés à un interlocuteur et impliquent la possibilité de l'examen par le lecteur
 
 La vérité est, d'une manière générale, toujours menacée par les passions
 ## C. La place de la preuve
@@ -163,7 +163,7 @@ Les prémisses sont vraies et premières si elles sont vraies par elle-même
 
 Premiers principes de la connaissance
 |> principe de non contradiction -> $A\land\lnot A$ est impossible
-|> principe du tiers exclu -> $A\lor B$ où $B$ exclue $A$ est complète (demain il pleuvra ou il ne pleuvra pas) est toujours vrai
+|> principe du tiers exclu -> $A\lor B$ où $B$ exclue $A$ est complète (demain il pleuvra ou il ne pleuvra pas) et toujours vrai
 |> principe d'identité -> $A=A$ est vrai
 -> permettent la connaissance et sont les points de départ
 |> dirigent la marche de la connaissance
@@ -189,7 +189,82 @@ Une démonstration doit donc mettre en évidence des causes
 4. cause finale -> but / fonction d'une chose
 
 Prémisses doivent être vraies, premières, immédiates, mieux connues que la conclusion, antérieures à la conclusion et causes de la conclusion
+-> est nécessaire pour avoir un point de départ premier
 
 Indémontrable = immédiat *ici*
 
 Démonstration reproduit sur le plan du discours ce qu'il se produit sur le plan causal
+
+Deux types : pour nous et en soi
+|> objectif est d'atteindre l'en soi, mais on part souvent du pour nous
+|> ce qui est antérieur et mieux connu pour nous sont les choses que l'on perçoit
+|> ce qui l'est en soi touche l'universel ($\forall$), inaccessible pour nos sens (sont ponctuels ($\exists$))
+|> universel énonce une propriété essentielle
+
+Si une démonstration n'utilise pas des prémisses antérieur et mieux connu en soi, alors elle n'est pas fiable pour la connaissance
+
+Déduction dialectique = démonstration se basant sur des idées admises
+|> idées partagées par presque tous ou par les experts les plus reconnus
+|> le côté admis possède des garants réels autorisés ou accrédités par une adhésion affective
+|> s'oppose au *paradoxe* (dans son sens ancien : côté communément admis)
+|> ne caractérise pas la réalité de l'idée
+-> cherche à répondre à une alternative pratique entre un choix et un rejet
+|> est une vision pratique de la démonstration scientifique
+|> mais elle n'établit pas la vérité : on cherche la connaissance, on ne la montre pas
+
+La dialecticien fait des déductions dialectiques en divisant
+|> il distingue et choisit une vision
+|> cherche à préparer / éprouver quelque chose
+-> nous pousse à devenir habile argumentateur
+|> risque de nous faire devenir sceptique, car peut neutraliser la vérité (ou peut argumenter pour $A$ et $\lnot A$)
+
+Aristote dit qu'on peut facilement choisir après la déduction dialectique
+|> besoin d'un critère supplémentaire pour choisir correctement l'une des deux hypothèses
+|> l'aptitude à bien choisir le vrai et à bien éviter le faux -> est le don naturel en nature de vérité
+|> est ce que les gens bien doués par la nature peuvent faire -> capacité à discerner le meilleur
+-> permet le dépassement du scepticisme et donc l'usage philosophique de la dialectique
+
+Bon choix du vrai permet d'appliquer le discernement de l'humain bon dans l'action
+|> vérité est l'analogue du bon
+
+Quelles sont les limites d'une preuve ?
+|> deux gros problèmes
+|> liés aux prémisses
+
+Soit les prémisses sont des principes, soit elles ne le sont pas
+|> mène aux principaux problèmes
+
+Si les prémisses ne sont pas des principes, alors on doit vérifier qu'elles soient vraies
+|> besoin de démontrer de ces prémisses
+|> tant qu'on n'a pas de valeurs de principe, besoin de tout démontrer
+|> il pourrait exister des principes méconnaissables (ou qu'ils n'existent pas)
+-> aucune démonstration n'est possible à cause de la régression à l'infini
+
+Si les prémisses sont des principes, alors elles sont indémontrables
+|> si on veut les démontrer, on se retrouve à faire un cercle vicieux (ou une pétition de principe) -> voir Aristote, _Métaphysique_, $\Gamma$, 4 pour le principe de non contradiction
+|> comment peut-on s'assurer de leur véracité ? il existerait un vrai sans preuve directe
+|> en admettant leur véracité, comment s'assurer que nous sommes parvenus jusqu'à eux ?
+-> besoin d'avoir une indication de ces principes
+=> comment identifier la vérité sans démonstration ?
+
+Méthode selon Pascal, _ouvrage (moodle)_
+|> prouver à l'aide d'une démonstration
+|> disposer toutes les propositions dans un certain ordre
+|> deux méthodes : une parfaite et une celle de la géométrie (qui n'est donc pas parfaite)
+|> méthode parfaite s'assure d'employer des termes dont le sens est clairement défini, elle n'avance aucune proposition non démontrer par des vérités déjà connues
+|> méthode parfaite est impossible car définir tous les termes demande de définir encore plus de termes *et* parce que tout démontrer demande un temps infini -> comment s'assurer que quand on s'arrête, tout puisse être vrai ?
+|> l'esprit humain s'arrête au niveau des mots primitifs non définissables et des principes dont la clarté est suffisante ne demandant pas la clarté -> sont suffisants, mais n'assure pas complètement la vérité
+-> la géométrie s'en rapproche le plus : elle est aussi certaine, mais moins convaincante
+
+escape, temps, mouvement, égalité = exemples de mots primitifs pour la géométrie
+lumière, humain, être = exemples de mots primitifs
+-> ils désignent naturellement les choses qu'ils signifient
+|> personne n'est d'accord, mais tout le monde sait à quoi renvoie ces termes
+-> est la marque d'une perfection selon Pascal
+|> pas besoin de les définir en raison de leur extrême évidence
+|> quand on dit « le temps passe », tout le monde comprend
+
+On a donc besoin d'avoir des prémisses claires et évidentes ainsi qu'un raisonnement rendant nécessaire la conclusion face aux prémisses
+
+Mais comment distinguer la vérité avant la démonstration ?
+|> besoin de critères

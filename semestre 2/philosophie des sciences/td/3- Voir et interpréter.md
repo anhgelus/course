@@ -43,7 +43,7 @@ Besoin de supposer que le tout est cohérent
 
 > [!info] L'observation *n*'est *pas* le moyen le plus sûr de fonder une connaissance en raison
 > L'énoncé d'observation peut être tout aussi imprécis que la théorie qu'il y a derrière
-## Texte de Hanson
+## Texte de Hanson, _Patterns of Discovery_
 Exemples donnés cassent le point de vu inductiviste
 
 Différence entre bébé et profane

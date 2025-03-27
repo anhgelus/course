@@ -21,10 +21,10 @@ Présentation de Hume
 Chapitre IV questionne la création dans l'esprit de la croyance de la régularité de la nature
 |> est appelé le problème de l'induction
 |> contient une distinction appelée _la fourche de Hume_
-## David Hume, Enquête sur l’entendement humain, IV
+## David Hume, _Enquête sur l’entendement humain_, IV
 §1 = saut logique entre induction et déduction
 |> la déduction est toujours inféré de l'induction dans la méthode empiriste
-|> cherche à expliquer la chaîne de raisonnement dans ce saut logique : «  La connexion entre ces propositions n’est pas intuitive »
+|> cherche à expliquer la chaîne de raisonnement dans ce saut logique : « La connexion entre ces propositions n’est pas intuitive »
 |> « On réclame un moyen terme qui puisse rendre l’esprit capable de tirer une telle inférence si, en vérité, elle se tire par raisonnement et argumentation »
 |> cherche le raisonnement derrière
 -> comment arrive-t-on à faire ce saut ?
@@ -36,7 +36,7 @@ Chapitre IV questionne la création dans l'esprit de la croyance de la régulari
 
 §4 = matérialisation du problème de l'induction
 |> nos raisonnements moraux découlent du raisonnement causal
-|> on justifie la régularité par la régularité (nature est régulière car on la suppose régulière)
+|> on justifie la régularité par la régularité (nature est régulière car on la suppose régulière) ==à corriger== (voir [[2- Les principales conceptions philosophiques de la validation empirique des théories scientifiques]], A, 2)
 
 §5 = comment faire pour rester empiriste ?
 |> ce n'est pas parce que nous ne l'avons pas fondé que nous ne pouvons pas les utiliser

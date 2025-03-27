@@ -154,12 +154,102 @@ headpunct=,%
 
 \renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
 
-\title{Titre}
+\title{Combinatoire}
 \author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
 
 \begin{document}
 	\maketitle
 	\tableofcontents
 	\newpage
+	\section{Notation}
+	Dans cette section, on parle de théorie des ensembles.
 
+	On notera toujours $E$ l'ensemble ambient. Soit $A$ un sous-ensemble de $E$. On le note~: $A\subseteq E$ (ou $A\subset E$, mais on l'aime moins celle-là). On note l'inclusion stricte $A\subsetneq E$.
+	\begin{defn}
+		$A\cup B$ est défini comme~:
+		$$ x\in A\cup B\quad\implies\quad x\in A\quad\lor\quad x\in B $$
+		On a :
+		$$ A\cup B = \{x\in E\quad|\quad x\in A\lor x\in B\} $$
+	\end{defn}
+	\begin{defn}
+		$A\cap B$ est défini comme~:
+		$$ x\in A\cap B\quad\implies\quad x\in A\quad\land\quad x\in B $$
+		On a :
+		$$ A\cup B = \{x\in E\quad|\quad x\in A\land x\in B\} $$
+	\end{defn}
+	\begin{defn}
+		$A\backslash B$ est défini comme~:
+		$$ x\in A\backslash B\quad\implies\quad x\in A\quad\land\quad x\not\in B$$
+		On a~:
+		$$ A\backslash B = \{x\in E\quad|\quad x\in A\land x\not\in B\} $$
+	\end{defn}
+	\begin{defn}
+		$E\backslash A$ est le complémentaire de $A$ et est défini comme~:
+		$$ \forall x\in E\backslash A\quad\implies\quad x\in E\quad\land\quad x\not\in A $$
+		On a~:
+		$$ E\backslash A=\{x\in E\quad|\quad x\not\in A\} $$
+	\end{defn}
+	\begin{defn}
+		Si $E$ est un ensemble fini, on a que $\mathrm{card}(E)$ ou $|E|$ est le nombre d'éléments de $E$.
+	\end{defn}
+	\begin{props}
+		On a :
+		$$ \mathrm{card}(A\cup B) = \mathrm{card}(A) + \mathrm{card}(B) - \mathrm{card}(A\cap B) $$
+	\end{props}
+	\begin{defn}
+		Le produit cartésien est noté $\times$ et est :
+		$$ A\times B = \{(x,y)\quad|\quad x\in A,y\in B\} $$
+	\end{defn}
+	\begin{props}
+		On a~:
+		$$ \mathrm{card}(A\times B) = \mathrm{card}(A)\times\mathrm{card}(B) $$
+	\end{props}
+	\section{Combinaisons}
+	Soit $\Omega=\{1,2,\ldots,n\}$, un ensemble de $n$ éléments.
+
+	\begin{defn}
+		Une combinaison de $k$ éléments parmis les éléments de $\Omega$ est un sous-ensemble $A\subseteq\Omega$ tel que $\mathrm{card}(A) = k$.
+	\end{defn}
+	\begin{props}
+		Le nombre de combinaisons de $k$ éléments parmis les éléments de $\Omega$ est~:
+		$$ \frac{\mathrm{card}(\Omega)!}{k!(\mathrm{card}(\Omega)-k)!} = \frac{n!}{k!(n-k)!} $$
+		pour $n = \mathrm{card}(\Omega)$, i.e.
+		$$ \binom{\mathrm{card}(\Omega)}{k} = \binom nk $$
+		ce qui est un cœfficient binomial.
+	\end{props}
+	On peut aussi écrire le cœfficient binomial $\mathcal{C}^k_n = \binom nk$. $\mathcal{C}$ signifie \textit{combinaison}~! Ici, l'\textit{ordre ne compte pas}.
+
+	Il existe aussi $\mathcal{A}^k_n = \frac{n!}{(n-k)!}$, ce qui est le nombre de choix possible où l'\textit{ordre compte}. $\mathcal{A}$ pour \textit{arrangement}~!
+
+	\begin{exemple}
+		Une personne qui veut aller à un endroit doit forcément faire une combinaison parmis $\{D,D,D,B,B\}$. (Ceci représente tous les chemins les plus rapides pour y aller~: on doit forcément prendre 3 fois droite et deux fois gauche.) Donc, il y a $\binom 52 = 10$ possibilités~: il suffit de choisir quand on descend (donc 2 possibilités) pour avoir tous les cas possibles~! (On aurait aussi pu choisir quand on va à droite, mais les calculs sont plus méchants.)
+	\end{exemple}
+
+	\begin{props}
+		On a~:
+		$$ \mathcal{C}^k_n = \mathcal{C}^{k-1}_{n-1} + \mathcal{C}^k_{n-1} $$
+		i.e.
+		$$ \binom nk = \binom{k-1}{n-1}+\binom k{n-1} $$
+	\end{props}
+
+	Maintenant, voici un énoncé très pratique~: le \textit{binôme de Newton}. Le prof l'a démontré en cours, mais j'avais la flemme d'écrire la démo. Voir la démonstration de l'année dernière.
+
+	\begin{thm}[Binôme de Newton]
+		On a~:
+		$$ (x+y)^n = \sum_{k=0}^{n} \binom nk x^ky^{n-k} $$
+	\end{thm}
+
+	\begin{corol}
+		On a cette magnifique relation pas très utile~:
+		$$ \sum^n_{k=0}\binom nk = 2^n $$	
+	\end{corol}
+	\begin{proof}
+		D'après le binôme de Newton, on a~:
+		$$ (1+1)^n = \sum_{k=0}^{n} \binom nk 1^k1^{n-k} $$
+		i.e.
+		$$ 2^n = \sum_{k=0}^{n} \binom nk $$
+	\end{proof}
+	\begin{exemple}
+	Dans un groupe de 20 personnes, il y a $2^{20}$ sous-groupes possibles. Il y a $20$ tailles de sous-groupes possibles~: de 1 à 20. Le nombre de sous-groupe contenant personne est $\binom{20}0$, celui contenant une personne est $\binom{20}1$, \ldots, celui contenant 20 personnes est $\binom{20}{20}$. Ainsi, le nombre de sous-groupe est la somme de tout cela et le résultat est donné par la formule juste au dessus.
+	\end{exemple}
 \end{document}

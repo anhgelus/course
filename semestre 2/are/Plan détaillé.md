@@ -71,6 +71,9 @@ Comment une IA répond-elle à un problème ?
 |> approche probabiliste (statistiques, aléatoire)
 |> raisonnement intérieur
 -> IA ne réfléchit pas d'une manière causale, elle regarde des probabilités
+|> est le même raisonnement que celui dans notre cerveau
+|> induction possède une utilité pragmatique fondamentale
+|> IA peut donc raisonner comme nous, dans notre vie de tous les jours
 
 > [!NOTE] IA ou algorithme ?
 > Bien que les IA génératives et les algorithmes de recommandation sont tous les deux des algorithmes de machine learning, nous n'appelons pas le deuxième IA. Cette différence montre une fausse impression de contrôle (==à justifier==) sur les IA de recommandation : on pourrait beaucoup plus simplement les maîtriser
@@ -96,3 +99,21 @@ Ce que ça limite :
 2. La régulation de l'IA
 3. Qui parlera de conscience pour les algorithmes de recommandation
 ## Conclusion
+
+---
+
+Nouveau plan ?
+1. Technique derrière l'IA (ne change pas), un peu plus court ?
+2. L'IA possède-t-elle une conscience ?
+	1. recherche d'une définition de la conscience
+	2. application de la vision de conscience à l'IA -> fusionne avec 2.1
+	3. compliquer de parler de conscience sur les algorithmes de recommendations
+	4. compliquer de trancher pour de la vrai conscience -> introduction à la conscience artificielle
+3. Création de la notion de conscience artificielle
+	1. vision de l'artificielle comme tromperie (mais peut-être vrai)
+	2. vision de l'artificielle comme création humaine
+	3. marche bien pour l'IA (tous les types) -> fusionne avec 3.1 et 3.2
+	4. n'explique pas que l'IA (marche aussi pour la conscience de groupe) -> fusionne avec 3.1 et 3.2
+
+Évoquer les limites dans la conclusion plutôt que dans une full partie
+|> évite le côté liste

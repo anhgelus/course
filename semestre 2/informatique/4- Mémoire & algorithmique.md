@@ -21,27 +21,27 @@ Pour retourné un pointeur (et donc aussi un array), on utilise le tas (heap en 
 
 **Comment mettre un tableau dans le heap ?**
 On récupère la taille du tableau :
-```c
+```c title=alloc_array.c
 sizeof(float)*len;
 ```
 où `len` est la taille du tableau
 
 Après, on récupère l'adresse dans le heap pour le mettre :
-```c
+```c title=alloc_array.c
 float* ptr = (float*) malloc(size);
 ```
 où `malloc` est dans `stdlib.h` et `size` est la taille de la variable.
 `ptr` est un pointeur vers cette nouvelle valeur.
 
 Après l'allocation, on doit vérifié que le pointeur n'est pas null :
-```c
+```c title=alloc_array.c
 ptr == NULL
 ```
 si sa valeur est null, alors la mémoire n'a pas été allouée.
 
 Par contre, attention, la mémoire allouée par `malloc` n'est jamais supprimée avant la fin du programme !
 -> on utilise `free` pour libérer la mémoire !
-```c
+```c title=alloc_array.c
 free(ptr);
 ```
 où `ptr` est un pointeur dans le heap *qui n'a pas déjà été libéré*, `free` est dans `stdlib.h`
@@ -49,14 +49,14 @@ où `ptr` est un pointeur dans le heap *qui n'a pas déjà été libéré*, `fre
 > [!tip] On doit avoir autant de `malloc` que de `free`
 
 On peut aussi initialiser toutes les valeurs à 0 avec `calloc`:
-```c
+```c title=alloc_init_array.c
 float* ptr = (float*)calloc(n, sizeof(float));
 ```
 où `n` est un entier non null et `calloc` la fonction de `stdlib.h`.
 (On vérifie toujours que `ptr != NULL`.)
 
 On peut modifier la taille allouée avec `realloc`:
-```c
+```c title=realloc_array.c
 float* ptr = (float*)realloc(ptr, 10*sizeof(float));
 ```
 où `ptr` est un pointeur et `realloc` la fonction dans `stdlib.h`
@@ -69,7 +69,7 @@ Quels sont les arguments de cette fonction ? -> `xs`, `x` et la taille de `xs`
 Quels sont les sorties ? -> `i` (un int >= -1, où -1 signifie pas trouver)
 Quelle méthode employer ? -> dichotomie car le tableau est trié
 Comment tester la fonction ? -> avec des valeurs particulières ou en démontrant formellement la fonction
-```c
+```c title=algo.c
 int found(int* arr, int n, int x){
 	int i = n >> 1;
 	while (arr[i] != x){

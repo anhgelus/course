@@ -4,7 +4,7 @@ tags:
   - informatique
 semestre: 2
 ---
-```c
+```c title=hello_world.c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,13 +24,13 @@ On écrit des programmes comme éditeur de texte
 -> permet d'écrire le programme
 
 Au début, on écrit les bibliothèques :
-```c
+```c title=hello_world.c
 #include <stdio.h>
 #include <stdlib.h>
 ```
 
 Les commentaires s'écrivent comme ça :
-```c
+```c title=commentaire.c
 /* bonjour, 
 je suis un commentaire sur
 plusieurs lignes */
@@ -41,7 +41,7 @@ plusieurs lignes */
 (le deuxième type de commentaire provient du C++, mais souvent ça passe)
 
 Après, on doit toujours écrire une fonction `main` :
-```c
+```c title=main_function.c
 int main(){
 	/* ... */
 	return 0;
@@ -75,7 +75,7 @@ Toutes les lignes d'instructions se finissent par un `;`
 On a toujours besoin d'une *unique* fonction `main` par programme.
 
 On peut définir plusieurs fonctions dans un programme, e.g.
-```c
+```c title=hello_world_function.c
 void hello(){
 	printf("Hello World\n");
 }
@@ -104,7 +104,7 @@ int main(){
 > `0` est vraie, le reste est faux.
 ## Arguments dans une fonction
 On les place dans les parenthèses et il fonctionne comme en Java
-```c
+```c title=hello_world_year.c
 void hello(int annee){
 	printf("Hello World %d!\n", annee)
 }
@@ -121,14 +121,14 @@ La fonction `printf` ici est utilisée pour formaté un string que l'on va ensui
 |> `"%c"` insert un `char`
 |> les valeurs que l'on insert sans mise après le format
 i.e.
-```c
+```c title=format_hello_world.c
 printf("Hello World%d-%d\n", 2024, 2025);
 // est équivalent à
 printf("Hello World 2024-2025\n");
 ```
 ## Variables
 On est obligé de déclarer les variables avec leur type, i.e.
-```c
+```c title=variables.c
 int p;
 p = 5;
 
@@ -147,14 +147,14 @@ float a=1, b=2.5, c=-2.5;
 
 ## De Python à C
 ### Syntaxe simple
-```python
+```python title=perimeter.py
 def perimetre(largeur: int, longeur: int) -> int:
 	"""Precond: longueur >= largeur >= 0
 	Retourne le périmètre du rectangle défini par sa longeur et sa largeur"""
 	return 2*(largeur + longueur)
 ```
 devient en C
-```c
+```c title=perimeter.c
 /* hypothèse: longueur >= largeur >= 0
 retourne le périmetre du rectangle défini par sa longueur et sa largeur*/
 int perimetre(int largeur, int longueur){
@@ -163,7 +163,7 @@ int perimetre(int largeur, int longueur){
 ```
 ### Structures de contrôle
 Un `if/else` s'écrit :
-```c
+```c title=conditions.c
 if (cond) {
 	//
 } else {
@@ -173,7 +173,7 @@ if (cond) {
 où `cond` est un booléen
 
 Un `while` s'écrit :
-```c
+```c title=repeat.c
 while (cond) {
 	//
 }
@@ -181,7 +181,7 @@ while (cond) {
 où `cond` est toujours un booléen
 
 Une nouvelle boucle : la `do while` qui est une boucle `while` où la condition est testée à la fin de la boucle (i.e. elle tourne toujours au moins 1 fois)
-```c
+```c title=repeat.c
 do {
 	//
 } while (cond);
@@ -190,7 +190,7 @@ où `cond` est encore un booléen
 ⚠ il y a un `;` après le while
 
 La boucle `for` est comme celle en java
-```c
+```c title=repeat.c
 int n = 5;
 int i;
 for (i = 0; i <= n; i++) {
@@ -198,7 +198,7 @@ for (i = 0; i <= n; i++) {
 }
 ```
 est équivalente à
-```c
+```c title=repeat.c
 int i;
 i = 0;
 while (i <= n) {

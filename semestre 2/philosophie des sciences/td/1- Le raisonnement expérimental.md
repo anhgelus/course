@@ -12,7 +12,7 @@ Philo continentale = analyse les phénomènes et les concepts
 
 Épistémologie =
 - théorie de la connaissance (vision analytique)
-- comment fonctionne les sciences ? -> vision meta-scientifique (vision continentale)
+- philosophie des sciences + histoire des sciences (vision continentale)
 
 Philosophie des sciences cherche à clarifier la nature et les fondements de la connaissance scientifique tout en cherchant à explorer certaines de ses conséquences philosophiques
 |> ici ne traite que les sciences naturelles et les sciences humaines et sociales (pas de sciences formelles !)
@@ -40,11 +40,11 @@ Comment peut-on distinguer les variations significatives dès variations superfl
 |> est le problème de la complétude de l'induction
 |> on peut les distinguer à l'aide de notre connaissance théorique de la situation
 |> or, cela revient à admettre que la théorie joue un rôle crucial, ce qui ne devrait pas être le cas
--> voir [[2- Le problème de l’induction]]
+-> voir [[2- Le problème de l'induction]]
 
 Comment fonder les théories issues de raisonnements inductifs ?
 |> un seul contre-exemple suffirait de casser l'induction, mais une infinité d'observations ne suffiraient pas à prouver qu'elle est vraie
--> voir [[2- Le problème de l’induction]]
+-> voir [[2- Le problème de l'induction]]
 ## Claude Bernard, _Introduction à l’étude de la médecine expérimentale_
 2 parties :
 1. la méthode expérimentale en science -> quelle méthode utiliser et ce qu'on ne doit absolument pas faire

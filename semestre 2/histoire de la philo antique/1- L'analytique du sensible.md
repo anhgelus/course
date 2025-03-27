@@ -41,7 +41,7 @@ Comment vérifier le deuxième critère ?
 |> sa thèse ressemble à celle de Protagoras dans _La Vérité_
 
 > [!quote] Protagoras, _La Vérité_
-> L'Homme est la mesure de toute chose, de celles qui sont qui sont et de celles qui ne sont pas qui ne sont pas
+> L'Homme est la mesure de toute chose, de celles qui sont et de celles qui ne sont pas
 
 L'humain est la mesure des choses (comme le pouce, la coudé, etc)
 |> c'est donc comment l'humain ressent la chose qu'elle est
@@ -82,7 +82,6 @@ Pour être savant toujours selon Protagoras, on doit être :
 - jugé comme un savant si le sujet juge que l'on propose des dispositions meilleures
 
 ==> Thèse de Protagoras valide la vision de Théètète
-
 #### Réfutation de cette thèse
 **1- Doctrine de Protagoras**
 
@@ -154,7 +153,7 @@ La réalité ne se réduit pas au domaine sensible
 Platon, _Phédon_ = thème est la mort de Socrate
 |> l'âme est-elle immortelle ?
 
-Socrate font partie de la différence entre l'âme et le corps
+Socrate fait partie de la différence entre l'âme et le corps
 |> le corps est un obstacle à la pensée -> les sens empêchent la pensée rationnelle
 |> car il n'y a pas d'exactitude et de clarté via le corps, donc pas de vérité -> un savoir est précis et est clair (NDLR, ressemble beaucoup à Descartes)
 
@@ -189,7 +188,7 @@ Pour accéder à la vérité, on doit mourir
 
 Deuxième option : et si l'âme n'a pas existé avant l'incarnation du corps ?
 |> apprendre c'est se rappeler
-|> ne consiste pas dans l'acquisition d'un nouveau savoir mais dans la réminiscence ->savoir acquis avant mais oublier
+|> ne consiste pas dans l'acquisition d'un nouveau savoir mais dans la réminiscence -> savoir acquis avant mais oublier
 |> personne ne confond un homme et une lyre, mais on peut associer une lyre à un homme (association d'idée provoque chez nous un souvenir absent)
 |> existe aussi avec proximité spatiale ou temporel, par ressemblance, etc. (cf Hume)
 -> on peut donc passer d'un mode d'appréciation à un autre

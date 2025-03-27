@@ -50,14 +50,14 @@ On peut mettre une valeur et une adresse en mémoire
 |> une adresse est une zone de la mémoire contenant une valeur
 
 Une variable qui contient une adresse est un pointeur
-```c
+```c title=pointer.c
 int *n;
 ```
 
 ici, `n` contient l'adresse vers un entier
 
 On récupère l'adresse avec l'opérateur `&`
-```c
+```c title=pointer.c
 int x = 0;
 int *p;
 p = &x;

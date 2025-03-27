@@ -6,7 +6,7 @@ semestre: 2
 ---
 ## Tableaux à plusieurs dimensions
 Pour déclarer un tableau à deux dimensions, on fait :
-```c
+```c title=double_dimension_array.c
 T tab[n1][n2];
 ```
 où `n1` et `n2` sont deux entiers naturels non nul et `T` est un type valide.

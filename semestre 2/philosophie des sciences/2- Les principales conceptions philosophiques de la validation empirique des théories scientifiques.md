@@ -137,9 +137,100 @@ Rien ne permet de dire qu'une théorie est vraie, ça permet juste d'évoquer la
 |> $P(\text{pile}) =\frac{1}{2}$ empêche les prédictions sur le prochain lancé
 |> ne peut pas être falsifié
 -> falsification « en pratique » a besoin d'utiliser les probas et les stats
-## D. Progrès scientifique
+## D. Ingrédients non empiriques de la validation des théories scientifiques ou introduction à la philosophie des sciences de Thomas Kuhn
 Falsificationnisme = science avance par essais et erreurs
 |> resistance aux tests empiriques est le plus important (est la « corroboration »)
 -> pourquoi devrait-on choisir une théorie comme celle-là pour progresser ?
 |> pas possible de rejeter une telle préférence sans l'induction
 |> *in fine*, on a besoin de l'induction, donc problème de Hume
+
+Et si toute la science ne découle pas de l'expérience ?
+|> existe d'autres ingrédients ne dépendant pas de l'expérience pour pouvoir avancer
+-> présentation des grandes thèses de Thomas Kuhn
+
+Thomas Kuhn = philosophe des sciences de la deuxième partie du XXe siècle
+|> doctorat en physique
+|> enseignant d'histoire des sciences
+|> _La structure des révolutions scientifiques_ (SRS), 1962
+|> _La tension essentielle. Tradition et changement dans les sciences_, 1977 (recueil d'articles et de textes)
+
+```mermaid
+flowchart LR
+	A[Science normale]-- Révolution --->B[Science normale]
+	B -- Révolution -->C[Science normale]
+```
+
+Science normale = plus pratiquée et la plus normée
+Science révolutionnaire = exceptionnelle et sans normes, en renversant les normes
+-> ne sont pas unifiables : sont complètement différents
+|> les normes sont appelées « paradigmes »
+
+Paradigme permet aux scientifiques d'exercer normalement leur métier
+|> détermine les questions susceptibles de recevoir une réponse scientifique
+|> détermine les méthodes à utiliser
+|> détermine les réponses considérées comme satisfaisante
+|> définie aussi le groupe
+
+Grandes définitions de paradigme
+|> cadre cognitif = fournit une façon de penser le monde et de pratiquer les sciences empiriques
+|> matrice disciplinaire
+
+Cadre cognitif contient :
+- des cas paradigmatiques qui ont été des succès expérimentaux, qui fixent des phénomènes connus et expliqués et des instruments de mesure typiquement utilisés
+- hypothèses métaphysiques relatives à la nature des entités existantes et des processus qui donnent lieu à des phénomènes étudiés
+
+Exemples = paradigme newtonien avec l'exemple de Galilée
+
+Matrice disciplinaire
+|> implique possession commune de la part des spécialistes d'une discipline particulière
+|> ensemble se compose d'éléments ordonnée de diverses sortes, dont chacune demande une étude détaillée
+|> appartenir à une communauté scientifique, c'est penser dans les termes du paradigme
+|> paradigme comprendre des œuvres fondatrices (traités) et des ouvrages pédagogiques (manuels) dont l'étude prépare les étudiants à devenir membre de la communauté
+
+Les 4 types d'éléments de la matrice disciplinaire :
+- modèles (exemples)
+- analogies (éléments théoriques)
+- hypothèses métaphysiques
+- valeurs communes (appartenance à un groupe)
+
+Valeurs =
+- incorporés dans les théories (déterminisme, bourgeois vs prolétarien, sexisme)
+- portant sur les théories, pas sur leur contenu (beauté, simplicité, cohérence, utilité sociale)
+- relatives à la pratique de la science en général (honnête, indépendance, éthique)
+
+Sciences normales est fondamentalement conservatrice
+|> ne cherche pas à réfuter la théorie
+|> essaye de résoudre les énigmes (qu'elle soit théorique ou expérimentale) -> celles qui sont très complexes sont des anomalies, souvent elle ne pose pas de problème
+|> pression social car on doit appartenir au groupe
+
+On apprend la science par les exemples et les exercices
+|> pas vraiment d'esprit critique, mais plutôt la capacité à penser dans les termes du paradigme
+-> la remise en question du paradigme est rare
+
+> [!NOTE] Étapes du changement de paradigme
+> **L'entrée dans la crise** = fragilisation du paradigme
+> 
+> **Période de révolution** = deux paradigmes rivaux
+> -> besoin d'avoir un autre paradigme pour que ça change
+> 
+> **Sortie de la révolution** = paradigme sortant devient la norme
+
+Le changement de paradigme commence suite à un grands nombres d'anomalies et l'émergence de théories concurrentes incompatibles avec le paradigme existant
+
+La compétition de paradigmes casse l'autorité de l'ancien au profit du nouveau
+|> cohérence interne devient de moins en moins évide
+-> l'activité scientifique n'est plus régulée (d'où le terme révolution)
+
+Changement arrive suite à un rapport de force
+|> ressemble à un conversion pour les individus
+|> le changement ne suit d'aucune règle rationnelle
+|> facteurs déterminant l'adoption ne sont pas d'ordre épistémique ou empirique
+
+Ne peut pas être rationnel car les anciens ne comprennent pas les nouveaux (ne peuvent pas communiquer)
+-> est l'incommensurabilité
+|> peut être linguistique (sens des mots), sur les expériences (n'analysent pas de la même manière)...
+
+Critère de démarcation est la capacité à progresser dans les paradigmes
+
+Il n'existe néanmoins des valeurs universels comme le principe de non contradiction (ou l'empirisme pour Kuhn)
+|> est un relativisme relatif

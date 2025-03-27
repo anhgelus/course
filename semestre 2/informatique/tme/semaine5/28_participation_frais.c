@@ -13,9 +13,10 @@ void init_tab(float tab[NB_AMIS][NB_JOURS]){
 void random_tab(float tab[NB_AMIS][NB_JOURS], int j) {
 	int a = rand()%NB_AMIS;
 	int v = rand()%21+30;
-	tab[a][j] = v;
+	float to_pay = (float) v/(-NB_AMIS);
+	tab[a][j] = v + to_pay;
 	for (int i = 0; i < NB_AMIS; i++) {
-		if (i != a) tab[i][j] = (float) v/(-NB_AMIS+1);
+		if (i != a) tab[i][j] = to_pay;
 	}
 }
 

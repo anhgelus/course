@@ -154,12 +154,40 @@ headpunct=,%
 
 \renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
 
-\title{Titre}
+\title{TD du 20 mars}
 \author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
 
 \begin{document}
 	\maketitle
-	\tableofcontents
-	\newpage
+	\subsection*{Exercice 1}
+	On n'oublira pas la proposition suivante~:
+	$$ |\mathcal{P}(E)| = 2^n $$
+	où $n$ est le cardinal de $E$ et $\mathcal{P}(E)$ désigne l'ensemble des parties de $E$.
 
+	\begin{enumerate}
+		\item C'est un quadruplet. Il y a donc $10^4$ arrangements possibles. Si on évite les répétitions, il y en a $\frac{10!}{6!}$
+		\item Il s'agit aussi d'un arrangement car l'ordre compte. Il y a donc $\frac{10!}{7!}$ possibilités.
+		\item Le nombre de chemin possible est $\binom{p+q}{p}$.
+		\item $12!$ manières de les aligner. Si $1$ et $2$ se suivent, alors il suffit de déterminer la place de $1$ pour déterminer $2$. On n'a donc que $11$ tomes à placer donnant ainsi $11!$ possibilités.
+		\item $\displaystyle\binom{p}{1}\times 2^{n-p}$ car on se retrouve à choisir une partie de $E\backslash A$ (on a donc $2^{n-p}$ choix)
+		\item $2^8 = 256$ car ordre avec répétition
+		\item $10^{14}$ car ordre avec répétition 
+		\item $\binom{11}{5}$. Si deux amis ne peuvent venir qu'ensemble, on a un ami en moins à choisir si un des deux amis arrivent. Si deux amis ne peuvent pas se voir, on a un ami de possible en moins.
+
+			Dans le premier cas, on a $\binom 93+\binom 95$ (car on somme les «~ou bien~»~!).
+
+			Dans le deuxième cas, on a $2\binom 94 + \binom 95$ (idem).
+		\item 
+	\end{enumerate}
+	\subsection*{Exercice 2}
+	Je sais faire, donc flemme (par contre j'ai calculé ce que ça valait en python)
+	\subsection*{Exercice 5}
+	\begin{enumerate}
+		\item $\displaystyle f(x) = \displaystyle\sum_{k=0}^{n-1}\binom nk\frac{2^{n-k}}{x^{n-k-1}} = 2\binom n1 + o_{x\to +\infty}(1) \xrightarrow[x \to \infty]{} 2n$
+		\item $\displaystyle\sum_{i=0}^{n} \binom ni x^i = (x+1)^n$
+
+			$\displaystyle\sum_{i=0}^{n} \binom ni = (1+1)^n = 2^n$
+
+			$\displaystyle\sum_{i=0}^{n} \binom ni(-1)^i = (1-1)^n = 0$
+	\end{enumerate}
 \end{document}

@@ -5,11 +5,11 @@ tags:
 semestre: 2
 ---
 Pour organiser les données, on utilise `struct`
-```c
+```c title=structure.c
 struct s_int_pair {
 	int fst;
 	int snd;
-}; // vraiment utile le ; ?
+}; // le ; est *obligatoire*
 ```
 Est toujours au début du fichier `.c` ou dans le `.h` si elle est utilisée par plusieurs fichiers
 |> possède deux champs nommés `fst` et `snd`
@@ -19,11 +19,11 @@ Les fichiers headers (`.h`) spécifient les interfaces utilisables par l'extéri
 |> ne contient pas tout ce qui est privé
 
 Pour qu'une variable utilise un struct, on écrit
-```c
+```c title=structure.c
 struct s_int_pair point;
 ```
 sauf que c'est long à écrire, donc on renomme tout ça avec un `typedef` :
-```c
+```c title=structure.c
 typedef struct s_int_pair int_pair;
 int main(){
 	int_pair point; 
@@ -31,7 +31,7 @@ int main(){
 }
 ```
 on peut aussi tout définir d'un coup
-```c
+```c title=structure_better.c
 typedef struct s_int_pair{
 	int fst;
 	int snd;
@@ -44,14 +44,14 @@ typedef struct s_int_pair{
 > |> est une convention
 
 Pour initialiser un struct, on utilise les parenthèses
-```c
+```c title=structure_init.c
 int_pair p = {1,2}; // initialisation séquentielle
 int_pair p2 = {.snd=3, .fst=4}; // initialisation sélective
 ```
 la première est traditionnelle et est commune
 
 Pour modifier les valeurs dans un struct, on accède aux champs avec l'opérateur `.` :
-```c
+```c title=structure_init.c
 p.fst = -1;
 p.snd = -2;
 
@@ -69,16 +69,16 @@ Structures et fonctions
 Il n'existe pas d'arithmétique des structures
 
 On peut chaîner les structures, i.e.
-```c
+```c title=chained_structure.c
 struct _cell {
 	int v;
-	struct cell* next;
+	struct _cell* next;
 }
 ```
 (ce qui donne une liste chaînée)
 
 L'opérateur `->` est un raccourcie permettant le déférencement rapide
-```c
+```c title=arrow_operator.c
 Foo *foo;
 
 foo->bar = 10;
@@ -89,3 +89,5 @@ foo->baz();
 // est équivalent à
 (*foo).baz();
 ```
+
+On a fini toutes les questions de syntaxe en C

@@ -56,14 +56,14 @@ L'Étranger est aussi un éléate, mais est *heteron* (différent)
 |> mais présente pourtant comme un philosophe (Théodore)
 |> compliquer de définir le genre de L'Étranger (Socrate)
 
-Trois types de philosophe (Socrate)
+Trois types de personnes prises pour philosophe (Socrate)
 1. le politique (_La République_, Platon) -> le philosophe roi
 2. le sophiste (cette œuvre) -> le philosophe prétendant être sage
 3. le fou  (_Théétète_ 174a, _Gorgias_ 494d1, _Phèdre_ 249c-d Platon) -> délire érotique (représenté par Thalès), déplacé/extravagant/étrange (*atopos*)
 
 Hubris = démesure
 
-C'est parce que la foule ignore qu'il y a trois types de philosophe -> ils alternent entre ces trois versions en fonction de ce que la foule veut
+C'est parce que la foule ignore qu'il y a trois types de personnes prise pour philosophe -> ils alternent entre ces trois versions en fonction de ce que la foule veut
 |> ces images ne sont pas identiques (elles dépendent de ce qu'est la foule)
 |> politique = ceux qui se trompent sur la valeur des valeurs
 |> sophisme = ceux qui se font abuser

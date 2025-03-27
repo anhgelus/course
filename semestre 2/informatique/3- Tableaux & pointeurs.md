@@ -16,11 +16,11 @@ Il y a deux types de tableaux en C :
 - tableaux dynamiques sont de tailles... dynamiques localisés dans le tas (heap)
 
 On déclare un tableau statique (array) comme ça :
-```c
+```c title=array.c
 type var[size];
 ```
 e.g.
-```c
+```c title=array.c
 int tab[12];
 ```
 déclare un tableau contenant 12 entiers
@@ -28,17 +28,17 @@ déclare un tableau contenant 12 entiers
 > [!warning] Les indices négatifs n'existent pas !
 
 On assigne une valeur avec 
-```c
+```c title=array.c
 var[indice] = val;
 ```
 e.g.
-```c
+```c title=array.c
 tab[0] = 1;
 ```
 assigne `1` dans `tab` à l'indice `0`
 
 On peut déclarer et initialiser un tableau avec les accolades, e.g.
-```c
+```c title=array.c
 float tab[5] = {0, 1.1, 10.9, 5, 5.6};
 ```
 
@@ -51,7 +51,7 @@ Ici c'est `pile (1)` car on écrit c'est la pile à l'étape 1 (écrit en commen
 
 Or, les arrays sont des pointeurs !
 On a donc que :
-```c
+```c title=array_pointer.c
 int main(){
 	int tab[3] = {0, 1, 2};
 	int *a = tab+2;
@@ -70,7 +70,7 @@ Quand on passe un tableau en paramètre, on obtient en réalité un pointeur
 > [!danger] Il n'y a pas d'erreur du style "Index Out Of Bound" en C, donc on doit faire attention à comment on manipule les tableaux
 ## Macro
 On peut définir des raccourcies appelé macro, avec `#define` :
-```c
+```c title=macro.c
 #define N 5
 int main(){
 	printf("%d\n", N);
@@ -94,7 +94,7 @@ Elle permet de récupérer l'entrée donnée par l'utilisateur au clavier
 |> le pointeur est la variable devant recevoir la variable
 |> (elle ajoute automatiquement le `"\n"` après la saisi de l'utilisateur)
 
-```c
+```c title=scan_input.c
 int main(){
 	char c;
 	int i;
@@ -111,7 +111,7 @@ int main(){
 ```
 ## Arithmétique des pointeurs
 Soit `ns` un array d'int de taille 42. Soit `a` un pointeur référencé sur `ns`. En C, on a donc :
-```c
+```c title=pointer.c
 int ns[42];
 int *a = ns;
 ```

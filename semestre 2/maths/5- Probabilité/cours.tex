@@ -154,12 +154,128 @@ headpunct=,%
 
 \renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
 
-\title{Titre}
+\title{Probabilités}
 \author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
 
 \begin{document}
 	\maketitle
 	\tableofcontents
 	\newpage
+	\section{Espace probabilisé}
+	Les probabilités sont très semblables à la théorie des ensembles.
+	\begin{defn}
+		On note $\Omega$ l'ensemble des issues possibles d'une expérience aléatoire. $\Omega$ est l'univers.
+	\end{defn}
 
+	\begin{lititle}
+		Dictionnaire des probabilités
+	\end{lititle}
+	Cette petite partie est piquée de mon cours de maths au CPES (créé par M. Kerner et M. Cote, deux professeurs de mathématiques au Lycée Henri-IV).
+	\begin{table}[htpb]
+		\centering
+		\caption{Dictionnaire}
+		\label{tab:dico-proba}
+		\begin{tabular}{|c|c|}
+			\hline
+			Théorie des ensembles & Probabilités \\
+			\hline
+			$w\in\Omega$ & issue de l'expérience \\
+			$A\in\mathcal{P}(\Omega)$ & événement \\
+			$\mathcal{P}(\Omega)$ ou l'ensemble des parties & tribu \\
+			$\bar A = \Omega\backslash A$ ou complémentaire & contraire \\
+			$A\cup B$ & $A$ ou $B$ \\
+			$A\cap B$ & $A$ et $B$ \\
+			$B\backslash A$ & $B$ mais pas $A$\\
+			$A\subset B$ & $A$ implique $B$ \\
+			$A\cap B = \varnothing$ ou $A$ et $B$ sont disjoints & $A$ et $B$ sont incompatibles \\
+			$A\sqcup B$ & $A$ ou bien $B$ \\
+			$E_1\sqcup E_2\sqcup\ldots\sqcup E_n = \Omega$ ou un partage & système complet d'évènements (s.e.c.)\\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{defn}
+		Un espace probabilisé est un univers $\Omega$ possédant une fonction $\mathbb{P}$ de $\mathcal{P}(\Omega)$ dans $[0;1]$ tel que
+		\begin{enumerate}
+			\item $\mathbb{P}(\Omega)=1$
+			\item $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)$, où $A$ et $B$ sont deux événements de $\Omega$ incompatibles.
+		\end{enumerate}
+	\end{defn}
+	Un espace probabilisé est donc un univers avec une fonction assignant une probabilité à tous les événements de l'univers~!
+	\begin{props}
+		On a :
+		$$ \mathbb{P}(\varnothing) = 0 $$
+	\end{props}
+	\begin{proof}
+		On a :
+		$$ \mathbb{P}(\Omega) = \mathbb{P}(\varnothing\cup\Omega) = \mathbb{P}(\varnothing) + \mathbb{P}(\Omega) = 1 $$
+		Donc $\mathbb{P}(\varnothing) = 0$, car, par définition, $\mathbb{P}(\Omega) = 1$.
+	\end{proof}
+	\begin{props}
+		On a pour tous événements $A$ et $B$ de $\Omega$, un espace probabilisé~:
+		$$ \mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(A\cap B) $$
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\section{Probabilités conditionnelles}
+	\begin{defn}
+		On dit que $A\subset\Omega$ est certain si et seulement si $\mathbb{P}(A) = 1$.
+
+		On dit que $B\subset\Omega$ est impossible si et seulement si $\mathbb{P}(B) = 0$.
+	\end{defn}
+	\begin{props}
+		À partir d'un événement $B$ non-impossible, on peut définir un espace probabilisé.
+
+		Soit $(\Omega,\mathbb{P})$ un espace probabilisé. Soit $B$ un événement non-impossible de $(\Omega,\mathbb{P})$ (i.e. $\mathbb{P}(B)\neq 0$). On a que $(\Omega,\mathbb{P}_B)$ est un espace probabilisé avec $\mathbb{P}_B$ de $\mathcal{P}(\Omega)$ dans $[0;1]$ tel que :
+		$$ \mathbb{P}_B(A) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)} $$
+		où $A$ est un événement de $\Omega$. $\mathbb{P}_B(A)$ est la probabilité de $A$ sachant $B$.
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	On peut aussi dire que $\mathbb{P}_B(A)$ est la probabilité de $A$ conditionnelle à $B$. 
+
+	On peut aussi noter $\mathbb{P}_B(A) = \mathbb{P}(A|B)$.
+	\section{Événements indépendants}
+	\begin{defn}
+		Soient $A$ et $B$ deux événements de l'espace probabilisé $(\Omega,\mathbb{P})$.
+
+		On dit qu'ils sont indépendants si et seulement si~:
+		$$ \mathbb{P}(A\cap B) = \mathbb{P}(A)\times\mathbb{P}(B) $$
+	\end{defn}
+	\begin{props}
+		Si $A$ et $B$ sont indépendants et si $B$ n'est pas impossible, alors $$ \mathbb{P}_B(A) = \mathbb{P}(A) $$
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	\begin{thm}[Théorème de Bayes]
+		On note $\Omega$ l'union des $(C_i)_{i\in[|1,n|]}$ disjoints deux à deux.
+
+		On note $R$ un événement de $\Omega$ sachant $\mathbb{P}_{C_i}(R)$ pour tout $i$ dans $[|i,n|]$.
+
+		On a~:
+		$$ \forall i\in[|1,n|],\quad\mathbb{P}_{R}(C_i) = \frac{\mathbb{P}_{C_i}(R)\mathbb{P}(C_i)}{\displaystyle \sum_{i=1}^{n} \mathbb{P}_{C_i}(R)\mathbb{P}(C_i)}$$
+	\end{thm}
+	\begin{exemple}
+		On veut $\mathbb{P}_D(I)$. On sait que~:
+		\begin{enumerate}
+			\item $\mathbb{P}_F(D) = 1/2$
+			\item $\mathbb{P}_I(D) = 3/4$
+			\item $\mathbb{P}_A(D) = 1/4$
+		\end{enumerate}
+		On sait aussi que~:
+		\begin{enumerate}
+			\item $\mathbb{P}(F)=1/4$
+			\item $\mathbb{P}(I)=1/4$
+			\item $\mathbb{P}(A)=1/2$
+		\end{enumerate}
+	Donc~:
+	\begin{align*}
+		\mathbb{P}_D(I) &= \frac{\mathbb{P}_I(D)\mathbb{P}(I)}{\mathbb{P}_F(D)\mathbb{P}(F)+\mathbb{P}_I(D)\mathbb{P}(I)+\mathbb{P}_A(D)\mathbb{P}(A)} \\
+						&= \frac{\frac{3}{4}\cdot \frac{1}{4}}{\frac{1}{4}\cdot \frac{1}{4}+\frac{3}{4}\cdot \frac{1}{4}+\frac{1}{4}\cdot \frac{1}{2}} \\
+						&= \frac{3}{7}
+	\end{align*}
+	\end{exemple}
 \end{document}

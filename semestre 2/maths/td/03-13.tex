@@ -77,7 +77,7 @@
  notefont=\sffamily\bfseries,%
  notebraces={}{},%
  headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
  postfoothook=\end{defn-leftbar},%
@@ -86,7 +86,7 @@
  notefont=\sffamily\bfseries,%
  notebraces={}{},%
  headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
  postfoothook=\end{warn-leftbar},%
@@ -95,7 +95,7 @@
  notefont=\sffamily\bfseries,%
 notebraces={}{},%
 headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
  postfoothook=\end{exemple-leftbar},%
@@ -104,7 +104,7 @@ headpunct=,%
  notefont=\sffamily\bfseries,%
  notebraces={}{},%
  headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{props-leftbar},%
  postfoothook=\end{props-leftbar},%
@@ -113,7 +113,7 @@ headpunct=,%
  notefont=\sffamily\bfseries,%
  notebraces={}{},%
  headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{props-leftbar},%
  postfoothook=\end{props-leftbar},%
@@ -122,7 +122,7 @@ headpunct=,%
  notefont=\sffamily\bfseries,%
  notebraces={}{},%
  headpunct=,%
-% bodyfont=\sffamily,%
+ bodyfont=\sffamily,%
  headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
  preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
  postfoothook=\end{corol-leftbar},%
@@ -154,12 +154,44 @@ headpunct=,%
 
 \renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
 
-\title{Titre}
+\title{TD du 13 mars}
 \author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
 
 \begin{document}
 	\maketitle
-	\tableofcontents
-	\newpage
+	\section{Feuille 6}
+	\subsection*{Exercice 2}
+	On a : $$\mathrm{det}(A-\lambda I) = -\lambda^3+73\lambda-72 = 0$$
+	$\lambda = 1$ est une racine évidente. Pour trouver les autres, on se débrouille avec ça~:
+	$$ P(x) = (x-1)(ax^2+bx-c) $$
+	(ça nous donne $\lambda = 8$ et $\lambda = 9$)\\
+	Les sous-espaces propres pour $\lambda = -9$ est défini par tous les $u$ tels que $(A+9)u = 0$. On utilise un pivot de Gauss et un système. On fait la même pour les autres valeurs de $\lambda$.
+	
+	\subsection*{Exercice 3}
+	\begin{enumerate}
+		\item Elle n'est pas diagonalisable, car la valeur propre $\pi$ est de multiciplité $3$ et que la matrice n'est pas nulle.
+		\item Le déterminent est donné par le produit des cœfficiants de la diagonale. On a donc que les valeurs propres, sont celles de la diagonale. Ainsi, elles sont $1$, $2$ et $3$. Elle est donc diagonalisable car elle possède 3 valeurs propres réelles.
+		\item Dans les deux cas, on a que $a$ et $b$ sont des valeurs propres (où $a$ est de multiplicité 1 puis 2, et $b$ est de 2 puis 1). Aucune de ces matrices ne sont diagonalisables, car la dimension du noyau vaut à chaque fois 2.
+		\item À faire avec la «~nouvelle méthode~».
+		\item À faire avec la «~nouvelle méthode~».
+	\end{enumerate}
 
+	\begin{lititle}
+		Méthode pour trouver les valeurs propres rapidement
+	\end{lititle}
+	Comme les valeurs propres d'une matrice échelonnée (i.e. triangulaire) sont les cœfficiants de la diagonale, alors, pour les déterminer, on peut~:
+	\begin{itemize}
+		\item échelonner la matrice avec le pivot de Gauss (on sait le faire facilement et rapidement)~;
+		\item en déduire les cœfficiants.
+	\end{itemize}
+	Cette méthode semble plus rapide, car déterminer le noyau de $A-\lambda_iI_n$ pour tout $(\lambda_i)$ et pour toute matrice $A$ de taille $n$ est beaucoup plus long et complexe.
+
+	\subsection*{Exercice 6}
+	Semble pertinent et sympa
+
+	\subsection*{Exercice 7}
+	Semble pertinent et sympa
+
+	\subsection*{Exercice 9}
+	Semble pertinent et sympa
 \end{document}
