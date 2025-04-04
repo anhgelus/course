@@ -269,3 +269,10 @@ _Le Sophiste_, 240a, **définition de l'image**
 |> « quelque chose d'autre fait à la semblance et pareil à ce qui est véritable »
 -> est une altérité
 |> on rappelle qu'on cherche les conditions de possibilités de cette altérité
+
+Distinction entre sophiste et philosophe est poreuse : la sophistique se rapproche beaucoup de la philosophie
+|> antilogie = réfutation
+|> éristique = pratique de l'antilogie par les sophistes
+|> pourtant, la réfutation est aussi celle des philosophes, mais ce n'est pas de l'éristique
+-> grande proximité entre les deux genres
+|> besoin d'ajouter quelque chose pour définir le sophiste

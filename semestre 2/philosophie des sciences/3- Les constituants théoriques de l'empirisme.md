@@ -27,3 +27,56 @@ Il possible d'attribuer une réfutation apparente à une hypothèse auxiliaire
 Les données ne sont pas offertes
 |> besoin de les traiter (correction de biais, prise en compte des erreurs, sélection au sein des données, « nettoyage »)
 |> besoin de les interpréter (lecture des images, catégorisation)
+## B. D'où viennent les questions et hypothèses scientifiques ?
+Hempel, _Éléments d'épistémologie_, 2
+|> manuel pour étudiant sur l'empirisme
+|> est la base de ce cours
+### Les questions
+Réponse classique = réponse par défaut
+|> désir spontané de savoir (cf Aristote, _Métaphysique_, $\alpha$, 1)
+|> désir d'explication, recherche du pourquoi
+
+L'expérience impose les questions
+|> se questionne sur les différences montrées par la nature
+|> peut aussi dépendre du cadre d'arrière plan (comme les paradigmes)
+
+Autres motivations
+|> mener à bien une tâche donnée
+|> fabriquer un objet spécifique
+|> guérir une maladie
+|> ...
+|> motivations économiques, politiques
+-> tout peut être mélangées
+### Les hypothèses
+**Réponse naïve**
+|> observer et enregistrer les faits
+|> analyser
+|> en tirer une hypothèse
+
+Pas possible d'observer et d'enregistrer *tous* les faits
+|> on ne peut pas observer tous les cas
+-> on a besoin de le faire sur ce qui est pertinent (ou significatif)
+|> dépend de l'hypothèse envisagée
+
+Analyser et classer dépendent des hypothèses
+|> n'existe pas de classement s'imposant sans théorie
+
+Comment on en tire une hypothèse ?
+|> généralisation simple (induction énumérative) n'explique pas le pourquoi -> ne donne pas de relation de causalité, donc pas scientifique + suppose une hypothèse plus fondamentale
+|> on pourrait le faire à l'aide d'une analyse méthodique -> besoin d'hypothèses + ne décrit pas la méthode scientifique
+-> repose sur des hypothèses, des remarques, de la chance, d'une autorité...
+
+> [!info] Sérendipité est la part des découvertes liées au hasard
+
+**Le problème des termes théoriques**
+|> comment parler des choses dont on ne fait pas l'expérience ?
+|> comment pouvons-nous former ces idées ?
+|> comment pouvons-nous créer le contenu de ces idées si tout vient de l'expérience ?
+
+Définition des termes théoriques par leurs effets
+|> connait pas la chose en soit, on connait juste ses effets
+
+Les idées proviennent de la créativité, l'inventivité, l'imagination...
+|> ne peut pas être mécanisé
+(Popper dit pareil)
+|> 

@@ -99,6 +99,10 @@ Ce que ça limite :
 2. La régulation de l'IA
 3. Qui parlera de conscience pour les algorithmes de recommandation
 ## Conclusion
+1. résume partie 1
+2. résume partie 2 + pb de parler de conscience pour l'IA
+3. résume partie 3 + pourquoi on le construit
+4. on dit que ça marche
 
 ---
 
@@ -107,7 +111,7 @@ Nouveau plan ?
 2. L'IA possède-t-elle une conscience ?
 	1. recherche d'une définition de la conscience
 	2. application de la vision de conscience à l'IA -> fusionne avec 2.1
-	3. compliquer de parler de conscience sur les algorithmes de recommendations
+	3. compliquer de parler de conscience sur les algorithmes de recommendations -> fusionne avec 2.4
 	4. compliquer de trancher pour de la vrai conscience -> introduction à la conscience artificielle
 3. Création de la notion de conscience artificielle
 	1. vision de l'artificielle comme tromperie (mais peut-être vrai)

@@ -1,0 +1,318 @@
+%%=====================================================================================
+%%
+%%       Filename:  cours.tex
+%%
+%%    Description:  
+%%
+%%        Version:  1.0
+%%        Created:  03/06/2024
+%%       Revision:  none
+%%
+%%         Author:  YOUR NAME (), 
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2024, YOUR NAME
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{newtxtext}
+
+% \renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+% bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}}
+
+\title{Variables aléatoires}
+\author{William Hergès\thanks{Sorbonne Université - Faculté des Sciences, Faculté des Lettres}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{Variables aléatoires discrètes}
+	Souvent il est très compliqué de déterminer une loi de probabilité. On introduit donc les variables aléatoires pour régler ce problème.
+
+	Dans le cas d'un lancer de dé, on a :
+	$$ \Omega = \{(i,j)|(i,j)\in\{1,\ldots,6\}^2\} = \{1,\ldots,6\}^2 $$
+	Ça donne beaucoup de possibilités, on va donc introduire la notion de variables aléatoires pour résoudre ce problème.
+
+	\subsection{Définitions}
+	\begin{defn}
+		Soit $D$ un ensemble.
+
+		On dit que $D$ est dénombrable si et seulement si~:
+		\begin{itemize}
+			\item il existe une bijection entre $\mathbb{N}$ et $D$
+			\item ou il est fini (son cardinal est différent de $\infty$)
+		\end{itemize}
+	\end{defn}
+
+	\begin{defn}
+		Soit $(\Omega,\mathbb{P})$ un ensemble probabilisé et $D$ un ensemble dénombrable.
+
+		Alors, $X$ défini tel que~:
+		$$ X:\Omega \to D $$
+	\end{defn}
+	$X$ est donc une fonction.
+
+	\begin{defn}
+		La loi de probabilité $Q$ de $X$ est définie telle que~:
+		$$\begin{matrix}
+			\mathcal{P}(D) &\to &[0;1]\\
+			A & \longmapsto & \mathbb{P}(X^{-1}(A)) = \mathbb{P}(X\in A)
+		\end{matrix}$$
+	\end{defn}
+	$(D,Q)$ forme un espace probabilisé.
+	
+	Écrire $X\in A$ est étrange, car cela veut dire que $X$, une application, appartient à n'importe quelle ensemble.
+
+	On a donc que $Q$ est une nouvelle probabilité fonctionnant comme les autres.
+	Il suffit donc de connaître $Q(\{K\})$ pour tout $k$ dans $D$ pour pouvoir déterminer la variable aléatoire.
+
+	\begin{props}
+		On a~:
+		$$ Q(A) = \mathbb{P}(X\in A) = \sum_{k\in A} \mathbb{P}(X=k) $$
+	\end{props}
+	On se réduit donc à connaître la probabilité que $X=k$, ce que l'on note $p_k$.
+
+	On a~:
+	$$ \sum_{k\in D} p_k = 1 $$
+
+	\begin{exemple}
+		Si on reprend l'exemple du dé en introduction, on a que la probabilité d'avoir $p_2$ (c'est-à-dire que la somme de $i+j$ vaut $2$) est de $1/36$.
+	\end{exemple}
+
+	\subsection{Lois usuelles}
+	\begin{defn}
+		On dit que $X$ suit la loi uniforme si, et seulement si, $X$ ne prend qu'une unique valeur.
+
+		On note~:
+		$$ X\sim\mathcal{U}(n) $$
+		où $n$ représente le nombre de valeur prise par $X$.
+	\end{defn}
+
+	\begin{defn}
+		On dit que $X$ suit la loi de Bernoulli si, et seulement si, $X$ ne prend que les valeurs $0$ et $1$ et que $p$ est la réussite, alors $q$, l'échec, vaut $1-p$.
+
+		On note~:
+		$$ X\sim\mathcal{B}(p) $$
+	\end{defn}
+
+	\begin{exemple}
+		Soit $\Omega = \{0, 1, 2, 3\}$ et $D = \{0, 1\}$ (on a donc que $D\subseteq \Omega$) où $\mathbb{P}(0\cup 1) = 1$.\\
+		Donc, $p_0+p_1 = 1$ et $p_0 = 1- p_1$ car $p_0\in[0;1]$.\\
+		On a donc que $X:\Omega \to D$ suit la loi de Bernoulli. Si $p_1 = 1/2$, alors on dira que $X$ suit une loi uniforme (et que $p_0 = p_1$).
+	\end{exemple}
+	Pour dire que $X$ suit la loi de Bernoulli, on écrit $\mathcal{B}(p)$.
+	Pour dire que $X$ suit la loi uniforme, on écrit $\mathcal{U}(2)$ (d'une manière générale, $2$ est remplaçable par $n\in\mathbb{N}^*$).
+
+	\begin{defn}
+		On dit que $X$ suit la loi binomiale si, et seulement si, elle est composée d'une somme de variable aléatoire $(X_n)$, où $n$ est fixé, suivant la loi de Bernoulli de paramètre $p$ fixé.
+
+		On note~:
+		$$ X\sim\mathcal{B}(n,p) $$
+	\end{defn}
+	On a que $X$ est le nombre de succès rencontré après avoir rencontré $n$ épreuves de Bernoulli de probabilité de succès $p$.
+
+	\begin{props}
+		On a que pour tous les $p_k$ de $X$ d'une variable aléatoire $X$ suivant une loi binomiale de paramètre $n$ et $p$~:
+		$$ \forall k\in D,\quad p_k = \mathcal{C}^k_n p^k(1-p)^{n-k} $$
+	\end{props}
+	\begin{proof}
+		On a~:
+		$$ \forall k\in D,\quad p_k = \mathcal{C}^k_n p^k(1-p)^{n-k} $$
+		D'après le binôme de Newton, on a~:
+		$$ \sum_{k\in D} p_k = (p-(p-1))^{n} = 1 $$
+	\end{proof}
+
+	\begin{defn}
+		On dit que $X$ suit la loi de Poisson si, et seulement si, pour $\lambda\in\mathbb{R}^*_+$ fixé et pour tout $k\in D$ (où $D=\mathbb{N}$ ici), on a~:
+		$$ p_k = \frac{\lambda^k}{k!}e^{-\lambda} $$
+
+		On note~:
+		$$ X\sim\mathcal{P}(\lambda) $$
+	\end{defn}
+	\begin{proof}
+		On a~:
+		$$ \sum_{k\in\mathbb{N}} p_k = \sum_{k\in\mathbb{N}} \frac{\lambda^k}{k!}e^{-\lambda} = e^{-\lambda}\sum_{k\in\mathbb{N}} \frac{\lambda^k}{k!} = e^{-\lambda}e^{\lambda} = 1 $$
+		par définition de $\exp\{\lambda\}$.
+	\end{proof}
+	
+	\subsection{Espérence et variance}
+	\begin{defn}
+		On définit l'espérence de $X$ par~:
+		$$ E(X) = \sum_{k\in D} kp_k $$
+	\end{defn}
+	Permet de calculer ce qu'on peut espérer de $X$.
+
+	\begin{defn}
+		On définit la variance de $X$ par~:
+		$$ \sigma^2(X) = \mathrm{Var}(X) = \sum_{k\in D} (k-E(X))^2p_k $$
+	\end{defn}
+	Permet de mesurer à quel point on peut s'écarter de l'espérence.
+
+	\begin{props}
+		On a~:
+		$$ \mathrm{Var}(X) = E(X^2) - E(X)^2 $$
+	\end{props}
+
+	\begin{thm}
+		Si $X$ suit la loi uniforme de paramètre $n$ avec $D=[1,n]$, alors~:
+		$$ E(X) = \frac{n+1}{2} $$
+		et
+		$$ \mathrm{Var}(X) = \frac{n^2-1}{12} $$
+	\end{thm}
+
+	\begin{thm}
+		Si $X$ suit la loi de Bernoulli de paramètre $p$, alors~:
+		$$ E(X) = p $$
+		et
+		$$ \mathrm{Var}(X) = p(1-p) $$
+	\end{thm}
+
+	\begin{thm}
+		Si $X$ suit la loi binomiale de paramètre $n$ et $p$, alors~:
+		$$ E(X) = np $$
+		et
+		$$ \mathrm{Var}(X) = np(1-p) $$
+	\end{thm}
+
+	\begin{thm}
+		Si $X$ suit la loi de Poisson de paramètre $\lambda$, alors~:
+		$$ E(X) = \lambda $$
+		et
+		$$ \mathrm{Var}(X) = \lambda $$
+	\end{thm}
+\end{document}

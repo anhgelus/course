@@ -48,7 +48,7 @@ fifo *new_fifo(){
 
 int is_empty(fifo f){
 	assert((f.last && f.first) || (!f.last && !f.first)); // permet de faire une vérification et de faire en sorte que le programme s'arrête proprement
-	return !f.first && !f.last
+	return !f.first && !f.last;
 }
 
 void add(fifo *f, int val){
@@ -56,14 +56,14 @@ void add(fifo *f, int val){
 	cell *c = malloc(sizeof(cell));
 	c->suivant = NULL;
 	c->donnee = val;
-	if (is_empty(f)) f->first = c;
+	if (is_empty(*f)) f->first = c;
 	else f->last->suivant = c;
 	f->last = c;
 }
 
 int pop(fifo *f){
 	if (!f || is_empty(f)) return 0;
-	cell c = f->first;
+	cell *c = f->first;
 	int d = c->donnee;
 	f->first = c->suivant;
 	free(c);
@@ -76,10 +76,10 @@ void print_fifo(fifo *f){
 		printf("\n");
 		return;
 	}
-	cell *first = fifo->first;
+	cell *first = f->first;
 	printf("{");
 	while (first){
-		printf("%d, ", f->donnee);
+		printf("%d, ", first->donnee);
 		first = first->suivant;
 	}
 	printf("}\n");
