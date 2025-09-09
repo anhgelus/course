@@ -128,3 +128,85 @@ Faculté de se fonder sur les apparences (la conjecture) = première section du 
 
 Plus on remonte, plus c'est claire et c'est la connaissance véritable
 |> sections du sensible ne sont pas des connaissances
+## D. Allégorie de la caverne
+Image de la situation de l'humain sans éducation et une fois qu'il a été éduqué
+|> humain sans éducation est celui au fond de la caverne
+|> humain avec éducation est celui sortant de la caverne -> capable de comprendre la cause et les choses autours de lui
+
+Construction d'une théorie de l'éducation
+|> détourne le regard de ce qui obscure vers ce qui est clair
+|> est l'image du détournement l'âme du sensible vers l'intelligible
+
+Éducation consiste donc à 
+1. se libérer de la penser "véritable = sensible"
+2. étudier ce domaine
+
+En quoi consiste cette éducation ? 
+Une fois l'éducation achevée, que faut-il faire des objets sensibles ?
+|> ne sont-ils que des ombres dont on ne peut rien dire ?
+|> peut-on penser une relation de ces ombres avec le modèle véritable ?
+## E. Éducation
+_Le Banquet_
+
+Définitions de "éducation" :
+1. ensemble de choses à savoir
+2. initiations protréptiques (qui vise à tourner/convertir l'âme)
+
+Peut prendre deux formes différentes (possèdent comme objectif d'élever l'âme) :
+- éducation scientifique (study the math bro), car nous met en contact avec objets non sensibles ; étude de la dialectique, mise à l'épreuve des types mathématiques -> _République_, VII
+- initiation érotique tourné vers la contemplation du Beau (objet de l'amour), cherche la connaissance ; comment arrive-t-on d'un beau au Beau en soi ? -> _Le Banquet_
+
+> [!question] Pourquoi l'amour ?
+> Démon est une divinité inférieure entre les humains et les dieux
+> |> servent d'intermédiaire entre les humains et les dieux
+>
+> L'Amour est un démon travaillant sur la beauté
+> |> possède le même rôle que les concepts mathématiques dans la compréhension du sensible/intelligible
+> 
+> Ce qui est aimé, ce sont les choses bonnes -> c'est le beau qui a provoqué l'amour
+> |> derrière, il y a le Beau
+
+L'amour n'est pas que réservé aux amoureux
+
+Enfanter dans la beauté = arriver dans l'immortalité pour des mortels (se perpétue à l'infini)
+|> selon le corps = signifie juste enfanter, car la lignée demeure
+|> selon l'âme = bonne production (action, œuvre...)
+-> cherche la possession perpétuelle des choses bonnes
+
+L'amour a donc comme objectif d'atteindre l'immortalité par génération
+|> cherche à mimer l'une des caractéristiques du Bien (l'éternité)
+|> les humains passent souvent à côté -> est une révélation pour Socrate
+
+Première étape de cette compréhension est l'existence d'un beau corps
+
+Deuxième étape est la beauté qui existe dans d'autres corps
+|> passe de la singularité à la pluralité -> permet de comprendre que la beauté n'est pas unique
+-> amour arrête d'être exclusif et s'étend lui aussi
+
+Troisième étape est la prise de conscience de la beauté des âmes
+|> plus précieuse que la beauté corporelle
+|> pousse à construire des beaux discours (est ce qui fait passer de la beauté du corps à l'âme)
+
+Donc, qu'est-ce qui rend une âme belle ?
+|> ce que la personne fait
+|> ses connaissances
+-> ce n'est donc pas l'âme de la personne, mais plutôt ce que l'âme fait
+|> une âme avec les mêmes connaissances et les mêmes actions est aussi belle
+=> pluralité de la beauté des âmes
+|> tout est uni
+
+Quand l'individu a pris connaissance de tout ça, alors l'individu est libéré
+|> le Beau apparaît quand on se demande pourquoi tout est beau
+
+Trois caractéristiques du Beau :
+1. est éternel
+2. n'est pas relatif à un point de vue (est donc absolu)
+3. ne se réduit pas à n'être qu'un corps, qu'une activité, qu'une connaissance... -> n'est pas réductif ou réductible
+
+Ainsi, le Beau est une Idée -> existe en lui-même par lui-même (ne dépend de rien)
+|> possède une forme d'unité indivisible
+
+Aucune chose ne possède leur propre beauté -> elles peuvent devenir s'enlaidir ou ne pas être universellement belle
+
+Dans tous les cas, l'éducation tourne l'âme du sensible vers l'intelligible
+|> cherche à trouver l'essence du sensible, mais ne le délaisse pas totalement

@@ -9,7 +9,7 @@ semestre: 2
 ### 1. Présentation
 Les arguments inductifs sont défaisables (ils peuvent dire quelque chose de faux) et ampliatifs (ils augmentent les connaissances)
 
-La science se présent comme étant inductive
+La science se présente comme étant inductive
 |> s'appuie sur des expériences sensibles
 |> vise à créer des lois générales
 
@@ -31,7 +31,7 @@ Existe aussi les inférences fondées sur la vérité d'une prédiction
 > Donc $H$ est vraie
 ### 2. Le problème de Hume
 Hume, _Enquête sur l'entendement humain_, IV, 2
-|> deux objets de la raison : relations d'idées (vrai car contradiction est fausse) et choses de fait (vrai, mais contradiction peut être fausse) [^(1)]
+|> deux objets de la raison : relations d'idées (vrai car contradiction est fausse) et choses de fait (vrai, mais contradiction peut être vraie) [^(1)]
 |> choses de fait proviennent des inductions (mot qui n'existe pas à l'époque de Hume)
 
 [^(1)] est plus compliqué en réalité, voir la diapo (cours 2)
@@ -40,13 +40,13 @@ Le principe d'induction transforme les inductions en déduction
 |> sorte de « les objets en apparence semblables à ceux que j'ai observés s'accompagneront d'effets semblables »
 -> on ne peut pas trouver de contradiction avec une démonstration, donc il est vrai
 
-Pourtant, on utilise de l'induction pour démonter l'induction
+Pourtant, on utilise de l'induction pour démontrer l'induction
 |> erreur logique !
 -> pas de justification de l'induction
 
 Est une thèse sceptique radicale qui est contre intuitive et qui a été beaucoup discutée
 
-Home propose dans _Enquête de l'entendement humain_, V 
+Hume propose dans _Enquête de l'entendement humain_, V 
 |> l'observation de la régularité implique la création d'une disposition dans l'esprit humain
 |> cette tendance est automatique
 -> disposition naturelle, principe de la nature humaine
@@ -130,7 +130,7 @@ Rien ne permet de dire qu'une théorie est vraie, ça permet juste d'évoquer la
 |> on peut sauver des hypothèses si l'hypothèse supplémentaire permet de faire des autres prédictions (sinon, l'hypothèse ajoutée est *ad hoc*)
 |> aussi possible que l'expérience ne fonctionne pas, i.e. il y a des hypothèses supplémentaires
 -> le falsificationnisme ne dépend pas que des faits et de la logique déductive, donc induction !
-|> est le problème de Duhem ou l'holisme du falsificationnisme
+|> est le problème de Duhem (voir [[5- Limites du falsificationnisme]]) ou l'holisme du falsificationnisme
 |> un sauvetage est donc toujours possible
 
 **3. hypothèse probabiliste** = casse totalement le falsificationnisme

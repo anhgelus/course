@@ -96,3 +96,81 @@ Thomas d'Aquin (on l'appelle aussi Aquinate), _Question disputée sur la vérit�
 -> l'intellect humain n'accomplie sa fonction que lorsque ses jugements sur les choses sont en accord avec les mêmes choses qui représentent l'idée de Dieu
 |> énoncé est vrai en tant qu'ils expriment la vérité de la chose elle-même (adéquation de la chose à l'intellect de Dieu)
 |> possibilité de la vérité se fonde sur le plan divin de la Création
+## Logique kantienne
+Kant, _Logique_, « Introduction », VII -> manuel kantien de logique
+|> reprend les lieux communs de la philosophie dans un enseignement scolaire
+|> parle de la vérité avec une conception classique
+|> vérité est l'accord entre la connaissance et l'objet 
+|> connaissance doit se confirmer elle-même (nécessaire, mais pas suffisant) -> car nous n'avons pas accès à l'objet à cause du problème de l'extériorité (pas possible de sortir de nous)
+|> existe-t-il un critère de la vérité qui soit certain, universel et susceptible d'application
+-> autrement dit, qu'est-ce que la vérité ?
+|> besoin d'avoir la certitude pour connaître
+|> universel pour avoir l'accord de tous les esprits en tout temps et tout lieu
+|> susceptible d'application pour qu'il soit pratique
+
+Il n'y a pas de critères matériels à cause du problème de l'extériorité
+|> on ne peut pas comparer le jugement et l'objet en vu
+
+Conformité de la connaissance avec elle-même est l'accord entre la connaissance et les lois générales de la pensée (comme les règles de la logique)
+|> condition négative et non positive
+|> ne donne aucune information sur la vérité, nous assure juste que la connaissance respecte les règles
+
+Connaissance est logiquement correcte et formellement vraie
+|> pas de contradiction
+|> ne contredit pas les règles de la logique
+
+> [!info] Vocabulaire chez Kant
+> Expérience = fait d'éprouver des choses
+> 
+> Entendement = faculté qui connait (n'est pas la raison)
+> |> détermine des concepts à partir de l'expérience
+> |> transforme l'expérience en un concept général et intellectuel (unifie l'expérience sensorielle)
+
+On a besoin que l'entendement respecte des règles pour que les concepts renvoie à qlq chose
+
+Connexions universellement valables de données et le processus de l'enchaînement de telles données en une unité objective donnent ce que l'on sait
+|> tout ce que l'on sait forme un système de pensées 
+|> permet l'expérience
+
+Conditions de possibilités de l'expériences en générales sont en même temps conditions de possibilités des objets de l'expérience (_Critique de la raison pure_, ou AK, III, 145)
+|> dès qu'on objet existe, on peut en faire l'expérience et donc le connaître
+
+Si on peut l'intégrer dans un ensemble cohérent, alors c'est vrai
+
+Donc, la vérité ne dépend pas du sujet
+
+> [!warning] Sur ce critère
+> Ce critère est nécessaire mais pas suffisant pour Kant !
+
+Les critères formels ne cherchent que l'accord de la connaissance avec elle-même
+|> provient de l'entendement et de la raison
+-> sont le principe de non contradiction (PNC) et le principe de la raison suffisante (PRS)
+|> PNC détermine la possibilité logique d'une connaissance (est possible logiquement ce qui ne contredit pas) -> est nécessaire mais n'est pas suffisant
+|> PRS détermine la réalité logique d'une connaissance -> fondée logiquement :
+1. obéit à des principes logiques (strictement similaire au PNC)
+2. n'ait pas de conséquences fausses
+-> permet d'inscrire la proposition dans un système logique et d'assurer une cohérence logique
+
+À partir de la vérité de la conséquence de la connaissance, on peut établir la véracité de la connaissance :
+- si une conséquence est fausse, alors connaissance est fausse
+- si la connaissance est vraie, alors la conséquence doit être vraie
+-> ne permet pas de conclure l'inverse
+|> d'un principe faux, on peut arriver à des conséquences vraies accidentellement ou par hasard
+(est l'implication de l'algèbre de Boole)
+
+Si toutes les conséquences sont vraies, alors la connaissance est vraie
+|> est réversible, à l'inverse du faux -> c'est pour ça qu'on doit s'assurer de la cohérence
+
+Critère extérieur à la logique
+|> comparaison de nos jugements avec ceux d'autrui
+|> est encore un critère négatif -> accord de ses propres jugements n'impliquent pas la vérité et en cas de désaccord, il y a un indice montrant qu'au moins une personne se trompe
+-> permet d'éviter l'apparence subjective
+|> la recherche de l'accord des esprits permet de se hisser vers l'objectivité
+
+DONC, son critère est
+|> adéquation de la chose à la connaissance, mais la chose en tant qu'elle peut être connue en vertu des règles de la logique
+-> on ne connait la chose que ce qu'on peut connaître
+|> est appelée objet
+-> est toujours un critère négatif et formel
+|> Kant dit qu'il est possible qu'il n'existe pas de critère positif matériel
+|> mais il évite de tomber dans le scepticisme, car pour lui l'existence des sciences montre qu'on peut atteindre la vérité

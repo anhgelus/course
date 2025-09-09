@@ -256,7 +256,7 @@ Méthode selon Pascal, _ouvrage (moodle)_
 |> l'esprit humain s'arrête au niveau des mots primitifs non définissables et des principes dont la clarté est suffisante ne demandant pas la clarté -> sont suffisants, mais n'assure pas complètement la vérité
 -> la géométrie s'en rapproche le plus : elle est aussi certaine, mais moins convaincante
 
-escape, temps, mouvement, égalité = exemples de mots primitifs pour la géométrie
+espace, temps, mouvement, égalité = exemples de mots primitifs pour la géométrie
 lumière, humain, être = exemples de mots primitifs
 -> ils désignent naturellement les choses qu'ils signifient
 |> personne n'est d'accord, mais tout le monde sait à quoi renvoie ces termes

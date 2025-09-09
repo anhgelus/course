@@ -79,4 +79,3 @@ Définition des termes théoriques par leurs effets
 Les idées proviennent de la créativité, l'inventivité, l'imagination...
 |> ne peut pas être mécanisé
 (Popper dit pareil)
-|> 

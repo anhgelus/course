@@ -84,7 +84,6 @@ Pour être savant toujours selon Protagoras, on doit être :
 ==> Thèse de Protagoras valide la vision de Théètète
 #### Réfutation de cette thèse
 **1- Doctrine de Protagoras**
-
 1. défendre le relativisme c'est s'auto-réfuter
 2. doctrine de l'homme mesure cesse de fonctionner sur les jugements concernant le futur
 

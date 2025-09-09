@@ -47,3 +47,14 @@ Savant est dangereux car pense libérer les autres de l'idéal ascétique alors 
 |> savoir, c'est croire qu'on ne croit pas
 
 C'est la volonté qui institue la vérité chez Nietzsche
+
+> [!danger] Problème dans la philosophie de Nietzsche
+> Souvent, ses catégories sont trop simplistes et caricaturales
+> |> ce sont limite des hommes de paille
+> |> après, ça doit avoir une certaine réalité historique liée à son expérience personnelle, mais ce n'est pas vraiment généralisable
+
+Par la volonté de lucidité que l'idéal ascétique s'autodétruit
+|> Dieu devient incroyable (littéralement)
+
+L'homme véridique cherche la vérité, car il a peur de se tromper
+|> science car on ne supporte pas de se tromper

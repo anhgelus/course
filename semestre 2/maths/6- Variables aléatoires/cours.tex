@@ -169,7 +169,7 @@ headpunct=,%
 	Ça donne beaucoup de possibilités, on va donc introduire la notion de variables aléatoires pour résoudre ce problème.
 
 	\subsection{Définitions}
-	\begin{defn}
+	\begin{defn}[Ensemble dénombrable]
 		Soit $D$ un ensemble.
 
 		On dit que $D$ est dénombrable si et seulement si~:
@@ -179,10 +179,10 @@ headpunct=,%
 		\end{itemize}
 	\end{defn}
 
-	\begin{defn}
+	\begin{defn}[Variable aléatoire discrète]
 		Soit $(\Omega,\mathbb{P})$ un ensemble probabilisé et $D$ un ensemble dénombrable.
 
-		Alors, $X$ défini tel que~:
+		Alors, $X$ est défini tel que~:
 		$$ X:\Omega \to D $$
 	\end{defn}
 	$X$ est donc une fonction.
@@ -270,18 +270,18 @@ headpunct=,%
 		par définition de $\exp\{\lambda\}$.
 	\end{proof}
 	
-	\subsection{Espérence et variance}
-	\begin{defn}
-		On définit l'espérence de $X$ par~:
-		$$ E(X) = \sum_{k\in D} kp_k $$
+	\subsection{Espérance et variance}
+	\begin{defn}[Espérance]
+		On définit l'espérance de $X$ par~:
+		$$ \mathrm{E}(X) = \sum_{k\in D} kp_k $$
 	\end{defn}
 	Permet de calculer ce qu'on peut espérer de $X$.
 
-	\begin{defn}
+	\begin{defn}[Variance]
 		On définit la variance de $X$ par~:
 		$$ \sigma^2(X) = \mathrm{Var}(X) = \sum_{k\in D} (k-E(X))^2p_k $$
 	\end{defn}
-	Permet de mesurer à quel point on peut s'écarter de l'espérence.
+	Permet de mesurer à quel point on peut s'écarter de l'espérance.
 
 	\begin{props}
 		On a~:
@@ -290,29 +290,204 @@ headpunct=,%
 
 	\begin{thm}
 		Si $X$ suit la loi uniforme de paramètre $n$ avec $D=[1,n]$, alors~:
-		$$ E(X) = \frac{n+1}{2} $$
+		$$ \mathrm{E}(X) = \frac{n+1}{2} $$
 		et
 		$$ \mathrm{Var}(X) = \frac{n^2-1}{12} $$
 	\end{thm}
 
 	\begin{thm}
 		Si $X$ suit la loi de Bernoulli de paramètre $p$, alors~:
-		$$ E(X) = p $$
+		$$ \mathrm{E}(X) = p $$
 		et
 		$$ \mathrm{Var}(X) = p(1-p) $$
 	\end{thm}
 
 	\begin{thm}
 		Si $X$ suit la loi binomiale de paramètre $n$ et $p$, alors~:
-		$$ E(X) = np $$
+		$$ \mathrm{E}(X) = np $$
 		et
 		$$ \mathrm{Var}(X) = np(1-p) $$
 	\end{thm}
 
 	\begin{thm}
 		Si $X$ suit la loi de Poisson de paramètre $\lambda$, alors~:
-		$$ E(X) = \lambda $$
+		$$ \mathrm{E}(X) = \lambda $$
 		et
 		$$ \mathrm{Var}(X) = \lambda $$
 	\end{thm}
+	\section{Variables aléatoires à densité}
+	Soit $(\Omega,\mathbb{P})$ un espace probabilisé.
+
+	On s'est vite restreint aux probabilités $\mathbb{P}(X^{-1}(A))$, où $A\in\mathcal{P}(D)$ avec $D$ un un ensemble dénombrable et $X$ est de $D$ dans $\Omega$, que l'on a noté $\mathbb{P}(X\in A)$.
+
+	Si $D$ est dénombrable, on a que~:
+	$$ \sum_{k\in D} p_k = 1 $$
+	où $p_k$ est $\mathbb{P}(X=k)$.
+	Si $D$ n'était pas dénombrable, le symbole somme n'aurait aucun sens~!
+	\subsection{Définitions}
+	\begin{defn}[Variable aléatoire à densité]
+		Une variable aléatoire est une fonction de $\Omega$ dans $E$, un ensemble pas forcément dénombrable.
+
+		Ainsi, $\mathbb{P}(X\in A)$, on a que $A$ est bien souvent une partie de $\mathbb{R}$.
+		On peut donc s'intéresser aux intervalles du style $[a,b]$ où $(a,b)\in E^2$.
+
+		Cette variable est à densité s'il existe une fonction $f$ croissante telle que~:
+		$$ \mathbb{P}(X\in[a,b]) = \int^b_a f(t)\mathrm{d}t $$
+		On appelle $f$ la densité de probabilité.
+	\end{defn}
+
+	\begin{defn}[Fonction de densité]
+		On appelle $F$ la fonction de densité de $X$ définie telle que~:
+		$$ \forall t\in E,\quad F(t)=\int^{t}_{-\infty} f(s)\mathrm{d}s $$
+		où $f$ est la fonction associée à $X$.
+	\end{defn}
+
+	\begin{props}
+		On a donc que~:
+		$$ \mathbb{P}(X\in[a,b]) = \mathbb{P}(a\leqslant X\leqslant b) = \mathbb{P}(X\leqslant b) - \mathbb{P}(X\geqslant a) $$
+	\end{props}
+
+	\begin{props}[Propriétés de la fonction de densité]
+		Les propriétés de $F$ sont~:
+		\begin{itemize}
+			\item  sa croissance
+			\item $0\leqslant F\leqslant 1$
+			\item $\displaystyle\int^{+\infty}_{-\infty}f(t)\mathrm{d}t = 1$, i.e. $\displaystyle\lim_{t \to \infty} F(t) = 1$
+		\end{itemize}
+	\end{props}
+	\begin{proof}
+		\AQT
+	\end{proof}
+	Ces propriétés sont celles analogues pour les variables aléatoires à~:
+	$$ \sum_{k\in D} p_k = 1 $$
+	des variables aléatoires discrètes.
+
+	\subsection{Lois usuelles}
+	\begin{defn}
+		On dit que $X$ suit la loi uniforme de paramètre $[a,b]$ si~:
+		$$ f(x) =
+		\left\{\begin{matrix}
+				\frac{1}{b-a}&\text{si}~x\in[a,b]\\
+				0 &\text{sinon}
+		\end{matrix}\right. $$
+		On note~:
+		$$ X\sim\mathcal{U} ([a,b]) $$
+	\end{defn}
+	La fonction de répartition dans ce cas est (si $x\in[a,b]$)~:
+	$$ \int_a^x \frac{1}{b-a}\mathrm{d}t = \frac{x-a}{b-a} $$
+
+	\begin{defn}
+		On dit que $X$ suit la loi exponentielle de paramètre $\lambda > 0$ si~:
+		$$ f(x) = \left\{\begin{matrix} \lambda \exp\left( -\lambda x \right) &\text{si}~x\geqslant 0\\ 0 &\text{sinon} \end{matrix}\right. $$
+		On note~:
+		$$ X\sim\mathcal{E}(\lambda) $$
+	\end{defn}
+	La fonction de répartition dans ce cas est~:
+	$$ \int_0^x \lambda\exp\left\{ -\lambda t \right\} \mathrm{d}t = 1-\exp\left\{ -\lambda x \right\}  $$
+
+	\begin{defn}
+		On dit que $X$ suit la loi normale de paramètres $\mu$, son espérence, et $\sigma$, son écart type, si pour tout $x$ on a ~:
+		$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left\{ -\frac{1}{2}\left( \frac{x-\mu}{\sigma} \right)^2 \right\}  $$
+		où $f$ désigne la densité de probabilité de $X$.
+
+		On note souvent~:
+		$$ X\sim\mathcal{N}(\mu,\sigma^2) $$
+		où $\sigma^2$ représente la variance
+	\end{defn}
+	Attention, $\sigma$ est toujours strictement supérieur à 0~!
+
+	La fonction de répartition de $\mathcal{N}(0,1)$ est~:
+	$$ \frac{1}{\sqrt{2\pi}}\int^x_{-\infty} \exp\left\{ -\frac{1}{2}t^2 \right\} \mathrm{d}t $$
+	\subsection{Espérance et variance}
+	\begin{defn}[Espérance]
+		Si $X$ est une variable aléatoire à densité $f$, alors~:
+		$$ \mathrm{E}(X) = \int^{+\infty}_{-\infty} tf(t)\mathrm{d}t $$
+	\end{defn}
+
+	\begin{defn}[Variance]
+		Si $X$ est une variable aléatoire à densité $f$, alors~:
+		$$ \mathrm{Var}(x) = E(X^2)-E(X)^2 $$
+		ce qui vaut
+		$$ \int^{+\infty}_{-\infty}(t-E(X))^2f(t)\mathrm{d}t $$
+	\end{defn}
+
+	\begin{thm}
+		Si $X$ suit la loi uniforme de paramètre $[a,b]$, alors~:
+		$$ \mathrm{E}(X) = \frac{b+a}{2} $$
+		et
+		$$ \mathrm{Var}(X) = \frac{(b-a)^2}{12} $$
+	\end{thm}
+	\begin{proof}
+		\AQT
+	\end{proof}
+
+	\begin{thm}
+		Si $X$ suit la loi exponentielle de paramètre $\lambda > 0$, alors :
+		$$ E(X) = \frac{1}{\lambda} $$
+		et
+		$$ \mathrm{Var}(X) = \frac{1}{\lambda^2} $$
+	\end{thm}
+
+	\begin{thm}
+		Si $X$ suit la loi normale de paramètre $m,\sigma^2$, alors :
+		$$ E(X) = m $$
+		et
+		$$ \mathrm{Var}(X) = \sigma^2 $$
+	\end{thm}
+
+	\subsection{Indépendance et suites de variables}
+	\begin{thm}[Inégalité de Markov]
+		Si $X$ est une variable aléatoire réelle \textit{positive} telle que $E(X)$ est bien définie, on a~:
+		$$ \forall r>0,\quad \mathbb{P}(X\geqslant r)\leqslant \frac{E(X)}{r} $$
+	\end{thm}
+	Cette preuve est importante niveau notation~!
+
+	\begin{proof}
+		Notons $g$ la fonction définie par $g(x) = r$ si $x \geqslant r$ et $g(x) = 0$ sinon. $g$ est une variable aléatoire discrète. Alors~:
+		\begin{itemize}
+			\item $\{g(x)=r\} = \left\{ X\geqslant r \right\} $
+			\item $\left\{ g(x) = 0 \right\} = \left\{ X < r \right\}$
+		\end{itemize}
+		On a aussi que $g(x) \leqslant x$ pour tout $x$ positif, ce qui nous donne~:
+		$$ E(X) \geqslant E(g(x)) = 0\times\mathbb{P}(X < r) + r\mathbb{P}(X \geqslant r) $$
+		par croissance de l'espérance. Ainsi,
+		$$ \mathbb{P}(X\geqslant r) \leqslant \frac{1}{r}E(X) $$
+	\end{proof}
+
+	\begin{props}[Inégalité de Bienaymé-Tchebychev]
+		Si $X$ est une variable aléatoire réelle telle que $E(X)$ et $\mathrm{Var}(X)$ sont bien définies, alors~:
+		$$ \forall r>0,\quad \mathbb{P}(|X-E(X)| \geqslant r)\leqslant \frac{\mathrm{Var}(X)}{r^2} $$
+	\end{props}
+	\begin{proof}
+		Cette formule découle de l'inégalité de Markov~: il s'agit du changement de variable $Z=(X-E(X))^2$ qui donne $(X-E(X))^2 \geqslant r^2$, d'où le résultat.
+	\end{proof}
+
+	\begin{defn}
+		On dit que deux variables $X$ et $Y$ sont indépendantes si pour toutes fonctions $f$ et $g$ on a~:
+		$$ E(f(X)g(Y)) = E(f(X))E(g(Y)) $$
+		sous réserve d'espérence bien définie.
+	\end{defn}
+
+	\begin{thm}
+		Si $X$ et $Y$ sont deux variables réelles indépendantes, on a~:
+		$$ \mathrm{Var}(X+Y) = \mathrm{Var}(X)+\mathrm{Var}(Y) $$
+	\end{thm}
+	La bonne définition des variances est assurées dans ce cas~!
+
+	\begin{thm}[Loi faible des grands nombres]
+		Soit $(X_k)_{k\in\mathbb{N}}$ une suite de variables aléatoires réelles telle que~:
+		$$ \forall k\in \mathbb{N},\quad E(X_k) = E(X_0)\quad\land\quad\mathrm{Var}(X_k) = \mathrm{Var}(X_0) $$
+		et que toutes les variables sont indépendantes deux à deux. Alors~:
+		$$ \forall \varepsilon > 0,\quad \mathbb{P}\left( \left| \frac{1}{n}\sum_{i=1}^{n} X_i-E(X_0) \right| \geqslant \varepsilon \right) \xrightarrow[n \to \infty]{} 0 $$
+	\end{thm}
+	On l'appelle aussi LGN.
+
+	\begin{thm}[Théorème central limite]
+		On prend une suite respectant les mêmes conditions que celles de la LGN. Pour tout réels $a<b$, on a~:
+		$$ \mathbb{P}\left(\frac{\sqrt n}{\sqrt{\mathrm{Var}(X_0)}} \left(\frac{1}{n}\sum_{i=1}^{n} X_i-E(X_0) \right) \in [a,b] \right) \xrightarrow[n \to \infty]{} \frac{1}{\sqrt{2 \pi}}\int^b_a \exp\left\{ -\frac{x^2}{2} \right\} \mathrm{d}x $$
+	\end{thm}
+	C'est le théorème qui est central, pas la limite. Donc, \textbf{pas de e à central}~!
+
+	On a donc que pour un grand nombre de variables, leur somme est équivalente à une variable aléatoire $Y\sim\mathcal{N}(0,1)$ (dite gaussienne centrée réduite).
+	En effet, la somme pour un $n$ assez grand est similaire à la fonction de répartition de la loi normale.
 \end{document}
