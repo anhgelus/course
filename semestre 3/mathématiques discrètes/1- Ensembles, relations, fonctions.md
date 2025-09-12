@@ -117,7 +117,7 @@ Si $E$ est un ensemble fini contenant $n$ éléments, alors $|\mathcal{P}(E)|=2^
 
 **Définition**
 Soit $E$ un ensemble.
-Quand on partitionne $E$, on construit des parties deux à deux disjointes.
+Quand on partitionne $E$, on construit des parties non vides deux à deux disjointes.
 
 Une partition de $E$ est une famille $(A_i)_{i\in I}$ de parties de $E$ telle que :
 - $A_i\neq\varnothing$

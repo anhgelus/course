@@ -240,21 +240,7 @@ def bin_to_hex(b):
 	return hex
 ```
 
-```elixir
-def bin_to_hex(b) do
-	bin_to_hex_rec(b, [])
-end
-
-defp bin_to_hex_rec(before, after) when before != "" do
-	{b, a} = String.split_at(before, -4)
-	#TODO: convert algo
-	bin_to_hex_rec(b, [a | after])
-end
-
-defp bin_to_hex_rec("", after) do
-	after
-end
-```
+Voir le dossier `scripts` pour la version elixir.
 
 Pour réaliser une addition en binaire, on a besoin que les deux mots fassent la même taille
 
