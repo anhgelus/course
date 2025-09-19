@@ -2,6 +2,7 @@
 tags:
   - sorbonne
   - informatique
+  - structure-des-données
 semestre: 3
 ---
 Comment gérer les structures de données ?

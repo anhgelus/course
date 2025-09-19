@@ -1,0 +1,18 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.tags.contains("sorbonne")
+        - file.tags.contains("philosophie")
+    order:
+      - file.name
+      - tags
+      - Semestre
+    sort:
+      - property: file.folder
+        direction: ASC
+    columnSize:
+      file.name: 284
+      note.tags: 445
+    imageFit: ""

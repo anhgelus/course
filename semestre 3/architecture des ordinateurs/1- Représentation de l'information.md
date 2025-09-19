@@ -135,6 +135,9 @@ Le codage est la correspondance entre le représentation externe de l'informatio
 |> c'est comment on souhaite utiliser l'information qui définit quel codage on utilise !
 -> est ce qui définit les grandes classes de processeur (Intel, ARM, RISC...)
 
+> [!NOTE] Les bases $B$ sont toujours strictement supérieures à 1 !
+> Sinon, on ne peut représenter que $0$
+
 Tout entier naturel $N$ peut être exprimé comme une somme de multiples de puissance de la base $B$
 |> $N = \sum_{i}a_iB^i$ avec $\forall i, a_i < B$  -> permet de convertir une notation dans la base $B$ vers $N$
 |> notation condensée est $a_{n-1}\ldots a_0$
@@ -161,8 +164,7 @@ L'hexadécimal (de 0 à F) permet de compacter le binaire
 
 > [!danger] Interprétation
 > Le codage ne permet toujours pas d'interpréter les données brutes !
-## Entiers
-### Entiers naturels
+## Entiers naturels
 Comme les mots sont de taille bornée, il n'est pas possible de tout représenter
 
 Sur $p$ symboles en base $B$, on peut représenter tous les entiers dans $[0,B^p-1]$
@@ -248,10 +250,13 @@ Les additions / soustractions sont triviales
 
 Attention à l'overflow !
 |> arrive quand on dépasse la taille du bit
-|> est détectable à l'aide de la retenu -> revoir le moodle pour ça
+|> est détectable à l'aide de la toute dernière retenu -> si elle est présente, on dépasse !
+|> la retenu est ignorée quand on dépasse -> est de l'arithmétique modulaire sur $2^n$
 
-Les décalages servent à multiplier / diviser (voir le diapo)
-### Entiers relatifs
+Décaler à gauche de $n$ revient à multiplier par la base $B^n$ 
+|> $(a_{p-1}\ldots a_0)_b\times 2^n = (a_{p-1}\ldots a_0)_b << n = (a_{p-1}\ldots a_0\underbrace{0\ldots0}_n)_b$
+|> $(a_{p-1}\ldots a_0)_b/2^n = (a_{p-1}\ldots a_0)_b >> n = (a_{p-1}\ldots a_{n})$
+## Entiers relatifs
 On les appelle les nombre entiers signés
 
 La représentation classique en signe/module (i.e. un bit pour le signe, le reste pour le module)
@@ -265,6 +270,10 @@ où $(k_i)$ sont les bits représentés
 -> s'appelle représentation des entiers relatifs en complément à deux
 |> avec $n$ bits on peut donc représenter $[2^{n-1},2^{n-1}-1]$
 
+Exemples :
+- $-1$ = `0b111`
+- 1 = `0b001`
+
 Pour prendre l'opposer, on prend son complémentaire et on lui ajoute 1
 |> est appelé le complément à deux
 |> le complémentaire de `0b1001` est `0b0110`
@@ -276,4 +285,69 @@ $$ = \mathrm{0b}1\ldots1 = -1 $$
 Donc, on a que $\bar N$ doit être décalé de 1, d'où le plus 1
 |> cela est dû au fait que l'intervalle ne soit pas symétrique
 
-Voir le moodle pour la suite
+Pour étendre un mot relatif de $p$ bits à $n$ bits ($n > p$), on doit :
+- ne pas toucher aux $p$ bits
+- on recopie le $p-1$ bits (bit de poids fort) sur tous les bits "vides"
+
+Exemples :
+- `0b01` devient `0b0001`
+- `0b10` devient `0b1110`
+
+**Preuve :**
+$$ N_p = -a_{p-1}2^{p-1}+\sum^{p-2}_{i=0}a_i2^i $$
+$$ N_{p+1} -a_{p-1}2^p+a_{p-1}2^{p-1}+\sum^{p-2}_{i=0}a_i2^i = a_{p-1}(-2^p+2^{p-1})+\sum^{p-2}_{i=0}a_i2^i $$
+$$ N_{p+1} = -a_{p-1}2^{p-1}+\sum^{p-2}_{i=0}a_i2^i = N_p $$
+car $-2^p + 2^{p-1} = -2^{p-1}$.
+
+L'addition fonctionne de la même manière que pour les entiers naturels 
+La soustraction est l'addition de l'opposé
+
+Pour détecter le débordement sur entier relatif, on regarde les deux dernières retenues
+|> si $C_{out,n-1}$ est différent de $C_{out,n-2}$, alors il y a un débordement
+
+Exemples :
+- `0b0110` + `0b0011` = `0b1001` avec $C_{out,n-1} = 0$ et $C_{out,n-2} = 1$, donc débordement en relatif ! (besoin de poser le calcul pour s'en rendre compte)
+- `Ob110` + `0b1011` = `0b1001` avec $C_{out,n-1} = C_{out,n-2} = 1$, donc pas de débordement en relatif !
+## Chaînes de caractères
+Elles sont majoritairement codées à l'aide de l'ASCII et de l'UTF-8
+|> ASCII est le plus vieux
+
+ASCII n'est que sur 7 bits (et non sur 8)
+|> le bit de poids fort vaut toujours 0
+|> est représenté dans un tableau à double entrée -> colonne = quartet de poids faible, ligne = quartet de poids fort
+|> `0x0A` en ASCII est l'équivalent de `LF`et `0x0D` est le `CR`
+-> besoin d'étendre le code ASCII pour représenter les autres tables
+|> le bit de poids fort sert à ça, mais c'est peu pratique car n'est pas universel
+
+Une chaîne de caractère est une succession de caractère se terminant par `\0` qui est `0x00` en ASCII
+-> **ne pas oublier le `\0` à la fin**
+
+> [!warning] `"123"` $\neq 123_d$
+## Rationnels
+Un rationnel est $\frac ab$ où $a\in\mathbb{Z}$ et $b\in\mathbb{Z}^*$
+|> contient une partie entière et une partie fractionnaire -> est le développement décimale
+
+Pour représenter d'une manière exacte un rationnel dans une base $B$, on fait :
+$$ \sum^{\infty}_{i=-\infty}a_iB^i $$
+Les $(a_i)$ sont les coefficients dans la base $B$.
+|> on n'est pas obligé de mettre les 0 non significatifs
+**Cette représentation n'est pas bornée**
+
+La partie entière est $(a_i)_{i\in\mathbb{N}}$
+La partie fractionnaire est $(a_i)_{i\in\mathbb{Z}^*_-}$
+
+Si $a>0$ et $a,b$ premier entre eux, alors $a/b$ est unique
+|> son développement décimal est toujours fini ou infini périodique
+|> est vrai dans toutes les bases $B$
+
+Voir le moodle pour la méthode par multiplications successives
+
+Deux manières de représenter : virgule fixe et virgule flottante
+
+Voir le moodle pour le codage en virgule fixe
+
+Virgule fixe est très simple à utiliser : il suffit de rajouter un facteur lors des opérations
+|> les opérations fonctionnent pareilles que pour les autres représentations
+|> les détections de l'overflow fonctionnent aussi
+
+Voir le moodle pour la représentation en virgule flottante
