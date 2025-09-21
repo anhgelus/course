@@ -1,0 +1,534 @@
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{\par$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}\par}
+
+\title{Ensembles, relations, fonctions}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+    \section{Ensembles}
+    \subsection{Définition}
+    \begin{defn}
+        Ensemble est une réunion dans une même entité de certains objets déterminés.
+        Un ensemble ne possède pas d'ordre.
+    \end{defn}
+    \begin{defn}
+        Relation d'appartenance est noté $\in$.
+        Elle indique si un élément $e$ appartient à un ensemble $E$.
+    \end{defn}
+    \begin{defn}
+        $\varnothing$ est l'ensemble vide, celui qui ne contient rien.
+
+        $\{e\}$ est le singleton $e$ (i.e. l'ensemble contenant exclusivement $e$).
+    \end{defn}
+    \begin{defn}
+        Le cardinal d'un ensemble est le nombre d'éléments appartenant à cet ensemble.
+        On le note $|E|$ ou $\mathrm{card}(E)$.
+    \end{defn}
+    \begin{exemple}
+        On a~:
+        $$ |\{7.2\}| = 1 $$
+    \end{exemple}
+    \begin{warn}
+        $2\not\in \{\{2\}\}$
+    \end{warn}
+    \begin{props}
+        Tout ensemble contient l'ensemble vide.
+    \end{props}
+    \subsection{Opérations}
+    \begin{defn}
+        La relation $A\subseteq B$ indique si $A$ est un sous-ensemble de $B$, i.e.
+        $$ \forall a\in A,\quad a\in B $$
+    \end{defn}
+    \begin{props}
+        Cette relation est réflexive, i.e. $E\subseteq E$ est vraie
+    \end{props}
+    \begin{defn}
+        Cette relation est transitive, i.e.
+        $E_1\subseteq E_2\land E_2\subseteq E_3\quad\implies\quad E_1\subseteq E_3$ est vraie.
+    \end{defn}
+    \begin{defn}
+        On dit que $A=B$ si, et seulement si~:
+        $$ A\subseteq B\quad\land\quad B\subseteq A $$
+        i.e.
+        $$ \forall x\in A,\quad x\in B $$
+    \end{defn}
+    \begin{props}
+        On a que $\subseteq$ est anti-symétrique.
+    \end{props}
+    \begin{defn}
+        Une relation est dite d'ordre (voir après) si elle est~:
+        \begin{itemize}
+            \item réflexive
+            \item transitive
+            \item anti-symétrique
+        \end{itemize}
+        Elle est dite partielle si elle n'est pas applicable pour tous les éléments.
+    \end{defn}
+    \begin{props}
+        Comme $\subseteq$ est réflexive, transitive et anti-symétrique, alors $\subseteq$ est une relation d'ordre.
+
+        Par contre, deux ensembles ne sont pas nécessairement comparables avec $\subseteq$~: il s'agit donc d'une relation d'ordre partielle.
+    \end{props}
+    \begin{defn}
+        $A\cup B$ est l'union de $A$ et $B$, deux sous-ensembles de $E$, tel que~:
+        $$ A\cup B = \{x| x\in A\lor x\in B\} $$
+        $A\cap B$ est l'intersection tel que~:
+        $$ A\cap B = \{x| x\in A\land x\in B\} $$
+    \end{defn}
+    La construction des ensembles de cette manière est dite par compréhension, comme en programmation fonctionnelle (et
+    en Python).
+    \begin{defn}
+        $A$ et $B$ sont disjoints si, et seulement si~:
+        $$ A\cap B = \varnothing $$
+    \end{defn}
+    \begin{thm}[Formule du crible, formule de Poincaré]
+        Soient $A$ et $B$ deux sous-ensemble de $E$.
+        On a~:
+        $$ |A\cup B| = |A|+|B|+|A\cap B| $$
+    \end{thm}
+    \begin{defn}
+        La différence $A\backslash B$ , deux sous-ensembles de $E$, est~:
+        $$ A\backslash B = \{x|x\in A\land x\notin B\} $$
+    \end{defn}
+    \begin{defn}
+        Le complémentaire de $A$, un sous-ensemble de $E$, est noté $\bar A$ et est défini tel que~:
+        $$ \bar A= E\backslash A $$
+    \end{defn}
+    \begin{defn}
+        Le produit cartésien $A\times B$ est l'ensemble des couples $(a,b)$ avec $a\in A$ et $b\in B$.
+        Donc~:
+        $$ A\times B = \{(a,b)|a\in A,b\in B\} $$
+    \end{defn}
+    \begin{props}
+        Si $E_1,\ldots,E_n$ sont des ensembles finis, alors~:
+        $$\left|\prod^n_{i=1} E_i\right| = \prod^n_{i=1}|E_i|$$
+    \end{props}
+    \begin{props}[Lois de De Morgan]
+        On a~:
+        $$ \overline{A\cap B} = \bar A\cup\bar B $$
+        $$ \overline{A\cup B} = \bar A\cap\bar B $$
+    \end{props}
+    \begin{defn}
+        Une partie $A$ d'un ensemble $E$ est un sous-ensemble de $E$.
+
+        $\mathcal{P}(E)$ est l'ensemble des parties de $E$.
+    \end{defn}
+    \begin{warn}
+        $\mathcal{P}(E)$ ne peut jamais être vide~!
+
+        En effet, on a $\mathcal{P}(\varnothing) = \{\varnothing\} \neq \varnothing$~!
+        Ne pas oublier que $\mathcal{P}(E)$ est un ensemble d'ensemble et que $\varnothing$ est bien un ensemble valide~!
+    \end{warn}
+    \begin{lititle}
+        Construction de $\mathcal{P}(E)$
+    \end{lititle}
+    Si $E=\varnothing$, alors $\mathcal{P}(E) = \{\varnothing\}$.
+    Sinon, $E=\{e\}\cup F\neq\varnothing$ ($e$ est un élément de $E$ et $F$ est ce qui reste, il peut être vide~!).
+
+    Proposition~: $$ \mathcal{P}(\{e\}\cup F) = \mathcal{P}(F)\cup\{\{e\}\cup A|A\in\mathcal{P}(F)\} $$
+
+    Ceci est un appel récursif de la fonction $\mathcal{P}$ permettant ainsi de construire l'ensemble des parties.
+    \begin{corol}
+        Si $E$ est un ensemble fini contenant $n$ éléments, alors $|\mathcal{P}(E)|=2^n$.
+    \end{corol}
+    \begin{defn}
+        Soit $E$ un ensemble.
+        Quand on partitionne $E$, on construit des parties non vides deux à deux disjointes.
+
+        Une partition de $E$ est une famille $(A_i)_{i\in I}$ de parties de $E$ telle que~:
+        \begin{itemize}
+            \item $A_i\neq\varnothing$
+            \item $A_i\cap A_j = \varnothing$ si $i\neq j$ (pour tout $(i,j)$ dans $I$)
+            \item $E=\bigcup_{i\in I} A_i$
+        \end{itemize}
+    \end{defn}
+    \begin{warn}
+        Une partition de $E$ n'est pas unique dans le cas générale~!
+    \end{warn}
+    \section{Relations}
+    \subsection{Définitions}
+    \begin{defn}
+        Relation binaire $R$ d'un ensemble $E$ vers $F$ est un sous-ensemble de $E\times F$, i.e.
+        $$ R\subseteq E\times F $$
+        On peut la noter $(x,y)\in R$, $x R y$, $R(x,y)$.
+        Lorsque $E=F$, on dit que $R$ est une relation binaire sur $E$.
+    \end{defn}
+    \begin{exemple}
+        $\mathrm{Id}_E$ est la relation identité de $E$ est une relation binaire sur $E$ telle que $\{(e,e)|e\in E\}$.
+
+        $\mathrm{Id}_{\mathbb{N}} = \{(n,n)|n\in\mathbb{N}\}$
+
+        $\leqslant$ sur $\mathbb{N}$ est aussi une relation binaire~: $\{(n_1,n_2)\in\mathbb{N}^2|n_1\leqslant n_2\}$.
+
+        $<$ sur $\mathbb{N}$ est aussi une relation binaire (elle est incluse dans $\leqslant$).
+    \end{exemple}
+    Comme une opération est un ensemble, on peut appliquer les opérations ensemblistes dessus~!
+    \begin{defn}
+        Relation $n$-aire est un sous-ensemble du produit cartésien $E_1\times\ldots\times E_n$
+    \end{defn}
+    \begin{defn}
+        Une relation unaire est un sous-ensemble d'un ensemble $E$.
+    \end{defn}
+    Définir par compréhension permet d'énoncer la propriété caractéristique de l'ensemble. 
+    On peut avoir une même relation pour des propriétés caractéristiques différentes
+
+    Définir par extension permet de lister les éléments.
+    \begin{defn}
+        La relation inverse $R^{-1}$ d'une relation $R\subseteq E\times F$ est la relation de $F$ vers $E$ contenant
+        tous les couples $(x,y)$ tels que $(y,x)\in R$, i.e.
+        $$ R^{-1} = \{(x,y)\in F\times E|(y,x)\in R\} $$
+    \end{defn}
+    \begin{defn}
+        Un produit de relation est quand on applique plusieurs relations à la suite.
+
+        Le produit de $R_1\subseteq E\times F$ et de $R_2\subseteq F\times G$ est définie par~:
+        $$ R_1.R_2 = \left\{(x,y)\in E\times G\quad|\quad\exists z, (x,z)\in R_1\quad\land\quad(z,y)\in R_2\right\} $$
+
+        On la note $R_1\circ R_2$ ou $R_1.R_2$.
+    \end{defn}
+    Appliquer $R_1.R_2$ revient à appliquer $R_1$ puis $R_2$.
+    \begin{warn}
+        Le produit de relation n'est pas commutatif
+    \end{warn}
+    \begin{warn}
+        $R\cdot R^{-1}\neq\mathrm{Id}_E$~!
+
+        De même dans l'autre sens.
+    \end{warn}
+    \begin{props}[Propriétés]
+        $\varnothing$ est un élément est absorbant des relations~: $R\cdot\varnothing = \varnothing\cdot R = R$.
+
+        Le produit est associatif : $R_1\cdot(R_2\cdot R_3) = (R_1\cdot R_2)\cdot R_3$.
+
+        $\mathrm{Id}$ est l'élément neutre~: $R\cdot\mathrm{Id}_F = \mathrm{Id}_ER=R$ (si $R$ est dans $E\times F$).
+        Attention à bien modifier l'ensemble de l'identité en fonction qu'on soit à droite à gauche~!
+    \end{props}
+    \begin{lititle}
+        Notations
+    \end{lititle}
+    Si $R$ est une relation sur $E$, on note~:
+    $$ R^n = \underbrace{R\ldots R}_n = \left\{\begin{matrix}
+    	\mathrm{Id}_E&\text{si}&n=0\\
+	    R\cdot R^{n-1}&\text{sinon}
+    \end{matrix}\right. $$
+    \subsection{Réflexivité, symétrie, transitivité}
+    \begin{defn}
+        La fermeture d'une relation $R$ sur $E$ pour une propriété $P$ est l'ajout du moins d'éléments possibles dans
+        $R$ pour que $R$ vérifie $P$.
+
+        Si cette relation existe, c'est la plus petite relation $R'$ (au sens de l'inclusion) qui contient $R$ et qui
+        vérifie $P$, i.e.
+        \begin{itemize}
+            \item $R\subseteq R'$
+            \item $R'$ vérifie $P$
+            \item si $R\subseteq R''$ et $R''$ vérifie $P$, alors $R'\subseteq R''$
+        \end{itemize}
+    \end{defn}
+    \begin{defn}
+        Une relation binaire $R$ de $E$ est dite réflexive si, et seulement si~:
+        $$ \forall x\in E,\quad (x,x)\in R$$
+        i.e. tout élément est en relation avec lui-même.
+    \end{defn}
+    \begin{defn}
+        Une relation binaire $R$ de $E$ est dite symétrique si, et seulement si~:
+        $$ \forall (x,y)\in E^2,\quad (x,y)\in R\implies (y,x)\in R $$
+        i.e. un élément $x$ est en relation avec un élément $y$, l’élément $y$ est aussi en relation avec $x$.
+    \end{defn}
+    \begin{warn}
+        $\leqslant$ n'est pas symétrique~!
+    \end{warn}
+    \begin{defn}
+        Une relation binaire $R$ de $E$ est dite antisymétrique si, et seulement si~:
+        $$ \forall (x,y)\in E^2,\quad (x,y)\in R\land (y,x)\in R \implies x=y$$
+    \end{defn}
+    \begin{defn}
+        Une relation binaire $R$ de $E$ est dite transitive si, et seulement si~:
+        $$ \forall (x,y,z)\in E^3,\quad (x,y)\in R\land(y,z)\in R\implies(x,z)\in R $$
+    \end{defn}
+    \begin{defn}
+        La fermeture transitive $R^+$ de $R$ est l'ajout des éléments nécessaires dans $R$ pour obtenir une relation
+        transitive, i.e.
+        $$ R^+ = \bigcup_{i\geqslant 1} R^i $$
+    \end{defn}
+    \begin{exemple}
+        $S^+ = \{(n_1, n_2)|\exists n > 0, n_2=n_1+n\}$, ce qui est équivalent d'appliquer $S^n$ à $n_1$ pour obtenir
+        $n_2$.
+        Cela rend $S$ transitive.
+    \end{exemple}
+    \begin{defn}
+        La fermeture réflexo-transitive $R^*$ de $R$ est l'ajout des éléments nécessaires dans $R$ pour obtenir une
+        relation réflexive et transitive, i.e.
+        $$ R^* = \bigcup_{i\geqslant0} R^i $$
+    \end{defn}
+    C'est un ajout de l'identité dans $R^+$.
+    \begin{defn}
+        Une relation binaire est dite totale si, et seulement si~:
+        $$ \forall (x,y)\in E^2,\quad (x,y)\in E\lor(y,x)\in E $$
+    \end{defn}
+    \begin{warn}
+        Ne pas confondre avec la symétrie~! C'est bien un "ou" ici.
+    \end{warn}
+    \subsection{Classes d'équivalence}
+    \begin{defn}
+        Une relation est dite d'équivalence si, et seulement si, elle est~:
+        \begin{itemize}
+            \item réflexive
+            \item symétrique
+            \item transitive
+        \end{itemize}
+
+        Une relation est dite d'ordre si, et seulement si, elle est~:
+        \begin{itemize}
+            \item réflexive
+            \item anti-symétrique
+            \item transitive
+        \end{itemize}
+        Comme on l'a vu dans la partie sur les ensembles.
+    \end{defn}
+    \begin{exemple}
+        $\equiv$ (congruence) est une relation d'équivalence.
+
+        $\leqslant$ est une relation d'ordre.
+
+        $<$ n'est pas une relation d'ordre car elle n'est pas anti-symétrique~!
+    \end{exemple}
+    \begin{defn}
+        Soit $R$ une relation d'équivalence sur $E$.
+        La classe d'équivalence d'un élément $e\in E$ pour $R$ est noté $[e]_R$ et~:
+        $$ [e]_R = \{e'\in E|(e,e')\in R\} $$
+    \end{defn}
+    $e\in[e]_R$ car $R$ est réflexive
+    \begin{defn}
+        On note $[e]_R$ la classe d'équivalence d'un élément $e\in E$ pour $R$, i.e.
+        $$ [e]_R = \{e'\in E|(e,e')\in R\} $$
+        On note $E_{/R}$  l'ensemble quotient de $E$ par $R$, i.e. l'ensemble des classes d'équivalence de $E$ pour $R$~:
+        $$ E_{/R} = \{[e]_R|e\in E\} $$
+    \end{defn}
+    \begin{props}
+        $E_{/R}$ forme une partition de $E$.
+    \end{props}
+    \section{Fonctions}
+    \subsection{Relations et fonctions}
+    \begin{defn}
+        Une relation de $E$ vers $F$ est dite déterministe (ou fonctionnelle) si, et seulement si, tout élément de $E$
+        est en relation avec au plus un élément de $F$, i.e.
+        $$ \forall e\in E,\quad\forall(e_1,e_2)\in F^2,\quad(e,e_1)\in R\quad\land\quad(e,e_2)\in R \implies e_1=e_2 $$
+    \end{defn}
+    \begin{exemple}
+        $S$ est fonctionnelle.
+
+        $S^{-1}$ l'est aussi.
+
+        $\leqslant$ ne l'est pas par contre.
+    \end{exemple}
+    \begin{props}
+        Une relation déterministe est une fonction $f$.
+
+        Si $f$ n'est pas définie pour tout l'ensemble de départ, on dit qu'elle est partielle.
+    \end{props}
+    \begin{proof}
+        Une relation déterministe ne donne qu'une unique image.
+    \end{proof}
+    \begin{defn}
+        Une relation $R$ de $E$ vers $F$ est dite totale à gauche si, et seulement si, chaque élément de $E$ est en
+        relation avec au moins un élément de $F$~:
+        $$ \forall e_1\in E,\quad\exists e_2\in F,\quad (e_1,e_2)\in R $$
+    \end{defn}
+    \begin{defn}
+        Une application est une relation déterministe et totale à gauche, on la note~:
+        $$ f : E\to F $$
+        i.e. tout élément de $E$ possède une (unique) image.
+        On dit parfois qu'elle est une fonction totale.
+    \end{defn}
+    \subsection{Injections, surjections et bijections}
+    \begin{defn}
+        Une relation $R$ de $E$ dans $F$ est injective si, et seulement si~:
+        $$ \forall e\in F,\quad\forall (e_1,e_2)\in E^2,\quad(e_1,e)\in R\land(e_2,e)\in R\implies e_1=e_2 $$
+    \end{defn}
+    \begin{defn}
+        Une relation $f$ de $E$ dans $F$ injective, déterministe et totale à gauche est une application injective (on
+        dit injection), i.e.
+        $$ \forall (e_1,e_2)\in E^2,\quad f(e_1)=f(e_2)\implies e_1=e_2 $$
+    \end{defn}
+    \begin{defn}
+        Une relation $R$ de $E$ dans $F$ est surjective si, et seulement si~:
+        $$ \forall e_2\in F,\quad\exists e_1\in E^1,\quad(e_1,e_2)\in R $$
+    \end{defn}
+    \begin{defn}
+        Une relation $f$ de $E$ dans $F$ surjective, déterministe et totale à gauche est une application surjective (on
+        dit surjection), i.e.
+        $$ \forall e_2\in E,\quad \exists e_1\in E,\quad f(e_1)=e_2 $$
+    \end{defn}
+    \begin{defn}
+        Une application injective et surjective est une application bijective (on dit bijective).
+
+        Cela implique que tous les éléments de $E$ possèdent exactement un antécédent.
+    \end{defn}
+    \begin{thm}
+        Il n'existe pas de bijection entre $E$ et $\mathcal{P}(E)$.
+    \end{thm}
+    \begin{props}
+        Toute bijection $f$ possède une application réciproque notée $f^{-1}$.
+
+        Cette inverse est une application si, et seulement si, $f$ est bijective.
+
+        Si $f$ est bijective, $f^{-1}$ l'est aussi, alors $f\circ f^{-1} = \mathrm{Id}_F$ et$f^{-1}\circ f = \mathrm{Id}_E$.
+    \end{props}
+    \subsection{Ensembles dénombrables et monoïdes}
+    \begin{defn}
+        Un ensemble est dit dénombrable si, et seulement si, on peut numéroter tous ses éléments sans répétition et
+        sans omission.
+    \end{defn}
+    \begin{props}
+        Tout ensemble fini est dénombrable.
+
+        Tout ensemble infini en bijection avec $\mathbb{N}$ est dénombrable.
+    \end{props}
+    Deux ensembles ont le même nombre d'élément s'ils sont en bijection.
+    \begin{defn}
+        Un monoïde est un ensemble $E$ muni d'une opération $\odot$ de $E\times E$ dans $E$ telle que~:
+        \begin{itemize}
+            \item elle est associative~: 
+                $\forall (e_1,e_2,e_3)\in E^3,\quad (e_1\odot e_2)\odot e_3 = e_1\odot (e_2\odot e_3)$
+            \item elle possède un élément neutre $e$~: $\forall e'\in E,\quad e\odot e'=e'\odot e = e'$
+        \end{itemize}
+    \end{defn}
+\end{document}
