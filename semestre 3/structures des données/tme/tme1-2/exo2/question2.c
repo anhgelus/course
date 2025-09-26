@@ -14,22 +14,16 @@ int diff_quad(int *t, int n){
 
 /* Calcule la somme des carrés des différences entre les éléments des tableaux pris deux à deux (version linéaire)
  *
- * On a que sum(sum(x_ix_j)) = (sum(x_i))^2.
- * En developpant, on obtient : sum(sum(T_i^2-2*T_i*T_j+T_j^2))
- * i.e. : sum(sum(T_i^2))-sum(sum(2*T_i*T_j))+sum(sum(T_j^2))
- * i.e. : sum(sum(T_i^2))-2*sum(sum(T_i*T_j))+sum(sum(T_j^2))
- * i.e. : 2*sum(T_i^2)-2*sum(sum(T_i*T_j))+2*sum(T_j^2)
- * i.e. : 2*sum(T_i^2)-2*(sum(T_i))^2+2*sum(T_j^2)
- * Ainsi : 2*(2*sum(T_i^2)-(sum(T_i))^2)
+ * Après diverses simplifications, on obtient que sum(sum(T_i-T_j)^2) est egale à 2 * sum(n*T_i*T_j - T_i^2)
  * */
 int diff_lin(int *t, int n){
-    int sum1 = 0;
-    int sum2 = 0;
+    int sum = 0;
+    int sub_sum = 0;
     for (int i = 0; i < n; i++){
-        sum1 += t[i]*t[i];
-        sum2 += t[i];
+        sum += n*t[i]*t[i];
+        sub_sum += t[i];
     }
-    return 2*(2*sum1-sum2*sum2);
+    return 2 * (sum - sub_sum * sub_sum); 
 }
 
 int main(void){

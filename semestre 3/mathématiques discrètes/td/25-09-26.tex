@@ -1,0 +1,101 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{titlesec}
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\title{TD Maths discrètes}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+    \section*{Exercice 6}
+    \begin{enumerate}
+        \item Supposons que $R$ soit réflexive.
+            On a que pour tout $x$ dans $R$, $(x,x)\in R$, ce qui est la définition de l'identité.
+
+            Supposons que $\mathrm{Id}_E\subseteq R$.
+            On a que pour tout $x$ dans $R$, $(x,x)\in R$ car $(x,x)\in\mathrm{Id}_E$.
+        \item \begin{align*}
+                \text{$R$ symétrique} \iff& \forall (x,y)\in E^2, (x,y)\in R \implies (y,x)\in R \\
+                                      \iff& R = \{(x,y) \in R | (y,x)\in R \} \\
+                                      \iff& R = R^{-1} 
+            \end{align*}
+        \item À faire par équivalence classiquement. 
+    \end{enumerate}
+    \section*{Exercice 8}
+    Si $R$ est relation d'équivalence sur $E$, alors la classe d'équivalence de $a\in R$ est l'ensemble~:
+    $$ \{(a,x)\in R\} $$
+    \begin{enumerate}
+        \item $R$ est réflexive, donc $a\in [a]$ car $(a,a)\in R$
+        \item Si $[a] = [b]$, alors pour tout $x$ dans $A$, on a $(a,x)\in R$ et $(b,x)\in R$, donc $(a,b)\in R$ par
+            symétrie et transitivité.
+
+            Pareil dans l'autre sens.
+        \item Supposons que $[a]\cap[b]\neq\varnothing$. 
+            Alors, $\exists x\in [a]\cap[b]$ tel que $(a,x)\in R$ et $(b,x)\in R$.
+            Par symétrie et transitivité, on a $(b,x)\in R \iff (x,b)\in R \iff (a,b)\in R$.
+            Absurde car si $(a,b)\in R$, on a que $[a] = [b]$, ce qui est faux par hypothèse.
+        \item $\{[a]|a\in A\}$ est une partition de $A$ car 
+            \begin{itemize}
+                \item tous les éléments de $[a]$ pour tout $a\in A$ sont dans $A$ par définition;
+                \item toutes les classes d'équivalence sont disjointes (3);
+                \item tous les éléments de $A$ sont présents dans cet ensemble car $a\in [a]$ (1).
+            \end{itemize}
+    \end{enumerate}
+    \textbf{Ceci est un résultat important~!}
+    \section*{Exercice 9}
+    L'application $\{(a,b), (b,b)\}$ dans $\{a,b\}$ n'est ni injective, ni surjective.
+    \begin{enumerate}
+        \item $f_1$ est injective, mais pas surjective, car il n'existe pas d'inverse sur $\mathbb{N}$.
+            $f_2$ est bijective, car il existe un inverse sur $\mathbb{Q}$.
+        \item $f$ est surjective, car $f(0) = 0$, $f(1) = 1$, $f(2) = 2$ et $f(3) = 0$.
+        \item $f$ est surjective, car $\forall x\in\mathbb{N}, f(x, 0) = x$ et $f(1,0) = f(0,1)$.
+        \item $f$ est bijective, car~:
+            \begin{itemize}
+                \item si $f(n)$ est pair, alors son antécédent est $n+1$
+                \item si $f(n)$ est impair, alors son antécédent est $n-1$
+                \item si $f(n_1) = f(n_2)$, alors $n_1 + 1 = n_2 + 1$ ou $n_1 - 1 = n_2 - 1$, i.e. $n_1=n_2$
+            \end{itemize}
+        \item $f$ n'est pas surjective, car les mots ne finissant par par $b$ ne sont jamais atteint.
+            $f$ est injective, car $f(u_1) = f(u_2) \implies u_1.b = u_2.b\implies u_1 = u_2$. 
+    \end{enumerate}
+    Il existe $2^3 = 9$ applications différentes de $\{a,b,c\}$ vers $\{1,2\}$ (pour chaque élément de $\{a,b,c\}$, on
+    possède deux choix), dont aucune injective, $3\times 2 = 6$ surjectives (on choisit quel élément est le premier et 
+    quel élément est le deuxième, le troisième est libre) et aucune bijective (car aucune n'est injective).
+    \section*{Exercice 19}
+    Soit $n\in\mathbb{N}$.
+
+    Si $n$ est pair, alors $n+1$ est impair.
+    Donc, $$ \exists !p\in\mathbb{N},\quad n+1=2p+1 $$
+    On pose $x=0$ et $y=p$, alors $$ n = 2^0 (2p+1) - 1 = 2^x(2y+1) $$
+    Par conséquent, les nombres pairs s'écrivent comme~:
+    $$ g(0,p) $$
+
+    Si $n$ est impair, il existe un unique $p$ dans $\mathbb{N}$ tel que $n = 2p+1$.
+    Donc, $$ n+1 = 2p+2 = 2(p+1) $$
+    Or, un nombre pair s'écrit d'une manière unique avec $(q,r)\in\mathbb{N}^2$ avec $q$ non nul comme~:
+    $$ 2^q(2r+1) $$
+    On pose $x=q$ et $p=r$, alors $$ n = 2^q(2r+1) - 1 = 2^x(2y+1) - 1 $$
+    Par conséquent, les nombres pairs s'écrivent comme~:
+    $$ g(q,r) $$
+\end{document}
+endsnippet

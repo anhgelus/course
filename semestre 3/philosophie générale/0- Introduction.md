@@ -67,3 +67,36 @@ Dans les langues germaniques, il y en a deux (ici en allemand) :
 Rede = parole -> mais peut aussi avoir un sens plus théorique ressemblant à langage
 Sprache = langue -> mais peut aussi avoir un sens concret ressemblant à parole
 -> deux distinctions
+
+**rattraper le cours**
+
+Pour Aristote, c'est l'âme qui donne le sens aux symboles
+|> sinon, ça ne serait que des signes
+
+Les animaux n'utilisent que des signes et non des symboles
+|> le crie possède une signification naturelle, mais pas conventionnelle
+|> la signification du crie ne vient pas d'une institution humaine
+|> les animaux n'ont pas d'institutions
+-> la convention suppose que l'on s'entende ensemble
+|> on appartient à une communauté politique
+
+On a toujours interprété Aristote de cette manière
+|> les mots parlent des concepts et non des choses
+-> vision mentaliste
+
+Pourtant, on n'est pas obligé d'associer à un mot une image mentale
+
+Il existe aussi des mots avec plusieurs objets -> on doit sélectionner sa référence
+|> la référence s'accroche à un type de réalité
+
+Langage a besoin de : état physique (signes), état psychologique (âme) et choses (réalité)
+|> s'il nous manque un de ces éléments, on ne peut pas analyser le langage
+-> mais on peut choisir ce qui est le plus important
+
+Les théories mentalistes choisissent de mettre l'accent sur l'âme
+En mettant l'accent sur les choses, on indique que le langage se réfère au monde
+Et sur les signes, on crée une sémiotique
+## Plan
+1. Sémiotique
+2. Langage et réalité
+3. Langage et psychologie

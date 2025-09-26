@@ -1,0 +1,248 @@
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{\par$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}\par}
+
+\title{Relations d'ordre, ensembles ordonnés}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+    \section{ensemble ordoné}
+    \begin{defn}
+        Une relation d'ordre $\preceq$ est une relation binaire sur $E$ si et seulement si~:
+        \begin{itemize}
+            \item réflexive
+            \item anti-symétrique
+            \item transitive
+        \end{itemize}
+
+        L'ordre strict $\prec$ est associé à $\preceq$~: c'est la même, sauf qu'elle n'est pas réflexive~:
+        $$ \prec = \preceq\backslash\mathrm{Id}_E $$
+    \end{defn}
+    \begin{defn}
+        Une relation d'ordre $\preceq$ est~:
+        \begin{itemize}
+            \item totale si et seulement si $\preceq$ permet toujours de comparer deux éléments quelconques de $E$
+            \item partielle s'il existe au moins deux éléments de $E$ incomparables avec $\preceq$
+        \end{itemize}
+    \end{defn}
+    \begin{defn}
+        $(E,\preceq)$ est un ensemble~:
+        \begin{itemize}
+            \item totalement ordonné si $\preceq$ est un ordre total.
+            \item partiellement ordonné si $\preceq$ est un ordre partiel.
+        \end{itemize}
+    \end{defn}
+    \begin{exemple}
+        $(\mathbb{N},\leqslant )$ est un ensemble totalement ordonné.
+
+        $(\mathcal{P}(F),\subseteq)$ est un ensemble partiellement ordoné (pour $F$ un ensemble quelconque).
+
+        $(\mathbb{N}^*, |)$ est aussi partiellement ordoné, où
+        $$ | = \{(a,b)|\exists k\in\mathbb{N}^*, b = na\} $$
+        (c'est la relation divise.)
+    \end{exemple}
+    \begin{proof}
+        Preuve du deuxième exemple.
+
+        Soit $F$ un ensemble.
+
+        Montrons que $\subseteq$ est un ordre pour $\mathcal{P}(F)$.
+        \begin{itemize}
+            \item Soit $A\in\mathcal{P}(F)$.
+                Triviallement, $A\subseteq A$.
+                Alors, $\subseteq$ est réflexive.
+            \item Soit $(A,B)\in\mathcal{P}(F)^2$.
+                Supposons que $A\subseteq B$ et que $B\subseteq A$.
+                Alors, $A=B$ par définition.
+            \item Soit $(A,B,C)\in\mathcal{P}(F)^3$ avec $A\subseteq B$ et $B\subseteq C$.
+                Si $A$ est l'ensemble vide, il est inclu dans tous les ensembles. 
+                Donc $A\subseteq C$.
+                Si $A$ n'est pas l'ensemble vide, tous ses éléments sont dans $B$. 
+                Or, tous les éléments de $B$ sont dans $C$.
+                Donc, tous les éléments de $A$ sont dans $C$.
+                Alors, $A\subseteq C$.
+        \end{itemize}
+        Ainsi, $\subseteq$ est bien un ordre pour $\mathcal{P}(F)$.
+
+        Montrons que $\subseteq$ est un ordre partiel.
+
+        Supposons que $F$ contient au moins deux éléments.
+
+        Soit $(x,y)\in F^2$, deux éléments différents.
+        Soient $A=\{x\}$ et $B=\{y\}$.
+
+        On a que $A\not\subseteq B$ et que $B\subseteq A$.
+        Donc, $\subseteq$ est partiel dans ce cas.
+
+        Si $F$ est vide, alors $\mathcal{P}(F)$ contient un unique élément.
+        Cet ensemble est totalement ordonné.
+
+        Si $F$ est un singleton, alors $\mathcal{P}(F)$ contient $F$ et l'ensemble vide.
+        Cet ensemble est totalement ordonné.
+
+        La slide est ainsi fausse, mais les ensembles à moins de deux éléments sont peux intéressants.
+    \end{proof}
+    Revoir les slides 4 - 6.
+    \begin{defn}
+        Soient $(E_1,\preceq_1)$ et $(E_2,\preceq_2)$ deux ensemble ordonnés.
+
+        L'application $f:E_1\to E_2$ est dite monotone si~:
+        $$ \forall (x,y)\in E_1^2,\quad x\preceq_1 y \implies f(x)\preceq_2 f(y) $$
+    \end{defn}
+    Une application monotone préserve les relations d'ordre.
+    \begin{exemple}
+        On se place dans $(\mathbb{N},\leqslant)$ et dans $(\mathcal{P}(\mathbb{N}))$
+
+        $f:\mathbb{N}\to \mathcal{P}(\mathbb{N})$ tel que $f(n) = \{k\in\mathbb{N}|k\leqslant n\}$ est monotone.
+
+        $g:\mathbb{N}\to \mathcal{P}(\mathbb{N})$ tel que $g(n)=\{n\}$ ne l'est pas par contre~!
+    \end{exemple}
+    \begin{props}
+        Deux ensembles ordonnés $(E_1,\preceq_1)$ et $(E_2,\preceq_2)$ sont isomorphes s'il existe une bijection
+        $f:E_1\to E_2$ telle que $f$ et $f^{-1}$ sont monotones.
+    \end{props}
+    Slide 8 pour des exemples et pour le retour des graphes.
+    \begin{warn}
+        Une bijection $f$ peut être monotone sans que $f^{-1}$ ne le soit~!
+    \end{warn}
+    \begin{proof}
+        Fin de la slide 8 pour la preuve.
+    \end{proof}
+\end{document}
