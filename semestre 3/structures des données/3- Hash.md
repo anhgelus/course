@@ -6,7 +6,8 @@ tags:
 semestre: 3
 ---
 ## Tableaux associatifs
-**Rattraper le cours**
+Tableau associatif (aussi appelé dictionnaire) associe une valeur à une clé
+|> chaque clé est associée à *au plus* une valeur
 
 Tableaux associatifs peuvent être implémentés à l'aide de deux structures de données :
 - les tables de hachage

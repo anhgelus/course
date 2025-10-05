@@ -1,0 +1,112 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{titlesec}
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\title{TD Maths discrètes}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+    \section*{Exercice 1}
+    \begin{enumerate}
+        \item Maj = $\{1,2,3\}$
+        \item Min = $\{6,7,8\}$
+        \item $\sup V = 3$
+        \item $\inf V = 6$
+    \end{enumerate}
+    \section*{Exercice 3}
+    Soit $(x,y)\in \mathbb{N}^2$.
+    On a que $(x,y)\preceq(x,y)$ car $(x,y)=(x,y)$.
+    $\preceq$ est réflexive.
+
+    Soit $(x,y)\in\mathbb{N}^2$ et $(x',y')\in\mathbb{N}^2$ tel que $(x,y)\preceq (x',y')$ et $(x',y')\preceq (x,x)$.
+    On a que $x+y < x'+y' \land x'+y' < x+y$ ou $(x,y)=(x',y')$.
+    La première possibilité est impossible.
+    Donc la deuxième est forcément vraie.
+    Ainsi, $\preceq$ est anti-symétrique.
+
+    Soit $(a,b)\in\mathbb{N}^2$, $(c,d)\in\mathbb{N}^2$ et $(e,f)\in\mathbb{N}^2$ tel que~:
+    $$ (a,b)\preceq (c,d)\land (c,d)\preceq (e,f) $$
+    Alors, soit $a+b < c+d$, soit $(a,b) = (c,d)$ et soit $c+d<e+f$, soit $(c,d)=(e,f)$
+    Si $a+b < c+d$, alors $a+b < e+f$ dans tous les cas.
+    Si $(a,b) = (c,d)$, on a que $(a,b)\preceq (e,f)$ est vraie.
+
+    Ainsi, $\preceq$ est une relation d'ordre.
+
+    Cet ordre n'est pas total car $(1,0)$ et $(0,1)$ ne sont pas en relations.
+
+    Soit $(a,b)$ un élément plus petit que $(0,0)$.
+    On a donc que $a+b < 0+0 \iff a + b < 0$ ou $(a,b)=(0,0)$.
+    La première possibilité est impossible, donc $\min\{\mathbb{N}^2,\preceq\} = (0,0)$.
+    Ainsi, cet élément est bien fondé.
+    \section*{Exercice 4}
+    Soit $x$. On a que $x$ divise $x$. Donc $|$ est réflexive.
+
+    Soient $(x,y)\in(\mathbb{N}\backslash\{0,1\})^2$ tels que~: $$ x | y \land y | x $$
+    Il existe donc $k_1$ et $k_2$ dans $\mathbb{N}^*$ tels que~: $$ x = k_1y \land y = k_2x $$
+    Or $$ k_1k_2y = y $$
+    Donc $$ k_1=k_2=1 $$
+    i.e. $$ x = y $$
+    Ainsi, $|$ est anti-symétrique.
+
+    Soient $(x,y,z)\in(\mathbb{N}\backslash\{0,1\})^3$ tels que ~: $$ x | y \land y | z $$
+    Il existe donc $k_1$ et $k_2$ dans $\mathbb{N}^*$ tels que~: $$ x = yk_1 \land y = zk_2 $$
+    Or $$ x = zk_2k_1 $$
+    Donc $$ x | z $$
+    Ainsi, $|$ est transitive.
+
+    Alors, $|$ est une relation d'ordre.
+
+    Les éléments minimaux de $E$ sont les nombres premiers car ils ne sont divisibles que par $1$ (qui n'est pas dans 
+    $E$) et par lui-même.
+
+    $E$ ne possède pas d'éléments maximaux.
+    Si $x$ est un élément maximal, alors $2x$ est plus grand que $x$ et est divisé par $x$, donc $x$ n'est pas un 
+    élément maximal.
+    \section*{Exercice 5}
+    Ici, $\inf$ est le $\mathrm{PGCD}$ de $x$ et $y$ et $\sup$ est le $\mathrm{PPCM}$.
+
+    Les minorants de $A$ sont~: $$ \{1,3\} $$
+    Les minorants de $B$ sont~: $$ \{1\} $$
+    Les majorants de $A$ sont~: $$ \{\sup(A)k | k \in\mathbb{N}^*\} = \left\{\frac{15\times 21}3k | k \in\mathbb{N}^*\right\} $$
+    Les majorants de $B$ sont~: $$ \{\sup(B)k| k \in\mathbb{N}^*\} = \left\{\frac{14\times 21}7k | k \in\mathbb{N}^*\right\}$$
+
+    $A$ ne possède ni de plus petit, ni de plus grand élément.
+    $B$ possède un plus petit élément ($1$), mais pas de plus grand.
+
+    $\{1,3\}$ sont les minorants de $A$.
+    Les majorants de $A$ sont~: $$ \{\sup(A)k | k\in\mathbb{N}^*\} = \left\{\frac{12\times 15}{3}k | k\in\mathbb{N}^*\right\} $$
+    $\inf A=\min A = 3$, et les éléments minimaux sont $\{3\}$.
+    Il n'a pas de borne sup, ni d'éléments maximaux, ni de plus grands éléments.
+
+    Les minorants et majorants ne sont pas forcément dans $A$.
+
+    Les éléments minimaux et maximaux sont dans $A$.
+    Ce sont les minorants et les majorants dans $A$.
+
+    Les bornes ne sont pas forcément dans $A$.
+
+    Le minimum et le maximum sont dans $A$.
+    C'est la borne inférieur et supérieur dans $A$.
+    Ils sont aussi appelés le plus petit et le plus grand élément.
+\end{document}

@@ -155,3 +155,100 @@ syscall # syscall dans $2, i.e. syscall 10, i.e. fin du programme
 ```
 
 On utilise le simulateur Mars pour écrire / exécuter des programmes
+## Lancer un programme
+Pour exécuter un programme, on a besoin de le lancer
+|> besoin de le charger en mémoire -> souvent, le *loader* s'en occupe
+|> chargé en RAM depuis l'adresse de base contenant le début du programme
+|> modifie PC pour contenir l'adresse du début (adresse en RAM)
+## System call
+Un appel système est une demande de service fourni par le système
+|> est un garde fou
+|> `syscall` appelle ces services
+|> chaque service possède son numéro en Mips
+|> on met le numéro du service dans `$2`
+|> pour passer des argument à `syscall`, on doit les mettre dans les registres `$4` à `$7`
+
+Pour afficher 125 :
+```asm
+ori $4, $0, 125
+ori $2, $0, 1
+syscall
+```
+
+`syscall` est un déroutement -> est gérer par l'OS
+## Données en mémoire
+Variables globales et partie `.data`
+
+On peut voir la mémoire en mode "mot" (32 bits) ou en "octet" (8 bits)
+|> représente la même mémoire
+|> "mot" est 4 fois plus grand qu'un octet
+
+Mips ne peut lire que 4 octets (ou un mot, ou 32 bits) à la fois
+|> adresse mémoire d'un mot est l'adresse la plus petite des 4 octets
+|> octet est l'unité adressable -> pas possible d'être plus petit que ça
+
+On utilise toujours les notations en Kio
+
+Mémoire non réinscriptible = ROM, lente d'accès, contient le code de démarrage ou l'ensemble du code dans certains systèmes embarqués
+Mémoire vive = RAM, volatile et rapide
+Mémoire flash (USB, SD Card) = non volatile, peut écrire (mais pas beaucoup)
+
+RAM garde les données en mémoire et ne les supprime pas jusqu'à ce qu'on écrit dessus
+|> lecture est non destructive (pas vraie partout !)
+
+Écriture RAM -> *store*
+Lecture RAM -> *load*
+
+Type de stockage en RAM :
+- Big Endian (grand boutien) -> l'octet de poids fort est rangé à l'adresse la plus petite
+- Little Endian (petit boutien) -> l'octet de poids faible est rangé à l'adresse la plus petite
+-> avec les mêmes bits en RAM, on n'obtient pas le même mot !
+
+Mips est en Little Endian
+
+Après avoir écrit `0xAABBCCDD` à `0x4`, on obtient
+
+| Adresse | `0x0` | `0x1` | `0x2` | `0x3` | `0x4`  | `0x5`  | `0x6`  | `0x7`  | `0x8` |
+| ------- | ----- | ----- | ----- | ----- | ------ | ------ | ------ | ------ | ----- |
+| Contenu | ?     | ?     | ?     | ?     | `0xDD` | `0xCC` | `0xBB` | `0xAA` | ?     |
+On peut écrire en mot, demi-mot ou octet
+
+Mémoire est structuré pour éviter d'avoir des problèmes des sécurités
+|> programme ne peut pas utiliser la RAM de l'OS par exemple
+-> elle est d'abord coupé en deux
+|> une partie utilisateur et une autre système
+|> est séparée par une adresse (tous ceux qui sont inférieures sont dans l'utilisateur en Mips)
+
+Mémoire utilisateur, c'est :
+1. segment de code (le code du programme)
+2. segment de données (données et variables globales)
+3. segment de pile (variables locales et contextes d'appels) -> stack
+4. (le tas dans la pile, mais on n'en a pas ici)
+
+**Besoin de lire le diapo 22/48** (et un peu avant)
+
+Le transfert RAM -> CPU en Mips doit être sur la même ligne !
+
+Les contraintes d'alignement sont respectées par défaut quand utilise les données globales
+|> quand utilise `.space`, on a besoin d'utiliser `.align` pour aligner correctement les zones libres
+
+Quand on utilise la mémoire, on a besoin de copier les valeurs dans les registres et d'après la mettre à jour
+
+Signature des instructions d'accès mémoire : `Codop Rt, Imm16(Rs)`
+|> `Rt` est la destination ou le registre source
+|> `Imm16(Rs)` est la zone mémoire avec `Rs` étant le décallage
+
+On se place tjs du côté du processeur pour les opcodes
+|> `l.` servent à *load*
+|> `s.` servent à *store*
+|> `.w` gèrent les mots (4 octets)
+|> `.h` gèrent les half-words (2 octets)
+|> `.b` gèrent les octets (1 octet)
+
+```asm
+lh $4, 4($3) # load le half-word contenu dans l'adresse 4 + $3 dans $4
+
+lw $4, -2(3) # load le word contenu dans l'adresse -2 + 3 dans $4
+```
+
+Par défaut, tout est signé, si on veut être en non signé, on rajoute `u`, i.e. `lhu` pour récupérer un `uint16`

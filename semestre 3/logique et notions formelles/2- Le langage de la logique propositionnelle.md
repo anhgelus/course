@@ -23,4 +23,8 @@ Les énoncés complexes sont des compositions d'énoncés atomiques connectés a
 
 Tout énoncé est soit vrai, soit faux.
 
-**Rattraper le cours d'énoncé vrai / faux à la fin du cours 2**
+**Rattraper le cours d'énoncé vrai / faux du cours 2**
+
+**On doit donner la clé de retranscription**
+|> i.e. ce qui permet de passer d'une phrase à l'énoncé logique
+|> e.g., $p$: Pierre est content, $q$: Marie est triste

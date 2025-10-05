@@ -6,7 +6,9 @@ tags:
 semestre: 3
 ---
 ## Matrices
-***Rattraper Matrice***
+Matrice = ensemble d'éléments accessibles par un index (entier) à une ou plusieurs dimensions
+|> matrice à une dimension sont exactement les array en C
+|> matrice à plusieurs dimensions peuvent être représentés par un tableau de tableau
 
 En mémoire, un tableau à deux entrées alloué statiquement est en réalité un tableau à une ligne -> les lignes sont les unes à la suite des autres
 |> un tableau à deux entrées est de type `T**` où `T` est le type du pointeur

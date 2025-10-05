@@ -12,6 +12,7 @@
 \usepackage{framed}
 \usepackage{parskip}
 \usepackage{titlesec}
+\usepackage{tikz}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -143,7 +144,8 @@ headpunct=,%
 	\maketitle
 	\tableofcontents
 	\newpage
-    \section{ensemble ordoné}
+    \section{Ensemble ordonné}
+    \subsection{Définition}
     \begin{defn}
         Une relation d'ordre $\preceq$ est une relation binaire sur $E$ si et seulement si~:
         \begin{itemize}
@@ -219,7 +221,42 @@ headpunct=,%
 
         La slide est ainsi fausse, mais les ensembles à moins de deux éléments sont peux intéressants.
     \end{proof}
-    Revoir les slides 4 - 6.
+    \subsection{Représentation d'une relation d'ordre}
+    \begin{defn}
+        La représentation d'une relation d'ordre $R$ sur un ensemble $E$ est le graphe \textit{minimal} représentant
+        une relation $\to$, telle que~:
+        \begin{itemize}
+            \item la fermeture réflexive et transitive $\to^*$ de $\to$ correspond exactement à la relation $R$
+            \item $\to$ est la plus petite relation dont la fermeture réflexo-transitive est égale à la relation $R$
+            \item $\to$ contient tous les couples $(a,b)\in R$ tels que $a\neq b$ et que~:
+                $$ \forall c\in E, c\neq a, c\neq b,\quad (a,c)\not\in R\lor (c,b)\not\in R $$
+        \end{itemize}
+        On a donc que $\to$ s'obtient en supprimant de $R$~:
+        \begin{itemize}
+            \item les couples $(x,x)\in R$ (réflexivité)
+            \item les couples pouvant se déduire par transitivité 
+        \end{itemize}
+        On dit que ce graphe est couvrant.
+    \end{defn}
+    \begin{props}
+        Le coupe $(a,b)$ appartient à $R$ si, et seulement si, il existe un chemin dans le graphe couvrant.
+    \end{props}
+    \begin{exemple}
+        Graphe couvrant de $\leqslant$ sur $\mathbb{N}$~:
+
+        \begin{tikzpicture}
+            \node (start) {0};
+            \node (1) [right of=start] {$1$};
+            \draw [->] (start) -- (1);
+            \node (2) [right of=1] {$2$};
+            \draw [->] (1) -- (2);
+            \node (3) [right of=2] {$3$};
+            \draw [->] (2) -- (3);
+            \node (4) [right of=3] {$\ldots$};
+            \draw [->] (3) -- (4);
+        \end{tikzpicture}
+    \end{exemple}
+    \subsection{Monotonie}
     \begin{defn}
         Soient $(E_1,\preceq_1)$ et $(E_2,\preceq_2)$ deux ensemble ordonnés.
 
@@ -238,11 +275,146 @@ headpunct=,%
         Deux ensembles ordonnés $(E_1,\preceq_1)$ et $(E_2,\preceq_2)$ sont isomorphes s'il existe une bijection
         $f:E_1\to E_2$ telle que $f$ et $f^{-1}$ sont monotones.
     \end{props}
-    Slide 8 pour des exemples et pour le retour des graphes.
+    \begin{exemple}
+        Soient $(\mathbb{N},\leqslant)$ et $(\mathcal{P}(\mathbb{N}),\subseteq)$ deux ensembles ordonnés.
+
+        $f:\mathbb{N}\to\mathcal{P}(\mathbb{N})$ telle que $f(n) = \{k|k\leqslant n\}$ est monotone.
+
+        $g:\mathbb{N}\to\mathcal{P}(\mathbb{N})$ telle que $g(n) = \{ n\}$ n'est pas monotone.
+    \end{exemple}
     \begin{warn}
         Une bijection $f$ peut être monotone sans que $f^{-1}$ ne le soit~!
     \end{warn}
+    \subsection{Minimum, maximum, bornes}
+    \begin{defn}
+        Soit $(E,\preceq)$ un ensemble ordonné et $X$ une partie de $E$.
+
+        Un élément minimal $x$ de $X$ est un élément tel que~:
+        $$ \forall y\in X,\quad y\preceq x\implies y=x $$
+
+        Un élément maximale $x$ de $X$ est un tel que~:
+        $$ \forall y\in X,\quad x \preceq y \implies x=y $$
+    \end{defn}
+    \begin{defn}
+        On dit que $e\in E$ est un minorant de $X$ si~:
+        $$ \forall x\in X,\quad e\preceq x $$
+
+        On dit que $e\in E$ est un majorant de $X$ si~:
+        $$ \forall x\in X,\quad x\preceq e $$
+    \end{defn}
+    La différence avec l'élément minimal, c'est que $e$ n'est pas forcément dans $X$~!
+    La différence avec l'élément maximal, c'est que $e$ n'est pas forcément dans $X$~!
+    \begin{defn}
+        Le plus petit élément (aussi appelé minimum) de $X$, s'il existe, est l'unique élément de l'intersection de $X$
+        et de ses minorants.
+
+        Le plus grand élément (aussi appelé maximum) de $X$, s'il existe, est l'unique élément de l'intersection de $X$
+        et de ses majorants.
+    \end{defn}
+    Le minimum est le minorant dans $X$~!
+    Le maximum est le majorant dans $X$~!
+
     \begin{proof}
-        Fin de la slide 8 pour la preuve.
+        Soient $x_1$ et $x_2$ deux minorants (resp. deux majorants) de $X$.
+
+        Par défintion, on a~:
+        $$ x_1\preceq x_2\quad\land\quad x_2\preceq x_1$$
+        Par anti-symétrie, on obtient $x_1=x_2$.
+
+        Ainsi, le minorant (resp. majorant) est unique.
     \end{proof}
+
+    \begin{defn}
+        La borne inférieure de $X$ est le plus grand élément des minorants de $X$ (s'il existe).
+        On la note $\inf$.
+
+        La borne supérieure de $X$ est le plus petit élément des majorants de $X$ (s'il existe).
+        On la note $\sup$.
+    \end{defn}
+    \section{Ordre bien fondé}
+    \subsection{Relation d'ordre bien fondée et induction}
+    \begin{defn}
+        Une relation d'ordre $\preceq$ sur un ensemble $E$ est dite bien fondée s'il n'existe pas de suite infinie
+        strictement décroissante d'éléments de $E$.
+    \end{defn}
+    \begin{exemple}
+        $\leqslant$ sur $\mathbb{N}$ est une relation bien fondée.
+        
+        $\leqslant$ sur $\mathbb{Z}$ n'est pas une relation bien fondée.
+    \end{exemple}
+    \begin{thm}
+        La relation d'ordre sur $E$ est bien fondée si, et seulement si, toute partie non vide de $E$ admet un élément
+        minimal (pour cet ordre).
+    \end{thm}
+    \begin{proof}
+        Soit $E$ un ensemble ordonné par $\prec$, une relation d'ordre bien fondée.
+        Soit $X$ une partie non vide de $E$.
+
+        \fbox{$\implies$}
+        Par l'absurde, supposons que $X$ n'admet pas d'élément minimal.
+
+        Comme $X$ n'est pas vide, il existe $x_0$ dans $X$.
+        Comme $x_0$ n'est pas minimal, il existe $x_1$ dans $X$.
+        On peut ainsi construire \textit{de proche en proche} une suite infinie strictement décroissante, ce qui
+        contredit la définition de $\preceq$.
+
+        \fbox{$\impliedby$}
+        Si toute partie non vide de $E$ admet un élément minimal, c'est en particulier le cas pour une suite 
+        strictement décroissante.
+        Soit $(u_n)$ une suite strictement décroissante à valeur dans $X$.
+        Soit $p\in\mathbb{N}$ l'indice de l'élément minimal de $(u_n)$.
+        
+        Tous les éléments d'indice supérieur à $p$ doivent être strictement plus petit que $u_p$, ce qui est impossible.
+        $(u_n)$ est donc finie.
+
+        Ainsi, le théorème est vrai.
+    \end{proof}
+    \begin{thm}[Induction]
+        Soit $E$ un ensemble muni d'une relation d'ordre bien fondée $\preceq$ et $P$ une propriété de $E$.
+
+        Si pour tout $x\in E$ et pour tout $y \prec x$ telle que $P(y)$ soit vraie, on a alors que $P$ est vraie pour
+        tous les éléments de $E$.
+    \end{thm}
+    Ceci est une version généralisée de la récurrence.
+    \begin{proof}
+        Soit $X$ l'ensemble des $x$ tels que $P(x)$ soit faux.
+
+        Si $X$ est non vide, $X$ admet un élément minimal (car $\preceq$ est bien fondée).
+        Donc, tous les $y$ strictement plus petits que $x$ sont vrais.
+        En utilisant l'hypothèse, $P(x)$ est aussi vraie.
+        $X$ est donc vide.
+
+        Ainsi, pour tout $e\in E$, $P(e)$ est vraie.
+    \end{proof}
+    \begin{lititle}
+        Démonstration utilisant l'induction
+    \end{lititle}
+    Elle fonctionne de la même manière qu'une récurrence~:
+    \begin{itemize}
+        \item Si $x$ est un élément minimal, on démontre $P(x)$ sans aucune hypothèse.
+        \item On suppose $P(y)$ pour tous les éléments plus petit que $x$ et on démontre $P(x)$.
+    \end{itemize}
+    \begin{exemple}
+        Toutes les démonstrations par récurrence sur $(\mathbb{N},\leqslant)$ sont des inductions~!
+    \end{exemple}
+    \subsection{Ordre lexicographique}
+    \begin{defn}
+        Soient $(E_1,\preceq_1)\ldots(E_n,\preceq_n)$ des ensembles ordonnés.
+
+        La relation d'ordre lexicographique $\preceq$ sur $E_1\times\ldots\times E_n$ est définie par~:
+        $$ \exists i<n,\forall k<i, \quad (e_k=f_k\land e_i\preceq f_i)\quad\lor\quad(e_1,\ldots,e_n) = (f_1,\ldots,f_n)$$
+        avec $(e_1,\ldots,e_n)\preceq(f_1,\ldots,f_n)$
+    \end{defn}
+    C'est-à-dire, soit ils sont tous égaux, soit il existe un indice $i$ où $e_i \preceq f_i$.
+    \begin{props}
+        L'ordre lexicographique est une relation d'ordre.
+    \end{props}
+    On a bien choisi son nom :D
+    \begin{exemple}
+        Flemme de recopier des exemples, voir le diapo 24 (page 46).
+    \end{exemple}
+    \begin{thm}
+        L'ordre lexicographique est bien fondée si $(\preceq_1,\ldots,\preceq_n)$ sont bien fondés.
+    \end{thm}
+    L'ordre du dictionnaire n'est pas bien fondée par contre.
 \end{document}
