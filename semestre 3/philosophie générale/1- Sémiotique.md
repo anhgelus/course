@@ -53,3 +53,52 @@ Chaque signe possède un sens uniquement dans le système général qu'est la la
 
 Le langage est réflexif -> il peut parler de lui-même
 Le langage permet de parler de tous les autres systèmes de signe
+
+Husserl -> Présomption du signe est l'interprétation du lien causale entre le signe et ce qu'il indique
+|> se fonde sur l'empirisme
+|> est contingent
+-> la fumée ne vient pas toujours d'un feu
+|> ne fonctionne pas de la même manière pour l'expression linguistique
+-> parler de chien ne provoque pas le chien
+|> le lien est nécessaire
+-> si on maîtrise la langue, alors on comprend nécessairement la signification
+=> la signification n'est pas mentale
+|> on comprend la même chose, même si notre représentation mentale est différente
+|> la représentation est contingente
+-> ce sont des objets idéaux
+=> Les mots n'ont plus une fonction d'indication, mais d'expression
+
+Mais les peuvent-ils indiquer qlq chose ?
+|> les phrases indiquent les pensées de la personne
+|> on peut comprendre l'expression, mais pas l'indication (voir Kafka)
+(quand on se parle à soi-même, il n'y a pas de fonction d'indication)
+-> cette différence est fondée sur une conjecture
+|> on fait l'hypothèse de l'indication, pas de l'expression
+
+Existe-t-il un système de langage animal ?
+|> si les animaux poussent un crie spécifique à un moment, il manifeste qlq chose de spécifique (c'est le cas)
+|> ressemble à un proto-langage
+|> il semble manquer un une syntaxe
+|> le langage humain est libérer de ce contexte
+
+Descartes questionne l'existence du langage animal
+|> il explique que ce n'est pas une question d'organe -> les sourds/muets peuvent créer des signes
+|> les animaux ne peuvent pas refaire une phrase en ajoutant une négation
+-> le langage humain est combinatoire
+|> l'infini est produit par le fini
+|> Descartes explique que les animaux n'ont pas de raison car ils ne sont pas capable de faire ça
+-> il leur manque une syntaxe
+|> pourtant, diverses études biologiques ont montré qu'ils sont capables d'apprendre / d'utiliser les symboles humains
+
+Le problème du langage animal existe depuis l'antiquité
+|> néo-académiciens et stoïciens sont d'accord qu'il y a un langage extérieur
+|> néo-académiciens soutiennent que les animaux ont un langage intérieur
+-> on ne comprend pas les sons animaux, mais ça ne veut pas dire qu'ils parlent pas
+|> stoïciens défendent l'inverse, les animaux n'ont pas de langage intérieur
+-> 
+
+> [!warning] Descartes s'est trompé
+> Les animaux ne sont biologiquement pas capable de parler comme nous
+> |> ils n'ont pas de larynx
+> 
+> Les premiers humains n'ont plus !

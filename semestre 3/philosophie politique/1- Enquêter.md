@@ -42,3 +42,32 @@ Voir [[Enquêter - Frise chronologique - Foucault.pdf]]
 
 Une injure à une victime devient une injure au pouvoir
 ## B. Qui dois enquêter ?
+Deux types de système : inquisitoire et accusatoire
+
+Inquisitoire = juge possède un pouvoir d'instruction
+|> charge de l'enquête revient au juge
+
+Accusatoire = juge ne possède pas ce pouvoir
+|> charge de l'enquête revient au procureur, à la défense et à l'attaque
+-> est un écho de l'épreuve selon Foucault (juge qui n'est que l'arbitre, capacités financières rentrant en jeu)
+
+![Carte de l'université d'Ottawa](géographie-des-systèmes-judiciaires.png)
+## C. Comment enquêter ?
+Toutes les preuves sont acceptées d'une manière générale en France
+
+En *common law*, il y a des interdictions
+|> pas possible de présenter l'accusé / l'attaquant sous un jour négatif s'il n'y a pas de rapport avec l'infraction en cause (*bad character evidence*)
+|> témoignages rapportant les dires d'un tiers (*hearsay*)
+-> permet d'éviter d'influencer le jury avec des preuves de mauvaises qualités
+
+Bentham, _Rationale of Judicial Evidence, Specially Applied to English Practice_
+|> est contre l'interdiction des preuves
+
+Schauer (utilitariste), _On the Supposed Jury-Dependence of Evidence Law_ -> très compliqué de calculer le bien être collectif
+|> il existe des règles dont le suivi optimise le bien être collectif
+|> on devrait donc suivre ces règles
+
+Les preuves statistiques ont un problème au niveau
+|> des classes de référence
+|> du *sensitive believe*
+|> incentives

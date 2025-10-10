@@ -12,20 +12,11 @@ Biblio* charger_n_entrees(char* nomfic, int n){
         char* tmp = fgets(content, 256, f);
         if (!tmp) return NULL;
         
-        char* parsed[3];
-        char c[256];
-        int k = 0;
-        int l = 0;
-        for (int j = 0; j < 256 && content[j] != '\0'; j++){
-            if (content[j] == ' '){
-                c[k] = '\0';
-                parsed[l++] = strdup(c);
-                k = 0;
-            } else {
-                c[k++] = content[j];
-            }
-        }
-        inserer_en_tete(bib, atoi(parsed[0]), parsed[1], parsed[2]);
+        int num;
+        char title[256];
+        char author[256];
+        if (sscanf(content, "%d %s %s", &num, &title, &author) != 3) return NULL;
+        inserer_en_tete(bib, num, title, author);
     }
     if (fclose(f) != 0) return NULL;
     return bib;

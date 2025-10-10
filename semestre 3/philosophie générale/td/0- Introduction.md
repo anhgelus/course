@@ -6,6 +6,7 @@ tags:
   - td
 semestre: 3
 ---
+clromano@wanadoo.fr
 Que des auteurs du XXe siècle
 
 20/11 est le devoir sur table
@@ -13,7 +14,7 @@ Que des auteurs du XXe siècle
 
 Possiblement un autre le 11/12
 ## Références
-_Frege_, « Sur le sens et la référence », _Philosophie du langage_ (anthologie de texte en deux volumes), I, p. 57-58
+Frege, « Sur le sens et la référence », _Philosophie du langage_ (anthologie de texte en deux volumes), I, p. 57-58
 |> de « La référence d'un nom propre » à « Suivre cette piste nous écarterait trop de notre chemin »
 |> rupture par rapport aux théories classiques de la signification
 |> signification d'un mot n'est pas psychologique car elle n'est pas unique à chacun -> elle n'est pas privée, sinon on ne pourrait pas s'entendre dessus

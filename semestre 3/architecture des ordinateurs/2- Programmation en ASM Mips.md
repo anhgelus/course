@@ -236,7 +236,7 @@ Quand on utilise la mémoire, on a besoin de copier les valeurs dans les registr
 
 Signature des instructions d'accès mémoire : `Codop Rt, Imm16(Rs)`
 |> `Rt` est la destination ou le registre source
-|> `Imm16(Rs)` est la zone mémoire avec `Rs` étant le décallage
+|> `Imm16(Rs)` est la zone mémoire avec `Rs` étant le décalage en octet
 
 On se place tjs du côté du processeur pour les opcodes
 |> `l.` servent à *load*
@@ -252,3 +252,87 @@ lw $4, -2(3) # load le word contenu dans l'adresse -2 + 3 dans $4
 ```
 
 Par défaut, tout est signé, si on veut être en non signé, on rajoute `u`, i.e. `lhu` pour récupérer un `uint16`
+
+Il n'existe pas de pointeur
+|> besoin de mettre à jour la mémoire
+|> faut faire attention aux problèmes de synchronisation
+
+Il y a toujours au moins un transfert mémoire vers CPU
+|> est celui qui place le code dans IR
+## Structures de contrôle
+Pour ne plus faire une instruction séquentielle, on doit faire des sauts
+|> deux types : inconditionnels et conditionnels
+-> changent PC
+
+Sauts inconditionnels -> les jumps (commencent par `j`)
+|> `j label` saute au label
+|> `jr Rt` saute à valeur contenu dans Rt
+
+Sauts conditionnels -> les branchements (commencent par `b`)
+|> saute si une condition est vraie
+|> voir le memento
+
+Afficher la valeur absolue d'un nombre
+```asm
+.data
+n:	.word -1
+
+.text
+	lui $3, 0x10010000
+	lw $4, 0($3)
+	
+# syntaxe du *if then* ici
+	bgez $4, show
+	sub $4, $0, $4
+show:
+	ori $2, $0, 1
+	syscall
+	
+	ori $2, $0, 10
+	syscall
+```
+
+Pour utiliser plusieurs conditions, on a besoin d'utiliser une instruction avant
+|> `slt $10, $8, $9` met `$10` à `1` si `$8 < $9`, il le met à `0` sinon
+-> on utilise un branchement après
+|> si on veut une comparaison large $a\leqslant b$, on vérifie si $a > b$ est faux
+
+Pour faire un `if else`, on fait :
+```asm
+	bcond ..., $0, else
+	# instruction du if
+	j next
+else:
+	# instruction du else
+next:
+	# suite
+```
+
+Pour faire un `while`, on fait :
+```asm
+boucle:
+	bcond ..., $0, next
+	# instruction du while
+	j boucle
+next:
+	# suite
+```
+
+Le codage de `j label` est
+|> `00010 Immédiat_sur_26_bits`
+-> besoin de calculer la bonne adresse pour qu'elle soit sur 26 bits
+|> on fait `PC = PC[31:28] | I * 4`
+|> `PC[31:28]` permet de rester dans la partie code
+|> `I` est l'immédiat avec en plus `[1:0]` qui sont nuls car multiple de 4
+|> `* 4` provient du multiple de 4
+
+Branchement sont en format I
+|> immédiat est donc sur 16 bits
+-> on a tjs besoin de le mettre sur 32 bits
+|> on fait `PC = PC + 4 + (I * 4)`
+|> le calcul du PC suivant est donc relatif à la ligne d'instruction en cours
+
+**Dans tous les cas, on a besoin de savoir où se trouve l'étiquette pour la coder**
+|> on a donc besoin de le faire en deux étapes (on les appelle "passe")
+1. on s'occupe de toutes les instructions sans traiter les étiquettes
+2. on traite les étiquettes après qu'on connait bien tout

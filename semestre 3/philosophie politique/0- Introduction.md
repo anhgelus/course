@@ -5,14 +5,16 @@ tags:
   - philosophie-politique
 Semestre: 3
 ---
+À chaque blocus, il y a un cours en ligne
+
 Permanence en 505 le jeudi de 14h à 16h.
 Pas là jeudi 23 octobre.
 
 Objectifs du cours :
 1. dénaturaliser le droit pénal
-2. développer vos capacités analytiques et argumentatives
+2. développer nos capacités analytiques et argumentatives
 3. allier la compréhension concrète de l'objet et la capacité à l'analyser de manière subtile
-4. développer votre aisance à l'oral -> cherche à compenser les khôlles
+4. développer notre aisance à l'oral -> cherche à compenser les khôlles
 
 Moyens :
 1. plan par questions

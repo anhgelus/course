@@ -27,13 +27,13 @@ int main(int argc, char** argv){
     int rep;
     do {
         menu();
-        char s[2];
-        char* r = fgets(s, 2, stdin);
-        if (!r) {
+        char s[3];
+        char* r = fgets(s, 3, stdin);
+        if (!r){
             printf("erreur lors de la lecture :(\n");
             return 3;
         }
-        s[1] = '\0';
+        s[1] = '\0'; // skipping \n char
         rep = atoi(s);
         printf("\n");
         switch(rep){ 
@@ -42,17 +42,21 @@ int main(int argc, char** argv){
                 afficher_biblio(bib);
                 break;
             case 2:
-                int num;
-                char titre[256];
-                char auteur[256];
                 printf("Veuillez ecrire le numero, le titre et l' auteur de l' ouvrage. \n");
-                /* On suppose que le titre et l’auteur ne contiennent pas d’espace*/
-                if (scanf("%d %s %s", &num, titre, auteur) == 3){
-                    inserer_en_tete(bib, num, titre, auteur);
-                    printf("Ajout fait.\n");
-                } else {
-                    printf("Erreur format\n");
+                char input[256];
+                char* s = fgets(input, 256, stdin);
+                if (!s){
+                    printf("Entrée invalide.");
+                    break;
                 }
+                int num;
+                char title[256];
+                char author[256];
+                if (sscanf(input, "%d %s %s", &num, &title, &author) != 3){
+                    printf("Entrée invalide.");
+                    break;
+                }
+                inserer_en_tete(bib, num, title, author);
                 break;
             case 3:
                 Biblio* db = rechercher_doublons(bib);
@@ -61,6 +65,6 @@ int main(int argc, char** argv){
         }
         printf("\n");
     } while (rep != 0);
-    printf ("Merci, et au revoir.\n");
+    printf("Merci, et au revoir.\n");
     return 0;
 }

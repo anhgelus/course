@@ -1,0 +1,87 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{titlesec}
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\title{TD Maths discrètes}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+    \section*{Retour sur les copies}
+    Les résultats ne sont pas bons.
+    Tout le monde devrait pouvoir avoir $5/10$ (la moyenne est à $4/10$).
+    Il y a un problème de vitesse et d'apprentissage du cours.
+    \section*{Exercice 11}
+    Soient $a$ un plus grand élément de $A$ et $m$ le maximum de $A$.
+    Par anti-symétrie, $a\preceq M$ et $M\preceq a$ par leurs définitions, alors $a=M$.
+    Si $m_1$ et $m_2$ sont deux maximums de $A$, par anti-symétrie, ils sont égaux.
+
+    $\mathbb{N}\cup \{a\}$ munie de $\leqslant$ possède un élément maximal ($a$), mais pas de maximum (il n'existe pas
+    de majorant dans $\mathbb{N}$).
+
+    Soient $m_1$ et $m_2$ deux éléments maximals de $A$.
+    Comme $\preceq$ est totale, on a $m_1\preceq m_2$ et $m_2\preceq m_1$.
+    Par anti-symétrie, $m_1=m_2$, i.e. l'élément maximal est unique.
+    \section*{Exercice 10}
+    Il y a le même nombre d'élément dans $P=\mathcal{P}(\{a,b,c\})$ et dans $E=\{1,2,3,6,7,14,21,42\}$.
+    Si on définit $f$ de $P$ dans $E$ tels que $f(p) = \prod_{a\in p} a$ où l'équivalent dans $\mathbb{N}$ est 
+    $\varnothing = 1$, $\{a\}=2$, $\{b\}=3$ et $\{c\}=7$.
+    Cette application est bijective (la réciproque est $f^{-1}(e) = \{p,p|e\}$ avec la même clé).
+    Elle est aussi monotone car $p_1\subseteq p_2$ et $f(p_1) | f(p_2)$ car $f(p_2)$ est une mulitple de $p_1$.
+
+    Sinon, on dessine le graphe couvrant~: c'est plus propre.
+
+    Version propre de mon idée~: après avoir défini les valeurs, on définit $f$ comme étant
+    $f(A\cup B) = f(A)\times f(B)$.
+    \section*{Exercice 16}
+    Elle n'est clairement pas bijective car $8 = f(\{1,3,4\}) = f(\{8\})$.
+    \section*{Exercice 8}
+    «~$\alpha$ est un préfixe de $\beta$~» est~:
+    $$ \forall k < \min(n_1,n_2),\quad \alpha_k = \beta_k $$
+    avec $n_1$ la taille de $\alpha$ et $n_2$ est la taille de $\beta$.
+    On note cette relation $\preceq$.
+
+    $$ (\exists i, \forall k < i, a_k = b_k \land a_i \preceq_A b_i) \lor a = b$$
+    C'est un ordre total car $\preceq_A$ est total.
+
+    Soit $n\in\mathbb{N}$.
+    On a $a^nb \preceq a^{n+1}b$.
+    Donc $\preceq$ n'est pas bien fondé.
+    \section*{Exercice en plus}
+    Soit $A$ un alphabet composé de $\{a,b\}$.
+    On définit un langage $L\subseteq A^*$ par induction structurelle~:
+    \begin{itemize}
+        \item $a\in L$
+        \item $\forall (u,v)\in L^2, uvb\in L$
+    \end{itemize}
+    Soit $u\in L$ où $u$ possède une taille de $2$.
+    Ainsi, $u$ est soit égal à $a$, soit de la forme $v_1v_2b$.
+    Donc $b$ est forcément dans $u$.
+    Ainsi, $v_1 = a$ ou $v_1 = \varepsilon$ et $v_2$ est le choix restant.
+    Or, $\varepsilon$ n'est pas dans $L$, donc $u$ est impossible.
+
+    $u\in L$.
+    Donc $aua$ est aussi dans $L$. Ainsi, le miroir de $aua$ est $a\tilde u a$.
+    Donc $bub$ est aussi dans $L$. Ainsi, le miroir de $bub$ est $b\tilde u b$.
+    Comme $\tilde u = u$, on a que la propriété est vraie.
+\end{document}
