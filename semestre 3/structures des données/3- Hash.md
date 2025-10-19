@@ -55,7 +55,9 @@ On suppose que la table est bien dimensionnée -> $\exists c>0,\quad m=c\times n
 
 À cause de ces hypothèses, on a des complexités en moyenne, que l'on note $0_{moy}$.
 
-**Rattraper facteur de charge**
+Facteur de charge est $\alpha=\frac nm$ où $n$ est le nombre de pairs et $m$ est la taille du tableau sous-jacent
+|> est un indicateur de ses performances
+|> quand devient supérieur à $0.5$, les collisions deviennent fréquentes
 
 La recherche d'un élément possédant une clé $k$ est en $O_{moy}(1)$
 |> $O_{moy}(1+\alpha)=O_{moy}(\alpha)$ car $\alpha$ est la taille moyenne de la liste gérant les collisions et que $O_{moy}(1)$ provient de la complexité de $h$
@@ -75,9 +77,22 @@ On a besoin de stocker le pointeur
 Cherche à résoudre les problèmes des listes chaînées
 
 Maintenant, une case une ne contient qu'un élément
-**Rattraper cours, j'ai trop faim pour bien prendre en note**
+|> quand une case contient déjà un élément, on en cherche une autre à l'aide d'une méthode de *probing*
 
-probing quadratic, souvent, $c=d=\frac 12$
+*Probing* détermine une nouvelle case à partir de l'ancienne
+|> linéaire = $h(k,i) = (h(k)+i)\%m$
+|> quadratic = $h(k,i) = (h(k)+ci+di^2)\%m$ avec $c\geqslant 0$ et $d>0$ (souvent $c=d=\frac 12$)
+|> double hachage = $h(k,i)=(h_1(k)+ih_2(k))\%m$ où $h_1$ et $h_2$ sont deux fonctions de hachage
+-> $i$ est toujours le nombre de raté (i.e. $i=0$ pour le premier, $i=1$ pour le deuxième...)
+
+Quand on supprime un élément, on casse la chaîne -> besoin de réorganiser le tout
+La recherche d'un élément ne dépend plus que de $\alpha$
+|> besoin que $\alpha$ soit inférieur à 1 (souvent, on a $\alpha \leqslant 0.8$)
+
+La recherche fructueuse et infructueuse sont en $O_{moy}(1)$, mais recherche fructueuse est plus rapide
+|> suppression est aussi en $O_{moy}(1)$
+
+Quand la supposition sur $\alpha$ est fausse (on se rapproche de 1), alors le $O_{moy}(1)$ n'est plus assuré -> besoin d'agrandir la table
 ## Filtre de Bloom
 Permet de tester efficacement si un élément est dans un ensemble
 |> permet d'éviter beaucoup de recherches non fructueuses
@@ -86,6 +101,7 @@ Structure probabiliste permet de savoir
 |> avec certitude si un élément n'est pas présent
 |> avec une certaine probabilité si un élément est présent
 -> peut donner des faux positifs, mais ne donne pas de faux négatif
-
-**Rattraper cours pour la même raison**
-pb dans l'exemple -> les flèches de w doivent arriver sur que des 1
+![[Pasted image 20251014102252.png]]
+On hash à l'aide de plusieurs fonctions les valeurs et on indique que la valeur est présente dans le tableau
+|> pour vérifier si une valeur est dans le tableau, on la hash on vérifie si les valeurs indiquent toutes qu'elle est présente !
+-> peut se tromper sur la présence à cause des collisions, mais jamais sur l'absence

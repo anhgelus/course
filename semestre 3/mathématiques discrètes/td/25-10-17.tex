@@ -1,0 +1,92 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{titlesec}
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\title{TD Maths discrètes}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+    \section*{Exercice 1}
+    Soit $(P_n)_{n\geqslant 2}$ une propriété telle que~:
+    $$ P_n:\quad \overline{\bigcup^n_{i=0} A_i}=\bigcap^n_{i=0} \bar A_i\quad\land\quad\overline{\bigcap^n_{i=0}A_i}=\bigcup^n_{i=0}\bar A_i $$
+    $P_2$ est vraie (c'est la loi de de Morgan).
+
+    Posons $n\geqslant 2$ tel que $P_n$ soit vraie.
+    
+    Soient $A_1,\ldots,A_{n+1}$ des parties de $E$.
+    On pose $B_1=A_n\cup A_{n+1}$ et $B_2=A_n\cap A_{n+1}$.
+    \begin{align*}
+        \overline{\bigcup^{n-1}_{i=0} (A_i)\cup B_1} &= \bigcap^{n-1}_{i=0}(\bar A_i) \cup \bar B_1 ~\text{hypothèse de récurrence} \\
+                                                     &= \bigcap^{n+1}_{i=0} \bar A_i
+    \end{align*}
+    de même pour la deuxième partie de $P_n$.
+
+    Alors, $P_{n+1}$ est vraie.
+
+    Ainsi, $P_n$ est vraie pour tout $n$ supérieur ou égale à 2.
+    \section*{Exercice 2}
+    Soient $a\in\mathbb{N}$ et $n\in\mathbb{N}$ tel que $P_a(n)$ soit vraie.
+
+    $10^n\times 10 + a = 9\times 10^n + 10^n + a$, donc c'est divisible par $9$ car $9\times 10^n$ l'est et $10^n+a$
+    l'est aussi par hypothèse.
+    Alors, $$ P_a(n) \implies P_a(n+1) $$
+
+    Prenons le cas particulier $a=9$.
+    On a que $9 | 10^0 + a \iff 9 | 10$ est faux, donc $P_a(n)$ n'est pas vraie pour tout $n$.
+    Pour que $P_a(n)$ soit vraie pour tout $n$, il faut que $9|a+1$, i.e. $a=9k+1$ (pour $k\in\mathbb{N}^*$).
+    \section*{Exercice 3}
+    $$ P_n:\quad H_{2^n} \geqslant 1+n/2 $$
+
+    $P_0:\quad H_1=1 \geqslant 1 + 0/2$
+
+    Soit $n$ telle que $P_n$ soit vraie.
+    On a donc que $H_{2^n} \geqslant 1+n/2$.
+    \textbf{TODO: refaire}
+    \section*{Exercice 4}
+    \begin{enumerate}
+        \item $F_2=F_1$, donc $P_1$ est vraie.
+
+            Soit $n > 0$ tel que $P_n$ soit vraie.
+            \begin{align*}
+                F_{2n}   &= F_1+\ldots+F_{2n-1} \\
+                F_{2n+2} &= F_{2n} + F_{2n+1} \\
+                F_{2(n+1)} &= F_1+\ldots+F_{2n-1} + F_{2n+1}
+            \end{align*}
+            Donc $P_{n+1}$ est vraie.
+        \item[5.] $F_1 \geqslant 0$ et $F_1 \leqslant \varphi$, donc $P_1$ est vraie.
+
+            Soit $n>0$ tel que $P_n,\ldots,P_1$ soit vraie.
+            \begin{align*}
+                \varphi^{n-2} &\leqslant &F_n& &\leqslant \varphi^{n-1} \\
+                \varphi^{n-2} + \varphi^{n-3} &\leqslant &F_n+F_{n-1}& &\leqslant \varphi^{n-1} + \varphi^{n-2} \\
+                \varphi^{n-2} + \varphi^{n-3} &\leqslant &F_{n+1}& &\leqslant \varphi^{n-1} + \varphi^{n-2} \\
+            \end{align*}
+    \end{enumerate}
+    \section*{Exercice 7}
+    $P(1)$ est vraie, donc $P(2\times 1 = 2^1)$ est vraie.
+    Donc, $P(2\times 2 = 2^2)$ l'est aussi.
+    Alors, $P(2^n)$ est vraie par récurrence triviale.
+    Or, $(2^n)_{n\in\mathbb{N}}$ tend vers $+\infty$.
+    Soit $k\in\mathbb{N}$, si 
+\end{document}

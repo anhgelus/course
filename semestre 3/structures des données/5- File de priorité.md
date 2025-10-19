@@ -22,7 +22,7 @@ flowchart TB
 	B --> B1
 	B --> B2
 	C --> C1
-	C --> C2["$\varnothing$"]
+	C --> C2["ø"]
 ```
 
 Un tas (min) est un arbre binaire complet

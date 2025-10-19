@@ -70,3 +70,32 @@ Le scepticisme se voit vraiment comme une réaction au dogmatisme stoïcien
 
 > [!warning] Augustin dit que c'est la pensée de Cicéron, mais rien ne le prouve
 > Aucun texte, aucune source ne permet de confirmer que c'était bien les idées de Cicéron
+
+Page 17, texte 2
+
+Qu'est-ce qu'on entend pas savoir ?
+|> les sens peuvent nous tromper
+|-> besoin de laisser ce qui nous provient des sens
+|> il reste des certitudes, au moins celle de vivre
+|> même si je suis trompé, je suis (*si falor sum*)
+-> être est la condition de possibilité de notre réalité
+|> certitude que rien ne peut rendre illusoire
+
+> [!NOTE] Différence avec Descartes
+> Augustin n'utilise pas que cet argument
+> Les finalités sont différentes -> Descartes utilise ce pov comme point central de sa philosophie
+> 
+> Pour Augustin, la science est intime -> il faut se regarder soit-même pour faire de la science
+
+Augustin justifie l'adéquation entre notre perception et le monde par dieu
+|> les sens fonctionnent de la même manière que les faits provenant de témoignages
+-> il n'existe pas de raison de douter systématiquement de leur fiabilité
+|> cet argument sert à convaincre le sceptique religieux
+|> argument est moral / pragmatique -> si on rejette ça, on perd beaucoup trop de connaissances
+
+Peut-on parler de connaissance provenant des sens ?
+|> les sens sont très importants
+|> Augustin dit que tout sera confirmé par la vision
+
+> [!NOTE] Pourquoi répondre aux sceptiques ?
+> Beaucoup pensent qu'il est nécessaire de répondre aux sceptiques pour pouvoir fonder la métaphysique / la science

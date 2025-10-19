@@ -336,3 +336,38 @@ Branchement sont en format I
 |> on a donc besoin de le faire en deux étapes (on les appelle "passe")
 1. on s'occupe de toutes les instructions sans traiter les étiquettes
 2. on traite les étiquettes après qu'on connait bien tout
+
+**Revoir la construction des sauts**
+## Tableaux, structures
+**revoir le début des tableaux**
+
+Un tableau de taille $n$ prend $n$ fois la taille du type stocké
+|> un tableau d'entier prend $4n$ octets
+
+L'adresse du $i$-ième élément du tableau est l'adresse du début $+ i\times n$
+|> c'est déréférencer `&T[i]`
+
+On déclare les tableaux comme
+```asm
+.text
+tab:  .word 1, 2, 3 # équivalent de int tab[] = {1,2,3};
+```
+
+Attention à l'alignement quand on utilise les tableaux !
+
+Les structures sont des ensembles de variables
+|> on utilise les `.space` pour en initialiser des vides
+
+**besoin de vérifier si c'est complet**
+## Variables locales
+Elles ne sont pas au même endroit que les variables globales
+|> elles sont dans une zone variable qui contient les infos dynamiques
+-> la pile !
+|> création d'un contexte pour chaque fonction
+|> contexte sont en LIFO, d'où la pile
+
+**rattraper la gestion mémoire**
+`0x8000 0000` -> égal ou plus grand pour le système
+|> ce qui précède `0x8000 0000` est pour l'utilisateur
+|> le fond de la partie utilisateur sont les contextes de fonction (la pile !)
+-> le sommet de la pile est variable et est dans un registre particulier, le `$29` (stack pointer)

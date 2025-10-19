@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "entreeSortieLC.h" 
-#include "biblioLC.h" 
+#include "entreeSortieH.h" 
+#include "biblioH.h" 
 
 void menu(){
     printf("Entrez l'action à effectuer :\n");
@@ -18,7 +18,7 @@ int main(int argc, char** argv){
     }
     char* file = argv[1];
     int n = atoi(argv[2]);
-    Biblio* bib = charger_n_entrees(file, n);
+    BiblioH* bib = charger_n_entrees(file, n);
     if (!bib){
         printf("erreur lors de la lecture du fichier\n");
         return 2;
@@ -56,15 +56,16 @@ int main(int argc, char** argv){
                     printf("Entrée invalide.");
                     break;
                 }
-                inserer_en_tete(bib, num, title, author);
+                inserer(bib, num, title, author);
                 break;
             case 3:
-                Biblio* db = rechercher_doublons(bib);
+                BiblioH* db = rechercher_doublons(bib);
                 afficher_biblio(db);
                 break;
         }
         printf("\n");
     } while (rep != 0);
     printf("Merci, et au revoir.\n");
+    liberer_biblio(bib);
     return 0;
 }
