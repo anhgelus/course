@@ -75,7 +75,7 @@ Argument est constitué de prémisses et d'une conclusion reliées par des expre
 
 Validité ici est la *validité déductive* et non inductive
 
-Un argument est dit correct si les prémisses sont vraies et si l'argument est correct
+Un argument est dit correct si les prémisses sont vraies et si l'argument est valide
 
 Il existe un lien entre validité et vérité
 |> validité dépend pourtant du rapport entre prémisses et conclusion et non de la valeur de vérité des énoncés

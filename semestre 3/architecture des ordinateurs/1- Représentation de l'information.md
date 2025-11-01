@@ -39,7 +39,7 @@ Processeur contient l'ALU (ce qui permet de faire des calculs arithmétiques et 
 L'unité de commande contient deux registres principaux -> Program Counter (PC) et Instruction Register (IR)
 |> PC contient l'adresse du programme exécuté
 |> IR contient les instructions à exécuté
--> le CPU exécute sans la fin :
+-> le CPU exécute sans fin :
 1. lecture de l'adresse du code dans PC
 2. le place dans IR
 3. la lecture des instructions mise dans IR

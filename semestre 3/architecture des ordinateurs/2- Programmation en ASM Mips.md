@@ -371,3 +371,70 @@ Elles ne sont pas au même endroit que les variables globales
 |> ce qui précède `0x8000 0000` est pour l'utilisateur
 |> le fond de la partie utilisateur sont les contextes de fonction (la pile !)
 -> le sommet de la pile est variable et est dans un registre particulier, le `$29` (stack pointer)
+
+Adresse du fond de pile = `0x7FFF FFFC`
+
+On définit la taille de la pile dans le prologue
+|> se fait en première instruction
+|> on modifie directement `$29` pour lui indiquer quelle taille on met dedans
+|> la première variable est tjs celle qui est le plus haut (i.e. avec l'adresse la plus petite), est la convention gcc
+
+Après, on diminue la taille de la pile dans l'épilogue
+|> on dépile toutes les variables qu'on a utilisé
+
+```c
+int main(){
+	int a = 1;
+	int b = 2:
+	int c;
+	c = a + b;
+	return 0;
+}
+```
+
+```asm
+.text
+# prologue
+addiu $29, $29, -12 # car on stock 3 mots
+# initialisation des variables
+ori $8, $0, 1
+sw $8, 0($29)
+ori $8, $0, 2
+sw $8, 4($29)
+# corps du main
+lw $8, 0($29)
+lw $9, 4($29)
+addu $8, $8, $9
+sw $9, 8($29)
+# épilogue
+addiu $29, $29, 12
+# exit
+ori $2, $0, 10
+syscall
+```
+## Fonction
+Pour arriver à une fonction, on utilise `jal label`
+|> garde le lien de l'appel dans `$31`
+|> saute à label
+
+> [!warning] Besoin de sauvegarder `$31`
+> Si `main` appelle `f` et `f` appelle `h`, alors on perd le `$31` pour `f` !
+> |> fonction doit s'assurer que `$31` est identique entre l'entrée et la sortie
+> 
+> **On le sauvegarde tjs au fond du contexte**
+
+Valeur de retour est dans `$2`
+|> ou dans `$2` et `$3` si le mot fait 64 bits
+
+Les arguments sont mis en haut de la pile
+|> les 4 premiers sont dans les registres `$4`, `$5`, `$6`, `$7`
+|> il y a quand même assez de place dans la pile pour garder les 4 premiers
+
+Les registres `$16` à `$23` ne doivent pas être modifié par un appel de fonction
+|> ou s'ils sont modifiés, leurs valeurs doit être restaurées
+
+**Voir le mémento pour les conventions de stockage**
+
+> [!warning] On garde toujours de la place dans la pile, y compris si on optimise en registre
+
+

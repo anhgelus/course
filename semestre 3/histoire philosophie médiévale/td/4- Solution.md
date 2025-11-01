@@ -31,3 +31,4 @@ Connaissance intellective est vrai si :
 -> si répond à tout cela, devient alors inutile de douter de la connaissance intellective
 |> un fou ou qlq'un qui dort est en vie et est capable de conclure la même chose avec ce qu'il voit
 
+Nie la clarté de la lumière éternelle pour la connaissance

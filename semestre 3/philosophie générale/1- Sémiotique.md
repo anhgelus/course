@@ -102,3 +102,7 @@ Le problème du langage animal existe depuis l'antiquité
 > |> ils n'ont pas de larynx
 > 
 > Les premiers humains n'ont plus !
+
+**Rattraper**
+
+Compliquer de trancher l'existence d'un langage animal

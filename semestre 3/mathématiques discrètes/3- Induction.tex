@@ -1,0 +1,208 @@
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\colorlet{defn-color}{DarkBlue}
+\colorlet{props-color}{Blue}
+\colorlet{warn-color}{Red}
+\colorlet{exemple-color}{Green}
+\colorlet{corol-color}{Orange}
+\newenvironment{defn-leftbar}{%
+  \def\FrameCommand{{\color{defn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{warn-leftbar}{%
+  \def\FrameCommand{{\color{warn-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{exemple-leftbar}{%
+  \def\FrameCommand{{\color{exemple-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{props-leftbar}{%
+  \def\FrameCommand{{\color{props-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\newenvironment{corol-leftbar}{%
+  \def\FrameCommand{{\color{corol-color}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\def \freespace {1em}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{defn-color}Définition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{defn-leftbar},%
+ postfoothook=\end{defn-leftbar},%
+]{better-defn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{warn-color}Attention~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{warn-leftbar},%
+ postfoothook=\end{warn-leftbar},%
+]{better-warn}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+notebraces={}{},%
+headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{exemple-color}Exemple~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{exemple-leftbar},%
+ postfoothook=\end{exemple-leftbar},%
+]{better-exemple}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Proposition~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-props}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{props-color}Théorème~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{props-leftbar},%
+ postfoothook=\end{props-leftbar},%
+]{better-thm}
+\declaretheoremstyle[headfont=\sffamily\bfseries,%
+ notefont=\sffamily\bfseries,%
+ notebraces={}{},%
+ headpunct=,%
+ bodyfont=\sffamily,%
+ headformat=\color{corol-color}Corollaire~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+ preheadhook=\vspace{\freespace}\begin{corol-leftbar},%
+ postfoothook=\end{corol-leftbar},%
+]{better-corol}
+
+\declaretheorem[style=better-defn]{defn}
+\declaretheorem[style=better-warn]{warn}
+\declaretheorem[style=better-exemple]{exemple}
+\declaretheorem[style=better-corol]{corol}
+\declaretheorem[style=better-props, numberwithin=defn]{props}
+\declaretheorem[style=better-thm, sibling=props]{thm}
+\newtheorem*{lemme}{Lemme}%[subsection]
+%\newtheorem{props}{Propriétés}[defn]
+
+\newenvironment{system}%
+{\left\lbrace\begin{align}}%
+{\end{align}\right.}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\newenvironment{lititle}%
+{\vspace{7mm}\LobsterTwo \large}%
+{\\}
+
+\renewenvironment{proof}{\par$\square$ \footnotesize\textit{Démonstration.}}{\begin{flushright}$\blacksquare$\end{flushright}\par}
+
+\title{Induction}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+	\newpage
+    \begin{defn}
+        Soient $E$ un ensemble, $X_0$ une partie de $E$ et $\mathcal{F}$ un ensemble de règles données sous la forme
+        d'applications distinctes $f:E^{a(f)}\to E$, avec $a(f)$ l'arité de l'application $f$.
+
+        L'ensemble définie inductivement à l'aide de $E$, $X_0$ et $\mathcal{F}$, est le plus petit ensemble $X$ de $E$
+        vérifiant~:
+        \begin{itemize}
+            \item $X_0\subseteq X$
+            \item pour toute application $f$ d'arité $n$ de $\mathcal{F}$, pour tous $x_1,\ldots,x_{n}$, si 
+                $(x_1,\ldots,x_n)\in X^{n}$, alors $f(x_1,\ldots,x_{n})$ est dans $X$.
+        \end{itemize}
+    \end{defn}
+    \begin{exemple}
+        L'ensemble $X$ des entiers pairs est définissable comme~:
+        $$ X \left\{\begin{matrix}X_0 &= \{0\}\\ \mathcal{F} &= \{x\longmapsto x+2\} \end{matrix}\right. $$
+    \end{exemple}
+    \begin{defn}
+        Soit $X$ un ensemble défini par induction structurelle à partir de $E$, $X_0$ et $\mathcal{F}$.
+
+        On peut définir par une fonction $g$ par induction structurelle de la façon suivante~:
+        \begin{itemize}
+            \item tous les $x$ dans $X_0$ doivent être données explicitement
+            \item pour toute règle $f$ dans $\mathcal{F}$ d'arité $n$, on donne
+                $$ g(f(x_1,\ldots,x_n)) = h(x_1,\ldots,x_n,g(x_1),\ldots,g(x_n)) $$
+        \end{itemize}
+    \end{defn}
+    \begin{exemple}
+        La hauteur $h$ d'un arbre binaire est définie par~:
+        \begin{itemize}
+            \item $h(\varnothing) = 0$
+            \item $h((a,g,d)) = 1+\max(h(g), h(d))$
+        \end{itemize}
+
+        Le nombre d'éléments $\mathcal{N}$ d'un arbre binaire est défini par~:
+        \begin{itemize}
+            \item $\mathcal{N}(\varnothing) = 0$
+            \item $\mathcal{N}(a,g,d) = 1+\mathcal{N}(g)+\mathcal{N}(d)$
+        \end{itemize}
+    \end{exemple}
+    \begin{thm}
+        Soit $X$ un ensemble défini par induction structurelle à partir de $E$, $X_0$ et $F$.
+        Soit $P$ une propriété vraie sur les éléments de $X$.
+
+        \fbox{Base} Si $P(x)$ est vraie pour tout $x\in X_0$,
+
+        \fbox{Induction} Si, pour tout $f$ dans $\mathcal{F}$ d'arité $n$, pour tous $x_1,\ldots,x_n\in X$, \textbf{si}
+        $P(x_1),\ldots,P(x_n)$ sont vraies, \textbf{alors} $P(f(x_1,\ldots,x_n))$ est vraie.
+
+        Alors pour tous $x$ dans $X$, $P(x)$ est vraie.
+    \end{thm}
+    Il s'agit de la preuve par induction structurelle.
+    \begin{proof}
+        Soit $V=\{x\in X | P(x)\}$.
+        \begin{itemize}
+            \item $V\subseteq X$
+            \item Par la base, on a $X_0\subseteq V$. Soient $f$ dans $\mathcal{F}$ d'arité $n$ et 
+                $(x_1,\ldots,x_n)\in V^n$.
+                Alors, par induction, $P(f(x_1,\ldots,x_n))$ est vraie.
+                Donc $f(x_1,\ldots,x_n)$ est dans $V$.
+                Par définition, $X$ est le plus petit ensemble de vérifiant ces conditions, alors $X\subseteq V$
+        \end{itemize}
+        Ainsi, $X=V$ et $P(x)$ est vraie pour tout $x$ dans $X$.
+    \end{proof}
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[svgnames]{xcolor}
+\usepackage{thmtools}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{parskip}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{AQT}{{\fontfamily{qbk}\selectfont AQT}}
+
+\usepackage{titlesec}
+\usepackage{LobsterTwo}
+\titleformat{\section}{\newpage\LobsterTwo \huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\vspace{2em}\LobsterTwo \Large\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\vspace{1em}\LobsterTwo \large\bfseries}{\thesubsubsection.}{1em}{}
+
+\title{TD Maths discrètes}
+\author{William Hergès\thanks{Sorbonne Université}}
+
+\begin{document}
+	\maketitle
+    \section*{Exercice 1}
+    $(0,0)$, $(0,1)$, $(0,2)$, $(1,2)$, $(2,2)$
+
+    $n$ tq $(n,n)$ est dans $\mathrm{Inf}_1$.
+    Donc $(n+1,n+1)$ est dans $\mathrm{Inf}_1$.
+    \section*{Exercice 2}
+    $u$ et $v$ dans $L$.
+    $$ w = a.u.v $$
+    $$ |w|_a = 1+|u|_a+|v|_b = |u|_b + |v|_b - 1 $$
+    $$ |w|_b = |u|_b + |v|_b $$
+    Donc 
+    $$ |w|_a + 1 = |w_b| $$
+    \section*{Exercice 3}
+    $$ h(\{t,a,b\}) = \left\{\begin{matrix}h(\varepsilon) = 0\\ h(\{t, a, b\}) = 1 + \max\{h(a),h(b)\}\end{matrix}\right. $$
+    $$ n(\{t,a,b\}) = \left\{\begin{matrix}h(\varepsilon) = 0\\ h(\{t, a, b\}) = 1 + n(a)+n(b)\end{matrix}\right. $$
+    $$ ar(\{t,a,b\}) = \max\{0,h(\{t,a,b\})-1\} $$
+\end{document}
