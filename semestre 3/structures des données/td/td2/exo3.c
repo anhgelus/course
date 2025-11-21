@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "LDC.h"
 
 int strToInt(char** s){
@@ -49,8 +48,9 @@ int algo(char* expr){
     return res;
 }
 
-void main(){
+int main(){
     char* s = "(((4+2)-5)*4)";
     int res = algo(s);
     printf("%s = %d\n", s, res);
+    return 0;
 }

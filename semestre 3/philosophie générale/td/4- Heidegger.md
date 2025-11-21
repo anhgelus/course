@@ -38,3 +38,28 @@ La pensée type poème casse cette vision de la technique
 
 Parole est subordonnée à l'humain
 |> Heidegger cherche à montrer l'inverse
+
+---
+
+Présupposés :
+1. Parler, c'est s'exprimer
+2. L'humain maîtrise le langage
+3. Le langage vise à représenter le monde
+
+Ils conçoivent le langage comme un étant et non comme un être
+|> le langage dépend du sujet
+
+« La parole parle » -> c'est le langage qui parle, pas comme un instrument
+|> n'est pas le rôle
+
+Poème est l'endroit où le langage s'exprime le plus
+|> devient donc « la langue parle »
+|> mais n'est pas suffisante car c'est la parole elle-même qui parle dans le poème
+|> le poète reconstruit le langage en proposant de nouvelles approches
+|> les mots normaux du langage sont morts
+
+Nommé, c'est appeler -> on fait venir à la présence grâce aux mots
+|> parole poétique est une évocation
+|> invoque les choses (i.e. tout ce qui dans le monde) et leur monde
+
+Monde n'est pas un univers physique, mais comme ce qui tient tout uni

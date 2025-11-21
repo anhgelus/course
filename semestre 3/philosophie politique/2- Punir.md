@@ -32,3 +32,8 @@ Pendant très longtemps, on ne punissait pas pour des raisons morales
 |> le créancier *veut* faire souffrir, c'est pour ça qu'on ne rembourse pas
 -> la justification pour la dissuasion arrive après
 |> cause $\neq$ utilité finale
+
+_Philosophie du Droit_, Christophe Béal, Vrin, Collection Textes clefs
+
+Si on fonde le droit de punir sur une infinité, il sera aussi infini, Montesquieu, _Esprit des Lois_
+|> explique pourquoi fonder le droit de punir sur un dieu implique toujours une disproportion

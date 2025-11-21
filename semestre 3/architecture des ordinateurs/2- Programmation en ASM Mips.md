@@ -436,5 +436,3 @@ Les registres `$16` à `$23` ne doivent pas être modifié par un appel de fonct
 **Voir le mémento pour les conventions de stockage**
 
 > [!warning] On garde toujours de la place dans la pile, y compris si on optimise en registre
-
-

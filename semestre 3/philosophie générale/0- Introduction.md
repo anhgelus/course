@@ -70,6 +70,14 @@ Sprache = langue -> mais peut aussi avoir un sens concret ressemblant à parole
 
 **rattraper le cours**
 
+Triangle d'Aristote :
+```mermaid
+flowchart LR
+	A[États de l'âme] --- B
+	B[Signes/Symboles] --- C
+	C[Choses] --- A
+```
+
 Pour Aristote, c'est l'âme qui donne le sens aux symboles
 |> sinon, ça ne serait que des signes
 

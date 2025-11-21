@@ -6,7 +6,6 @@ tags:
   - td
 semestre: 3
 ---
-clromano@wanadoo.fr
 Que des auteurs du XXe siècle
 
 20/11 est le devoir sur table
@@ -35,7 +34,7 @@ Husserl, _Recherche Logiques_, II, 1, p. 75-76
 
 Merleau-Ponty, « Le langage indirect et les voies du silence », _Signes_, p. 53-54
 |> de « En ce qui concerne le langage » à « Aucun langage n'aborde le langage »
-|> existe-t-il une pensée sans langage ? le langage est-il nécessaire au langage ?
+|> existe-t-il une pensée sans langage ? le langage est-il nécessaire à la pensée ?
 |> défend qu'il n'existe pas de pensée sans langage
 |> expression ne rend pas manifeste la pensée car elle prend directement forme dans l'expression
 

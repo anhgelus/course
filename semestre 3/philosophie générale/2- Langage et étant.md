@@ -59,4 +59,87 @@ Nom est un instrument servant à distinguer les choses des unes des autres (487)
 Les mots ont besoin de nous instruire, sinon ils ne pourraient pas être des mots
 |> certains mots peuvent être bien ou mal institué
 |> impossible pour un nom
-=> réfutation d'Hermogène 
+=> réfutation d'Hermogène
+
+Platon, _République_
+La véritable connaissance des choses ne dépend pas entièrement du langage
+|> langage marche car on a accès aux idées
+-> connaissance peut se faire sans le langage
+|> le langage est donc accidentel pour les connaissances*
+-> doctrine de Cratyle ne marche pas : la connaissance ne passe pas par l'étymologie
+|> seul celui qui l'utilise pour parler des Idées l'utilise correctement
+
+> [!info] Platon se méfie du langage
+> C'est un instrument inadéquat pour atteindre la connaissance véritable
+
+Le langage peut nous permettre de parler de ce qui est faux
+|> contredit Parménide et donc les sophistes
+|> quand on dit que le cheval n'est pas une vache, alors on dit que le non-être est -> il différencie les deux
+
+Les grands genres sont ce qui ordonnent le monde des Idées (comme le même, l'autre...)
+|> permet de comprendre l'existence du non-être
+|> permet de distinguer les choses
+-> permet de définir ce qu'est « dire le faux »
+|> on dit le faux quand les mots ne s'accordent pas entre eux
+-> le discours n'est plus tautologique, il devient hétérologique
+|> le langage devient un entrelacement entre des noms et des verbes
+=> permet de réfuter les sophismes (cf _Le Sophiste_), mais tue Parménide
+
+L'humain est celui qui utilise le *logos* et qui est capable de vivre dans une cité grâce à s'accorder sur le bon et le juste
+|> ces deux définitions fonctionnent ensemble
+|> le côté politique fonctionne grâce à l'accord commun
+
+Aristote, _La Rhétorique_
+On parle toujours à quelqu'un
+|> vision communautaire du langage
+|> trois éléments :
+- ceux dont on parle
+- celui qui parle
+- ceux qui entendent
+-> le *logos* est défini par rapport à qui on parle
+
+Interprétation traditionnelle disant que les signes renvoient aux états de l'âme et donc aux choses (mentalisme)
+|> phrase fausse ne renvoie pas à une état de l'âme, pourtant on comprend
+|> noms propres ne fonctionnent juste pas
+
+Interprétation de Saussure sur la différence entre signes naturelles et symboles conventionnelles
+|> pose moins de difficultés
+
+> [!warning] Ne permet pas de construire une théorie de la signification aristotélicienne
+
+Analyse en terme de noms et de verbes (Platon)
+vs.
+Analyse de la proposition (Aristote)
+|> proposition lie le sujet au prédicat
+
+> [!info] Linguistique montre que c'est Platon qui a plus raison
+
+Aristote, la vérité est ce qui unit ce qu'on dit dans le *logos* et ce qui est lié dans la réalité
+|> c'est parce que Socrate est habillé en blanc (réalité) que "Socrate est habillé en blanc" (*logos*) est vrai
+|> l'idée de vérité contient un élément appartenant au réel
+|> le problème du relativisme est de passer "les gens tiennent ça pour vrai" à "ça est vrai"
+-> le vrai dépend de ce qui est réel
+
+Métaphysique, $\Delta$, 29
+|> mais, le vrai existe-t-il dans les choses en plus du langage ?
+|> vérité ou fausseté touche l'apparence des choses
+|> besoin d'une adéquation entre les choses et ce qu'elle révèle
+-> donc tjs besoin d'une adéquation
+|> une proposition fausse exprime ce qui n'est pas, i.e. elle exprime l'apparence d'une chose qui est autre
+|> est une réfutation des sophistes comme Gorgias affirmant qu'on ne peut pas affirmer ce qui est
+|> une phrase ne peut pas être à la fois vraie et fausse, sinon relativisme !
+-> création du principe du tiers-exclu (Métaphysique, $\Gamma$, 7)
+
+Métaphysique, $E$, 4
+|> vérité reste dans le discours
+
+Heidegger
+|> pour Aristote, le vrai est d'abord la manifestation des choses
+|> l'énoncé sera ensuite dit vrai en fonction de ce qu'il énonce
+|> « autant une chose à d'être, autant elle a de vérité »
+
+> [!warning] Problème de la vision d'Heidegger
+> Si on parle du révélé, est compliqué de distinguer vrai et faux
+> |> besoin de distinguer une chose qui se montre vraiment ou faussement
+> |> une fenêtre se montre comme une vraie fenêtre si elle se montre telle qu'elle est
+> -> compliqué de se séparer de l'adéquation ou de la correspondance

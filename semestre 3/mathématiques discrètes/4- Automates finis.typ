@@ -9,13 +9,13 @@
 #set par(justify: true)
 #set text(
   size: 12pt,
-  font: "Times New Roman"
+  font: "PT Astra Serif"
 )
 #set heading(numbering: "1.")
 #show heading: set block(above: 1.4em, below: 1em)
-#show heading: set text(font: "Raveo")
+#show heading: set text(font: "PT Astra Serif")
 
-#show title: set text(size: 24pt, font: "Raveo")
+#show title: set text(size: 24pt, font: "Inter")
 #show title: set align(center)
 
 #title[
@@ -82,7 +82,7 @@ Le langage $L_("pair")={"nombres pairs"}$ est donc constitué de l'ensemble des 
 
 Une exécution de $cal(A)$ est une séquence finie $s_0a_1s_1 dots a_n s_n$ telle que~:
 - $s_0 in I$ est un état initial
-- pour tout $O <= i < n$, alors $(s_i, a_(i+1), s_(i+1)) in T$ est une transition autorisée par la relation de transition
+- pour tout $0 <= i < n$, alors $(s_i, a_(i+1), s_(i+1)) in T$ est une transition autorisée par la relation de transition
 
 La séquence $a_1 dots a_n$ est un mot de $A$ qui étiquette l'exécution.
 On dit qu'une exécution est _acceptante_ si $s_n in F$.
@@ -108,7 +108,8 @@ D'une manière formelle, un automate est déterministre si~:
 - la relation $R$ (les transitions de l'automate) est fonctionnelle au sens suivant~:
 $ (p,a,q) in R and (p,a,q') in R ==> q=q' $
 
-Dans un automate fini déterministe, $T$ est une _fonction_ allant de $S times A$ vers $S$. On note parfois $ T(s,a) = s' $ pour $(s,a,s') in T$ dans un automate déterministe.
+Dans un automate fini déterministe, $T$ est une _fonction_ allant de $S times A$ vers $S$.
+On note parfois $ T(s,a) = s' $ pour $(s,a,s') in T$ dans un automate déterministe.
 
 Dans un automate fini déterministe, tout mot est étiquette d'au plus une exécution.
 
@@ -126,6 +127,15 @@ Un automate dit non déterministe s'il n'est pas déterministe.
 === Déterminiser
 
 Tout automate fini est équivalent à un automate fini déterministe.
+
+#emoji.warning Un automate déterministe ne possède qu'un unique état d'entrée~!
+
+Soit $cal(A)=(S,T,I,F)$ un automate fini sur un alphabet $A$. On définit $op(det)(cal(A))=(cal(P)(S),T',I,F')$ avec
+- pour $X$ dans $cal(P)(S)$, pour $a in E$, on a $T'(X,a)={ s' in S | exists s in X, (s,a,s') in T }$
+- $F'={X subset.eq S | X inter F eq.not emptyset}$
+- $op(det)(cal(A))$ set déterministe
+- $L(cal(A)) = L(op(det)(cal(A)))$
+- _il manque un point_
 
 == Complétude
 
@@ -153,3 +163,19 @@ On a que~:
 - $op("comp")(cal(A))$ est complet
 
 = Propriétés de clôture
+
+Si $L subset.eq A^*$ est un langage reconnaissable, alors $overline(L)$ est reconnaissable.
+
+Soit $cal(A)$ tel que $L(cal(A)) = L$. Sans perte de généraliste, on suppose que $cal(A)$ est complet et déterministe
+(sinon on le complète et on le déterminise).
+
+Si $cal(A) = (S,T,i,F)$, alors on construit $cal(B) = (S,T,i,F')$ avec $F'=S backslash F$.
+- $L(cal(B)) = overline(L)$
+- L'approche n'est correcte que si $A$ est déterministe et complet~!
+Il s'agit du même automate où les états normaux deviennent finaux et les états finaux deviennent normaux.
+On les inverse.
+
+Si $L_1$ et $L_2$ sont deux langages reconnaissable de $A$, alors $L_1 union L_2$ et $L_1 inter L_2$ sont aussi
+reconnaissables.
+
+_compléter avec la diapo 26_

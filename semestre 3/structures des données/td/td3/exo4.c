@@ -1,12 +1,13 @@
+#include <stdlib.h>
 typedef struct cell{
     int val;
     int key;
-    cell* next;
+    struct cell* next;
 } Cell;
 
 typedef struct hashMap{
     int size;
-    cell** map;
+    struct cell** map;
 } HashMap;
 
 void mapInsert(HashMap* map, int val){

@@ -53,3 +53,42 @@ Philon propose une épochè (suspension du jugement)
 |> il doit suspendre sa marche car la vérité divine nous transcende infiniment
 |-> dimension métaphysique et éthique
 |> épochè est possible car Dieu est présent et le retient
+## Retour à Jean de Salisbury
+La thèse d'Augustin contre le scepticisme n'est pas une nécessité pour la théologie
+|> fidéisme biblique est possible
+|> provient du néant de la connaissance humaine par rapport à la transcendence divine
+
+Jean suit ce fidéisme biblique
+|> pas que théologique, possède aussi un lien avec Aristote
+|> faiblesse de la raison propre à notre condition incarnée
+|> le doute le plus radical n'est pas acceptable -> besoin d'avoir une version plus modérée
+
+**Doute radical vs probabilisme**
+Doute radical mène au doute de la moindre chose la plus ordinaire
+|> est le rôle de l'Académicien
+Probabilisme n'empêche pas la connaissance par la foi et permet de créer des preuves rationnelles
+|> elle ne concerne qu'une partie de notre activité intellectuelle
+|> ce qui est de mise pour le reste, c'est la modestie épistémique du scepticisme
+-> la certitude n'est pas la norme
+|> les sages sont capable de douter -> besoin d'une éducation intellectuelle
+|> considérer que la vérité est inaccessible est un nouveau dogmatisme
+-> besoin de questioner ce qui est le plus probable d'être vrai
+|> si on se concentre que sur ce qu'on peut démontrer d'une manière absolue, on limite énormément ce qu'on peut faire
+|> il y a certaines choses qui sont douteuses au sage, alors on doit refuser de se précipiter pour répondre -> pas de suspension de l'assentiment
+
+Mais quel critère pour le probable ?
+|> l'habitude rend probable la répétition d'un schéma similaire -> est la base de la confiance
+|> besoin de marquer la confiance avec « je pense », « je crois »
+|> confiance rationnelle est l'intermédiaire entre la science et l'opinion : elle est probable, mais pas certaine
+|> plus une chose est connue, plus la connaissance les touchant devient probable
+|> opinion fiable disparaîtra pour une opinion plus probable, opinion forte peut devenir une confiance -> arrive lors des répétitions des événements
+-> confiance est l'équivalence de la certitude pour les choses douteuses
+
+> [!warning] Confiance $\neq$ certitude
+> Même si la confiance est équivalente à la certitude, ces deux objets restent différents car la confiance ne garantie pas tout le temps la vérité !
+
+> [!NOTE] Probabilité devient une nouvelle norme
+> Probabilité remplace là où la science n'est pas possible.
+
+Au final, il s'agit d'une réflexion sur la bonne conduite de la vie épistémique
+|> est une éthique sceptique et une éducation
