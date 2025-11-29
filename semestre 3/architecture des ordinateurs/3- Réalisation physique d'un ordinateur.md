@@ -55,3 +55,35 @@ Formellement, on a : $\text{mux2}(a,b,c) = a.\bar c+b.c$
 
 Décodeur converti une entrée $n$ bits en sortie $p$ bits
 |> permet de déterminer les adresses, les champs suivants...
+
+**Rattraper sur les autres classes de fonction**
+
+Horloge est la référence temporelle permettant d'ordonner les choses
+|> signal qui oscille -> passe de 0 à 1 à 0 d'une manière continue en suivant des caractéristiques bien définies
+|> permet d'exécuter des instructions en même temps ou à des instants différents
+|> cycle est tout ce qui se passe entre deux fronts montant (i.e. contient un 1 et un 0)
+|> 98% des circuits numériques sont synchrones (i.e. utilisent au moins une horloge)
+-> comment faire en sorte que le signal soit assez fort partout ?
+|> besoin d'avoir un temps de setup (temps que le front monte) faible et un hold plus long (temps que le front reste)
+
+Les éléments avec boucle sont soit stabilisant, soit oscillant
+|> on utilise les éléments avec boucle qui sont stabilisants pour mémoriser
+-> structures stables changent d'état en fonction d'une entrée
+|> structure bistable est une boucle avec deux inverseurs
+
+Éléments mémorisant seront dans une zone appelée "bascules"
+|> contiennent les éléments bistables qui est commandable
+
+**voir les diapo pour les éléments à bascule**
+
+Les registres dans le processeur sont représentés par des bancs
+|> est un ensemble de bascule D (avec en plus une commande d'écriture) de 1 bits
+|> besoin d'être sur la même horloge et avec la même commande d'écriture
+
+**voir le diapo pour le schéma**
+
+Comment on met les bonnes commandes au bon moment ?
+|> possible grâce à un automate -> est la partie contrôle
+(avant, on était dans la partie donnée)
+
+**voir le diapo pour la liste des transferts élémentaires et le déroulement de la lecture d'un programme**

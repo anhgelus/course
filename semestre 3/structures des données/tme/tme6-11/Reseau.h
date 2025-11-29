@@ -5,9 +5,9 @@
 typedef struct noeud Noeud;
 
 /* Liste chainee de noeuds (pour la liste des noeuds du reseau ET les listes des voisins de chaque noeud) */
-typedef struct cellnoeud {
-    Noeud *nd;               /* Pointeur vers le noeud stock\'e */
-    struct cellnoeud *suiv;         /* Cellule suivante dans la liste */
+typedef struct cellNoeud {
+    Noeud *nd;                  /* Pointeur vers le noeud stock\'e */
+    struct cellNoeud *suiv;     /* Cellule suivante dans la liste */
 } CellNoeud;
 
 /* Noeud du reseau */
@@ -19,7 +19,7 @@ struct noeud{
 
 /* Liste chainee de commodites */
 typedef struct cellCommodite {
-    Noeud *extrA, *extrB;       /* Noeuds aux extremites de la commodite */
+    Noeud *extrA, *extrB;           /* Noeuds aux extremites de la commodite */
     struct cellCommodite *suiv;     /* Cellule suivante dans la liste */
 } CellCommodite;
 

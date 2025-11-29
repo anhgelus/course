@@ -159,3 +159,46 @@ Question d'Adam (lors de la Genèse) touche l'esprit humain dans son fonctionnem
 |> Thomas est contre (besoin de corriger le texte qui en parle) : il affirme que l'esprit humain est fondamentalement fait pour la vérité et est capable de l'atteindre -> impossible de faire des conjectures (et donc d'avoir des opinions fausses)
 |> la créature peut ne pas avoir tous les biens, mais cela ne veut pas dire qu'elle possède une version fausse (corruption par la fausseté) !
 |> ne possède donc aucune opinion, juste des vérités
+## Théorie de l'illumination de Bonaventure
+Souhaite maintenir la possibilité du savoir via l'illumination
+|> s'oppose à Duns Scot qui explique qu'il y a des fondements de la connaissance résistant au doute sceptique
+|> ressemble à Henri de Gand (est plus complexe et plus précise)
+
+Renouveau au XVIIIe siècle
+|> devient une théorie élaborée
+|> cherche à palier les théories aristotéliciennes de la connaissance
+|> est vue comme un complément à Aristote
+
+Source importante = Avicenne
+|> notamment _Le Livre de l'âme_
+Augustin est aussi très utilisé
+
+Bonaventure, « Itinéraire de l'esprit vers Dieu »
+|> ressemble beaucoup à Augustin
+|> hérité de Platon et du néo-platonisme
+
+Bonaventure, _Questions disputées sur le savoir du Christ_
+|> conception intellectuelle sur la certitude, d'où vient-elle ?
+|> les raisons éternelles (les idées des choses) sont présentes dans l'essence divine -> forme d'unité, pas de multiplicité
+|> stabilité provient d'un savoir nécessaire
+-> tension *a priori* entre la mutabilité du sensible et les exigences du savoir
+|> théorie de l'illumination cherche à résoudre ça
+|> nous obtenons la certitude grâce aux raisons éternelles des choses
+|> raisons orientent fondamentalement notre connaissance
+|> lumière divine collabore avec notre raison créée
+-> imperfection de notre propre connaissance, besoin d'un Dieu
+
+Les signes ne contiennent pas en eux-mêmes les significations (Augustin)
+|> comment peut-on apprendre via les mots ?
+|> soit l'élève ne connait pas les mots et ne peut pas apprendre, soit il les connait déjà et il n'apprend pas
+|> le maître attire l'élève vers des mots qu'il connait uniquement intérieurement (via la Christ)
+-> universalité des connaissances provient de cette raison commune
+
+La théorie de l'illumination a besoin de séparer notre connaissance actuelle et notre connaissance parfaite (voir le texte page 112, qlq chose comme ça)
+|> conception radicale (toute vraie connaissance est intelligible par l'intelligible) pourrait construire le scepticisme
+|> ne prend pas en compte les conditions d'exercice de notre connaissance (déception par rapport à ce qu'on connait actuellement)
+|> mais n'est pas une simple médiation -> simplifie trop et impossible de définir (grâce spéciale, vision sincère de nos mécanismes ne provenant plus de Dieu...)
+|> besoin de voir l'illumination comme une raison éternelle divine
+-> principe régulateur et moteur pour notre raison humaine
+|> n'est pas une intervention directe
+|> est une présence de Dieu dans la raison

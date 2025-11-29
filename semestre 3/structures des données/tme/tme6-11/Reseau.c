@@ -27,8 +27,11 @@ Reseau* reconstitueReseauListe(Chaines *C){
         CellPoint* points = chain->points;
         CellNoeud* before;
         CellNoeud* beforeTwice;
+        CellCommodite* com = malloc(sizeof(CellCommodite));
+        com->extrA = NULL;
         while (points){
             Noeud* node = rechercheCreeNoeudListe(R, points->x, points->y);
+            if (!com->extrA) com->extrA = node;
             // represents voisins of node
             CellNoeud* cellNode = (CellNoeud*) malloc(sizeof(CellNoeud));
             cellNode->nd = node;
@@ -42,12 +45,28 @@ Reseau* reconstitueReseauListe(Chaines *C){
             }
             beforeTwice = before;
             before = cellNode;
+            if (!points->suiv) com->extrB = node;
             points = points->suiv;
         }
         if (beforeTwice && before){
             before->nd->voisins = beforeTwice; // set before voisins
         }
+        com->suiv = R->commodites;
+        R->commodites = com;
         chain = chain->suiv;
     }
     return R;
 }
+
+int nbLiaisons(Reseau *R){
+    return 0;
+}
+
+int nbCommodites(Reseau *R){
+    int i;
+    CellCommodite* com = R->commodites;
+    for (i = 0; com; i++) com = com->suiv;
+    return i;
+}
+
+void afficheReseauSVG(Reseau *R, char* nomInstance);
