@@ -16,7 +16,8 @@ Une dvv pour le langage propositionnelle $\{p,q,r,s\}$ est par exemple :
 $$ d : \{p,q,r,s\} \to \{V,F\} $$
 telle que
 $$ d(p)=V,\quad d(q)=F,\quad d(r)=F,\quad d(s)=V $$
-*rattraper $\bar d$ diapo 8*
+
+$\bar d$ est extension de $d$ telle que $\bar d$ respecte les définitions des connecteurs
 
 La table de vérité est un tableau donnant les différentes valeurs de vérité des différentes dvv existantes
 

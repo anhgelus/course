@@ -94,3 +94,14 @@ Par conséquent, il n'y a rien à rechercher ici
 
 Signification d'un mot est son emploi dans le langage
 |> pas possible de comprendre un mot isolément
+
+Quand on comprend un mot dans le langage, on sait comment il est employé
+-> approche pragmatique
+|> pendant qu'on prononce une phrase, on ne saurait pas ce qu'elle signifie
+|> n'est pas une approche instantanée -> n'est pas un *eureka*
+|> signification n'est pas un épisode mental
+-> est une capacité/une disposition à savoir employer/à comprendre une phrase d'une manière intelligente
+|> ce sont juste des pratiques faites avec le langage
+|> c'est donc une règle
+
+Les critères de la règle ne doivent pas être connues par un seul individu

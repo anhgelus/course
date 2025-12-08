@@ -50,10 +50,73 @@ Lors de la création d'un nœud, on a besoin de calculer la hauteur
 
 Insertion/suppression comme dans un ABR
 |> par contre, si ça déséquilibre, on corrige
-|> pour corriger, on utilise des rotations *voir le diapo*
+|> pour corriger, on utilise des rotations
 -> on ne perd pas en complexité, tout reste en $O(h) = O(\log n)$
 
-*voir le diapo pour le principe précis d'insertion / suppression*
+```mermaid
+flowchart TB
+	r --> g
+	r --> D
+	g --> U
+	g --> V
+```
+rotation vers la droite ->
+```mermaid
+flowchart TB
+	g --> U
+	g --> r
+	r --> V
+	r --> D
+```
+(rotation vers la gauche est dans l'autre sens)
+
+```c title="rotations"
+AVL* rotDroite(AVL* racine) {
+	AVL* r = racine;
+	AVL* g = r->fg; // fils gauche
+	AVL* v = g->fd; // fils droit
+	g->fd = r;
+	r->fg = v;
+	majHauteur(r);
+	majHauteur(g);
+	return g;
+}
+
+AVL* rotGauche(AVL* racine) {
+	AVL* g = racine;
+	AVL* r = g->fg; // fils gauche
+	AVL* v = r->fd; // fils droit
+	g->fd = v;
+	r->fg = r;
+	majHauteur(r);
+	majHauteur(g);
+	return g;
+}
+```
+
+**Insertion**
+1. comme dans un ABR
+2. tant que la diff de hauteur entre les fils gauche et droit ne dépassent pas 1, on continue de remonter
+3. on note $A$ le premier ancêtre où cette différence dépasse 1
+4. Si $h(G) - h(D) = 2$, alors
+	1. si $h(G) < h(D)$, on fait une rotation à gauche de $G$
+	2. on fait une rotation à droite de $A$
+5. Si $h(G)-h(D)=-2$, alors
+	1. si $h(D) < h(G)$, on fait une rotation à droite de $D$
+	2. on fait une rotation à gauche de $A$
+6. On a fini le traitement
+
+Insertion est en $O(\log n)$
+
+**Suppression**
+1. comme dans un ABR
+2. Si le nœud supprimé n'a pas été remplacé par un autre nœud, ou s’il a été remplacé par son unique fils, on examine ses ancêtres en remontant jusqu’à la racine
+3. S’il a été remplacé par le max de son fils gauche (ou le min de son fils droit), alors on examine tous les ancêtres de ce dernier en remontant jusqu’à la racine.
+4. Durant la remonté
+	1. si la différence est inférieur ou égal à 1, on met à jour la hauteur
+	2. si la différence est supérieure à 1, on applique les mêmes transformations que pour l'insertion
+
+Suppression est en $O(\log n)$
 ## Tableau associatif
 Les AVL peuvent être pertinent pour les tableaux associatifs
 

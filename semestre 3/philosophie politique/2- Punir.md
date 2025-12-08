@@ -40,8 +40,8 @@ Si on fonde le droit de punir sur une infinité, il sera aussi infini, Montesqui
 
 Conséquentialisme = justifie la peine par ses bonnes conséquences (*forward looking*)
 |> utilitarisme = cherche à maximiser le bonheur du plus grand nombre
--> Beccaria (_Des  délits et des peines_), Bentham (_Rationale of Judicial Evidence, Specially Applied to English Practice_), Platon (_Protagoras_)
-|> pour Beccaria, on a besoin d'une proportion, sinon on ne limite pas du les crimes très dangereux (voir aussi Montesquieu, _Esprit des lois_)
+-> Beccaria (_Des délits et des peines_), Bentham (_Rationale of Judicial Evidence, Specially Applied to English Practice_), Platon (_Protagoras_)
+|> pour Beccaria, on a besoin d'une proportion, sinon on ne limite pas les crimes très dangereux (voir aussi Montesquieu, _Esprit des lois_)
 
 Rétributivisme = justifie la peine par la commission de la peine (*backward looking*)
 -> Kant (_Doctrine du droit_), Hegel (_Principes de la philosophie du droit_)
@@ -92,6 +92,7 @@ Hart, _Punishment and Responsibility_
 
 ![[Pasted image 20251127120330.png]]
 ## B. Quoi punir ?
+### Paternalisme, anti-paternalisme
 Paternalisme = interférence avec la liberté d'action d'une personne se référant exclusivement pour des valeurs bonnes pour la personne concernée (définition de G. Dworkin)
 |> aucune loi n'est paternaliste en soi
 |> une loi est paternaliste quand elle vise à protéger les personnes qu'elle contraint
@@ -108,6 +109,41 @@ Construction du marché des idées (*market place of ideas*) pour justifier la l
 |> le vrai émerge toujours du faux
 |> permet aussi d'éviter de créer un dogme vrai -> on doit croire aux choses vraies pour des bonnes raisons
 -> les mêmes raisons pour le principe de non-nuisance
+
+Le paternalisme touche *la manière de justifier une loi* et non son contenu
+
+Problème de la vision de Mill -> pense que l'humain est rationnel
+|> Hart, _Law, liberty, morality_
+|> l'humain n'est pas forcément rationnel et ne sait pas forcément ce qu'il vaut le mieux pour lui
+-> le consommateur est très vulnérable par manque de connaissance
+|> beaucoup de failles psychologiques dans l'humain
+
+Préférence adaptative / contre-adaptative
+|> préférence adaptative = être content de ce qu'on a, peu importe si on le pense vraiment
+|> préférence contre-adaptative = n'être jamais content de ce qu'on a, peu importe si on le pense vraiment
+-> choix relevant de ce type de préférence n'est donc pas libre
+
+Dworkin, _Paternalism_
+>Puisque nous sommes tous conscients de nos propensions irrationnelles, de nos lacunes cognitives et émotionnelles, ainsi que de notre ignorance évitable et inévitable, il est rationnel et prudent de notre part de souscrire à des « polices d'assurance sociale ». Nous pouvons débattre des avantages et des inconvénients des mesures paternalistes proposées en termes de ce que des individus pleinement rationnels accepteraient comme formes de protection. [...] Je suggère que nous considérions l'imposition d'interventions paternalistes dans ce type de situations comme une sorte de police d'assurance que nous souscrivons pour nous prémunir contre des décisions lourdes de conséquences, potentiellement dangereuses et irréversibles.
+### Droit et moralité
+Le droit doit-il sanctionner l'immoralité ne nuisant pas à autrui ?
+|> Devlin, « La morale et le droit pénal »
+
+Société a besoin d'exprimer un jugement moral pour être une société
+|> besoin d'un noyau moral commun pour fonder une société
+
+Société a le droit d'utiliser la moralité pour préserver son existence
+
+Ce qui permet de décider la société est le bon sens
+
+Hart contredit ça
+|> le noyau de la moralité dans la société est complexe
+|> l'unicité de la moralité est peu évidente
+|> la définition entre une société et sa moralité est aussi peu intuitive
+-> quelle valeur morale à faire respecter la morale pour de mauvaises raisons ?
 ## C. Comment punir ?
 ## D. Qui punir ?
 Pour être punissable, faut-il avoir agi librement ?
+
+Loi de Hume -> impossible d'obtenir une description normative depuis une description descriptive
+|> l'inverse est aussi impossible

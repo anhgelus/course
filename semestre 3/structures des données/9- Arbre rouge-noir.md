@@ -5,7 +5,6 @@ tags:
   - structure-des-données
 semestre: 3
 ---
-
 Problème de l'AVL
 |> besoin de faire des rotations, ce qui transforme tout le graphe
 |> concurrence impossible, change beaucoup en mémoire -> est très morcelé (donc défaut de page)
