@@ -11,7 +11,7 @@ Quel est le rapport que le langage entretient avec l'être ?
 *muthos* = Domaine de l’opinion fausse, de la rumeur, du discours de circonstance par opposition au *logos*
 *logos* = la raison, le discours rationnel, par opposition au *muthos*, le discours irrationnel
 
-Poème de Parménide
+_De la nature_, Parménide
 |> langage (*muthos*/*logos*) ne permet de parler que de ce qui est
 |> impossible de parler du non être
 -> impossible de penser le non être

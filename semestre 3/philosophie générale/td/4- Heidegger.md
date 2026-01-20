@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Heidegger, _Acheminement vers la parole_
+
+
 Heidegger souhaite montrer qu'on ne fait pas que répondre à la parole
 
 C'est la parole qui produit l'humain
@@ -58,7 +61,7 @@ Poème est l'endroit où le langage s'exprime le plus
 |> le poète reconstruit le langage en proposant de nouvelles approches
 |> les mots normaux du langage sont morts
 
-Nommé, c'est appeler -> on fait venir à la présence grâce aux mots
+Nommer, c'est appeler -> on fait venir à la présence grâce aux mots
 |> parole poétique est une évocation
 |> invoque les choses (i.e. tout ce qui dans le monde) et leur monde
 

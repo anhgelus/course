@@ -70,7 +70,7 @@ Sprache = langue -> mais peut aussi avoir un sens concret ressemblant à parole
 
 **rattraper le cours**
 
-Triangle d'Aristote :
+Triangle d'Aristote (dans Métaphysique) :
 ```mermaid
 flowchart LR
 	A[États de l'âme] --- B

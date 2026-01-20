@@ -395,22 +395,22 @@ int main(){
 ```asm
 .text
 # prologue
-addiu $29, $29, -12 # car on stock 3 mots
+	addiu $29, $29, -12 # car on stock 3 mots
 # initialisation des variables
-ori $8, $0, 1
-sw $8, 0($29)
-ori $8, $0, 2
-sw $8, 4($29)
+	ori $8, $0, 1
+	sw $8, 0($29)
+	ori $8, $0, 2
+	sw $8, 4($29)
 # corps du main
-lw $8, 0($29)
-lw $9, 4($29)
-addu $8, $8, $9
-sw $9, 8($29)
+	lw $8, 0($29)
+	lw $9, 4($29)
+	addu $8, $8, $9
+	sw $9, 8($29)
 # épilogue
-addiu $29, $29, 12
+	addiu $29, $29, 12
 # exit
-ori $2, $0, 10
-syscall
+	ori $2, $0, 10
+	syscall
 ```
 ## Fonction
 Pour arriver à une fonction, on utilise `jal label`

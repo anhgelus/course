@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Frege, _Sens et Dénotation_
+
+
 Cherche à comprendre comment le langage parle de la pensée
 |> rapport entre le mot, ce qu'il signifie et le monde
 

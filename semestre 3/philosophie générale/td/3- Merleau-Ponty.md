@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Merleau-Ponty, _Signes_
+
+
 Locke, _Essai sur l'entendement humain_ -> mots sont des vecteurs permettant de transmettre la pensée
 
 Casse la conception commune du "nom = objet" (comme celle de Locke)

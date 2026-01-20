@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Husserl, _Recherches logiques_
+
+
 Cherche à étudier le rapport entre signes et rapports mentaux
 
 Ici, cherche à montrer que la signification d'un mot ne peut être réduit au mot lui-même ou à une représentation mentale ou à un avis assertif

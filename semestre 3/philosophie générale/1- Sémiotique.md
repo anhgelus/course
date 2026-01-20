@@ -78,7 +78,7 @@ Mais les peuvent-ils indiquer qlq chose ?
 Existe-t-il un système de langage animal ?
 |> si les animaux poussent un crie spécifique à un moment, il manifeste qlq chose de spécifique (c'est le cas)
 |> ressemble à un proto-langage
-|> il semble manquer un une syntaxe
+|> il semble manquer une syntaxe
 |> le langage humain est libérer de ce contexte
 
 Descartes questionne l'existence du langage animal

@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Benjamin, _La Tâche du traducteur_
+
+
 Sens est indissociable de la langue
 |> impossible de faire passer le sens d'une langue à une autre langue
 -> idée que la traduction garde le sens est impossible

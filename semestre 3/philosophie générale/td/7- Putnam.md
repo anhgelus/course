@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Putnam, _The meaning of "meaning"_
+
+
 Après [[1- Frege]] et [[2- Husserl]]
 |> mais ne défend pas un platonisme sémantique
 |> défend signification sociologique

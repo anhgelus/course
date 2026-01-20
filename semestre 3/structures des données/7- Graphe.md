@@ -34,5 +34,3 @@ Deux implémentations classiques
 -> d'autres implémentations existent et peuvent être préférables lors de certains algo
 
 **Voir le diapo pour la def de matrices et listes d'adjacence**
-
-:(

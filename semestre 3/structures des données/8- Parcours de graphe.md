@@ -95,3 +95,16 @@ Complexité temporelle, chaque ligne de code est exécuté :
 Occupation mémoire est similaire pour itérative et récursive pour des $n$ pas trop grand
 |> par contre, comme récursive n'est pas terminal, elle prendra plus de place pour des $n$ très grands
 ### Parcours en largeur
+```
+L = Liste(r)
+Tant que B(L) n'est pas vide
+	Choisir un sommet s dans B(L) qui est successeur (ou voisin) du premier sommet ouvert de L
+	L = union de L et {s}
+Fin Tant que
+```
+
+Le code *itératif* est similaire au parcours en profondeur
+|> on remplace juste la pile par une file
+
+1. Comme dans un ABR
+2. Si nœud est remplacé par

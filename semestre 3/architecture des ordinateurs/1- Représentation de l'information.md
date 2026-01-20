@@ -105,11 +105,11 @@ Toute fonction booléenne peut être décrite par une composition des fonctions 
 Soit $A$ un mot binaire de $n$ bits avec la famille $(a_i)_{i\in[0,n-1]}$ qui forme les bits de $A$.
 Si $p > n-1$, on a que $[p,n-1] = \varnothing$ par abus de langage
 
-$B = A << p$ tel que 
+$B = A \ll p$ tel que 
 |> $\forall i\in[0,p-1], b_i = 0$
 |> $\forall i\in[p,n-1], b_i = a_{i-p}$
 
-$B = A >> p$ tel que
+$B = A \gg p$ tel que
 |> $\forall i\in[0,p-1], b_i = a_{i+p}$
 |> $\forall i\in[p,n-1], b_i = 0$
 
@@ -119,7 +119,7 @@ $B = A >> p$ tel que
 > Si $A = 0101$ et qu'on souhaite avoir $10$, on fait $m = 0110$
 > |> $A+m = 0100$
 > Puis on décale de 1 pour supprimer la valeur inutile
-> |> $A >> 1 = 0010$
+> |> $A \gg 1 = 0010$
 
 > [!warning] Comment faire un bon mask ?
 > Toujours ne mettre que des 1 là où on veut garder des valeurs, sinon on risque de perdre des infos !
@@ -254,8 +254,8 @@ Attention à l'overflow !
 |> la retenu est ignorée quand on dépasse -> est de l'arithmétique modulaire sur $2^n$
 
 Décaler à gauche de $n$ revient à multiplier par la base $B^n$ 
-|> $(a_{p-1}\ldots a_0)_b\times 2^n = (a_{p-1}\ldots a_0)_b << n = (a_{p-1}\ldots a_0\underbrace{0\ldots0}_n)_b$
-|> $(a_{p-1}\ldots a_0)_b/2^n = (a_{p-1}\ldots a_0)_b >> n = (a_{p-1}\ldots a_{n})$
+|> $(a_{p-1}\ldots a_0)_b\times 2^n = (a_{p-1}\ldots a_0)_b \ll n = (a_{p-1}\ldots a_0\underbrace{0\ldots0}_n)_b$
+|> $(a_{p-1}\ldots a_0)_b/2^n = (a_{p-1}\ldots a_0)_b \gg n = (a_{p-1}\ldots a_{n})$
 ## Entiers relatifs
 On les appelle les nombre entiers signés
 

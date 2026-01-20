@@ -15,8 +15,8 @@ On note $h$ sa hauteur
 Il s'agit de la même implémentation que pour les btree.
 
 min et max sont plus simples
-|> pour le min, on regarde à gauche -> $O(\log n)$
-|> pour le max, on regarde à droite -> $O(\log n)$
+|> pour le min, on regarde à gauche -> $O(h)$
+|> pour le max, on regarde à droite -> $O(h)$
 
 **Voir diapo pour toutes les implémentations standards**
 
@@ -37,7 +37,7 @@ Quand on supprime, on doit remonter une valeur
 Cette structure cherche à équilibrer l'ABR pour avoir une relation entre $n$ et $h$
 |> besoin de gérer l'insertion et la suppression -> est compliqué de gérer ça
 
-On a donc créer l'AVL qui est un ABR équilibré
+On a donc créer l'AVL qui esqqqqqqt un ABR équilibré
 |> propriété d'équilibre = la différence des hauteurs des fils gauche et droit de tout nœud ne peut excéder 1
 |> on a donc $h=\log n$
 -> tout devient en $\log n$ 🎉
@@ -98,11 +98,11 @@ AVL* rotGauche(AVL* racine) {
 1. comme dans un ABR
 2. tant que la diff de hauteur entre les fils gauche et droit ne dépassent pas 1, on continue de remonter
 3. on note $A$ le premier ancêtre où cette différence dépasse 1
-4. Si $h(G) - h(D) = 2$, alors
-	1. si $h(G) < h(D)$, on fait une rotation à gauche de $G$
+4. Si $h(G) - h(D) = 2$, alors ($g$ et $d$ sont les sous-arbres de $G$)
+	1. si $h(g) < h(d)$, on fait une rotation à gauche de $G$
 	2. on fait une rotation à droite de $A$
-5. Si $h(G)-h(D)=-2$, alors
-	1. si $h(D) < h(G)$, on fait une rotation à droite de $D$
+5. Si $h(G)-h(D)=-2$, alors ($g$ et $d$ sont les sous-arbres de $G$)
+	1. si $h(d) < h(g)$, on fait une rotation à droite de $D$
 	2. on fait une rotation à gauche de $A$
 6. On a fini le traitement
 
@@ -110,13 +110,15 @@ Insertion est en $O(\log n)$
 
 **Suppression**
 1. comme dans un ABR
-2. Si le nœud supprimé n'a pas été remplacé par un autre nœud, ou s’il a été remplacé par son unique fils, on examine ses ancêtres en remontant jusqu’à la racine
-3. S’il a été remplacé par le max de son fils gauche (ou le min de son fils droit), alors on examine tous les ancêtres de ce dernier en remontant jusqu’à la racine.
+2. Si le nœud supprimé n'a pas été remplacé par un autre nœud, ou s’il a été remplacé par son unique fils, on examine ses ancêtres en remontant jusqu'à la racine
+3. S’il a été remplacé par le max de son fils gauche (ou le min de son fils droit), alors on examine tous les ancêtres de ce dernier en remontant jusqu'à la racine.
 4. Durant la remonté
 	1. si la différence est inférieur ou égal à 1, on met à jour la hauteur
 	2. si la différence est supérieure à 1, on applique les mêmes transformations que pour l'insertion
 
 Suppression est en $O(\log n)$
+
+Étape 2 ou 3 permet de choisir à partir d'où remonter
 ## Tableau associatif
 Les AVL peuvent être pertinent pour les tableaux associatifs
 

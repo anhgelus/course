@@ -6,6 +6,9 @@ tags:
   - td
 semestre: 3
 ---
+Kripke, _La Logique des noms propres_
+
+
 N'est pas nécessaire de connaître singulièrement quelqu'un pour pouvoir parler de lui
 |> on a juste besoin de faire partie de la chaîne de communication pour en parler
 

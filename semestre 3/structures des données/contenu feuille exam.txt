@@ -1,0 +1,41 @@
+Hash
+|> complexité
+|> facteur de charge
+
+ABR
+|> vérif rapide
+|> insertion (rapide)
+|> suppression (rapide)
+
+AVL
+|> maj hauteur
+|> insertion (rapide)
+|> suppression
+
+Graphe
+|> defs
+|> parcours
+
+Tas
+|> indices et existence
+|> insertion (rapide)
+|> supression (rapide)
+
+Skip list
+|> insertion (rapide)
+|> supression (rapide)
+
+ARN
+|> insertion
+|> supression (début)
+
+Partition via Hash
+|> principe (rapide)
+
+Forêt
+|> principe (rapide)
+|> heuristique (rapide)
+
+Tas binomial
+|> principe (rapide)
+====================================

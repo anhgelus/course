@@ -8,7 +8,7 @@ semestre: 3
 Boethe en commentant Aristote
 |> le langage a besoin de passer par les états de l'âme pour qu'il puisse se référer à quelque chose
 
-Augustin
+Augustin ([[1- Sémiotique]])
 |> signe sert à communiquer à qlq'un ce qu'on a dans l'esprit
 |> permet de passer d'une intériorité à une autre
 

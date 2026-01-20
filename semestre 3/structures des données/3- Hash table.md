@@ -76,7 +76,7 @@ On a besoin de stocker le pointeur
 ### Collision par adressage ouvert
 Cherche à résoudre les problèmes des listes chaînées
 
-Maintenant, une case une ne contient qu'un élément
+Maintenant, une case ne contient qu'un élément
 |> quand une case contient déjà un élément, on en cherche une autre à l'aide d'une méthode de *probing*
 
 *Probing* détermine une nouvelle case à partir de l'ancienne

@@ -5,8 +5,11 @@ tags:
   - structure-des-données
 semestre: 3
 ---
-**Rattraper la définition**
-
+Les files de priorité servent à trouver le minimum/maximum d'un ensemble
+|> clé/valeur avec la clé donnant le niveau de priorité
+|> ajout doit être simple
+|> recherche/extraction du min (resp. max) doit aussi être simple
+## Implémentation naïve
 Implémentation naïve en liste chaînée, son extraction est en $O(n)$ pour récupérer la valeur minimum
 |> utilisation d'une liste chaînée triée permet d'éviter ça, mais on se retrouve à être en $O(n)$ pour l'insertion
 -> on fait sûrement des opérations en trop car à chaque fois on trie tout
@@ -56,10 +59,13 @@ int indiceFilsDroit(int i){
 Voir le diapo pour les tests d'existence
 
 Pour ajouter un élément, on :
-1. ajoute l'élément tout en bas
-2. tant que l'élément est plus grand que son père, on les échange
+1. ajoute l'élément tout en bas (i.e. le plus au fond du tableau)
+2. tant que l'élément est plus petit (resp. plus grand) que son père, on les échange
 -> elle est en $O(\log_2 n)$ (car au pire on remonte à la racine)
 
 Voir le diapo pour la fonction d'ajout implémenté
 
-Voir le diapo pour l'extraction
+Pour extraire le plus petit (resp. max) élément, on :
+1. remplace la racine par son plus grand (resp. plus petit) fils
+2. tant que l'élément est plus grand (resp. plus petit) qu'un de ses fils, on les échange
+-> elle est aussi en $O(\log n)$
