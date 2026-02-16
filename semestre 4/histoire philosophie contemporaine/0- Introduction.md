@@ -134,3 +134,95 @@ Rupture définitive avec Wagner en 1878
 
 NTZH est resté célibataire, mais il a quand-même eu une période d'émoi amoureux durant HTH
 |> Lou Andreas Salome (précurseur féministe), mais ne donne rien
+## Réception et interprétation de Nietzsche
+A fasciné l'extrême droite
+|> mais pas uniquement
+|> a aussi beaucoup intéressé Freud, via Lou Andreas Salome
+
+Extrême droite intéressé par le racisme de NTZH
+|> racisme = hiérarchie dans les races humaines (racialisme = il y a des races humaines)
+|> par sa vision du grand destin de certains
+|> pensé que le fond de toute vie est la recherche de la puissance
+-> représenté en philosophie par Heidegger
+|> pas que philosophique, est aussi d'accord avec l'interprétation de NTZH
+|> domination de la philosophie par l'ontologie (qu'est-ce qu'être ?)
+|> entre Kant et NTZH se joue la fin de l'histoire de la métaphysique, alors que les deux sont des métaphysiciens
+-> Kant montre que les objets de la métaphysique sont inconnaissables tout en affirmant leur existence
+-> NTZH critique psychologique et moral de la métaphysique en affirmant que la métaphysique est une fiction auquel on adhère pour ses bénéfices psychologiques, pourtant il possède une thèse fondamentale sur tout ce qui est (la volonté de puissance)
+|> Heidegger a popularisé l'idée que NTZH est l'anti-Platon
+|> NTZH, FP, I, 1, 7, 156 : « Ma philosophie, platonisme inversé : plus on s'éloigne de l'étant vrai, plus pur, plus beau, meilleur c'est. La vie dans l'apparence comme but. »
+
+« La métaphysique est la fabrique des arrières-mondes », APZ
+
+> [!warning] Relation entre Platon et Nietzsche est en réalité plus compliqué
+
+NTZH est considéré comme un grand héro de la pensée de gauche anti-bourgeoise dans les années 60-70
+|> attaque de la modernité de NTZH est surtout contre le capitalisme et la bourgeoisie -> renversement des valeurs contre la morale conformiste, chrétienne et bourgeoise (morale du troupeau)
+|> construit la valeur du corps -> grande raison du soi
+|> promeut l'affirmation vitale
+-> est aussi paradoxal
+|> critique de NTZH n'amène pas vers une rencontre avec les démocrates, les socialistes et les communistes
+-> Deleuze fait parti des principaux représentants de cette vision
+|> NTZH comme critique de la violence d'État (mais n'est ni égalitaire, ni libertaire)
+=> de nombreuses personnalités de droite deviennent anti-nietzschéen (Alain Renaud, Luc Ferry, Alain Boyer...)
+
+Après, il y a eu l'essor des lectures philologiques de son œuvre
+|> travaux de Wotling, Dixsaut...
+|> cherche à dépolitiser NTZH
+|> cherche aussi à proposer d'autres lectures
+## Difficulté chez NTZH
+Son écriture est très sélective
+|> compliqué de le comprendre
+
+NTZH, PBM, §27
+>Ne fais-je pas tout moi-même pour être difficilement intelligible ?
+
+=> il ne veut pas être compris par tout le monde
+|> écriture construite pour qu'on *doive* interpréter pour comprendre
+|> il ne veut pas être à la portée du premier venu
+-> cherche à être uniquement compris par les aristocrates, penseurs, philosophes et artistes qui feront la société de demain
+|> est provoqué par « la fatalité de la hauteur »
+
+Besoin aussi d'avoir une certaine expérience et une culture pour le comprendre
+|> esprit peut avoir besoin d'indépendances, d'aventures
+|> l'intellect ne fait pas tout pour NTZH
+
+Le caractère aphoristique rajoute toujours plus de difficulté
+|> s'oppose à l'écriture linéaire, ordonnée où une table des matières divise les sujets à traiter et permet un repérage parfaitement clair
+|> les traités médiévaux s'opposent complètement à la forme NTZH
+=> ne cherche pas à être cohérent
+|> mais il y a quand une forme de cohérence
+
+NTZH est virulent
+|> lié à l'intention de faire passer dans l'écriture le corps et les passions
+|> ne cherche pas une écriture purement théorique et neutre
+|> cherche à être insupportable et à déranger le public de son temps
+
+NTZH, APZ, Prologue
+>Ce que veut Zarathoustra, c'est que les bergers l'appelle brigand.
+
+Berger = les notables, les gentils, ceux qui contrôlent le peuple
+
+Ces textes s'adressent à ceux qui ont « besoin d'exploser » des jeunes gens
+
+==> NTZH n'est pas un pacifiste
+|> il n'est pas Tolstoï
+
+Souvent, des termes se répètent, mais avec une nuance
+|> ne sont pas équivalent
+
+Par exemple, critique de la pitié coexiste avec un côté louable de la pitié (quand l'aristocratie regarde le peuple avec pitié)
+|> NTZH critique la compassion -> empathie provoquant la souffrance avec ceux qui souffrent
+|> NTZH est pour la condescendance
+-> pareil pour l'amour, l'amitié, la création...
+|> est la logique du redoublement chez NTZH
+=> **besoin de se demander ce qu'il veut dire**
+
+NTZH critique Platon et Socrate, *mais*
+|> GS, §340 -> « J'admire la sagesse de Socrate en tout ce qu'il fit et ce qu'il dit »
+|> PBM, §204 -> « Platon est une figure royale et grandiose »
+-> comment faire tenir les deux ensembles ?
+|> le problème de Socrate est sa dépréciation du sensible
+|> le côté royal est sûrement leur côté aristocratique
+
+Aussi reçu comme un auteur critique, notamment avec sa méthode de la généalogie

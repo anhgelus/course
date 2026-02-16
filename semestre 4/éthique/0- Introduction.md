@@ -2,6 +2,7 @@
 tags:
   - sorbonne
   - philosophie
+  - éthique
 semestre: 4
 ---
 Examen est un commentaire sur les _Fondements de la métaphysique des mœurs_
